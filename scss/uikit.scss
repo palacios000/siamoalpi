@@ -1,0 +1,95 @@
+
+//$global-font-family: "Neuzeit S LT W03 Book", sans-serif, !default;
+// $global-font-family-heavy: "Neuzeit S LT W03 Book Heavy", sans-serif, !default; // gm
+// $base-heading-font-family: 'Infini-Bold', sans-serif, !default;
+// $global-font-size: 19px !default;
+/* uikit variables */
+
+	// //colors
+	// $global-color: black;
+	// $global-link-color: black;
+	// $global-emphasis-color: #333;
+	// $global-link-hover-color: $global-color;
+	// $base-heading-color: $global-color;
+	// $global-muted-color: #999 !default; // d
+	// $linkHoverColor: rgba($global-color,0.5);
+
+	// //spaces
+
+	// //logo
+	// $logo-font-size: 22px !default;
+	// $logo-font-family: $base-heading-font-family !default;
+
+	// //button
+	// $button-default-background: white !default;
+	// $button-default-color: $global-color !default;
+	// $button-font-size: $global-font-size - 4px !default;
+	// $button-padding-horizontal: $global-gutter - 12px !default;
+	// $button-default-hover-background: white !default;
+	// $button-default-hover-color: black !default;
+
+	// //navbar
+	// $navbar-background: white !default;
+	// //navbar in modal
+	// $nav-item-padding-vertical: 0px !default;
+	// $nav-item-padding-horizontal: 0 !default;
+	// $nav-divider-margin-vertical: 0px !default;
+	// $nav-divider-margin-horizontal: 0 !default;
+	// $nav-header-font-size: 32px !default;
+	// $nav-header-margin-top: 0px !default;
+	// $nav-default-item-color: black !default;
+	// $nav-default-item-hover-color: white !default;
+	// $nav-default-item-active-color: white !default; 
+	// $modal-close-position: $global-gutter !default;
+	// $modal-close-padding: $global-gutter !default;
+
+	// //cards
+	// $card-title-font-size: $global-font-size + 3px !default;
+
+	// //bread
+	// $breadcrumb-divider: "/" !default;
+	// $breadcrumb-divider-margin-horizontal: 6px !default;
+	// $breadcrumb-divider-color: black !default;
+	// $breadcrumb-item-font-size: 0.7rem !default; // or  0.875rem !default;
+	// $breadcrumb-item-color: black !default;
+	// $breadcrumb-item-hover-color: rgba($global-color, 0.8) !default;
+	// $breadcrumb-item-hover-text-decoration: underline !default;
+	// $breadcrumb-item-active-color: rgba($global-color, 0.8) !default;
+
+	// //hr
+	// $base-hr-margin-vertical: 3px !default;
+	// $base-hr-border: #666 !default;
+
+	// //tabs (archivio)
+	// $tab-margin-horizontal: 20px !default;
+	// $tab-item-padding-horizontal: 0px !default; // ex10
+	// $tab-item-padding-vertical: 0px !default; // ex 5
+ // 	$tab-item-color: $global-muted-color !default;
+	// $tab-item-hover-color: $global-muted-color !default;
+	// $tab-item-hover-text-decoration: underline !default;
+	// $tab-item-active-color: $global-color !default;
+
+
+
+/* CRB function */
+	@function px2em($pixels, $context: 20) {
+		@return #{$pixels/$context}em;
+	}
+	@mixin aHoverColor(){
+		color:$linkHoverColor;
+		transition:0.25s linear;
+		text-decoration: none;
+	}
+
+// 2. Import default variables and available mixins.
+	@import "../../node_modules/uikit/src/scss/variables.scss";
+	@import "../../node_modules/uikit/src/scss/mixins.scss";
+
+	// 3. Your custom mixin overwrites.
+	@mixin hook-card() { color: #000; }
+
+	// 4. Import UIkit.
+	@import "../../node_modules/uikit/src/scss/uikit.scss";
+
+
+/* ////////////////////////////////////////////////////////// */
