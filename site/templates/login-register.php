@@ -1,11 +1,4 @@
 <?php require "inc/head.php" ?>
-	<?php 
-	$config->styles->prepend($config->urls->adminTemplates . "styles/main.css?v=4"); 
-$config->styles->append($config->urls->adminTemplates . "styles/inputfields.css?v=4"); 
-$config->styles->append($config->urls->adminTemplates . "styles/ui.css?v=4"); 
-$config->styles->append($config->urls->root . "wire/templates-admin/styles/font-awesome/css/font-awesome.min.css");
-foreach($config->styles->unique() as $file) echo "\n\t<link type='text/css' href='$file' rel='stylesheet' />"; ?>
-
 <style>
 #wrap_register_codice{
 	visibility: hidden;
@@ -52,10 +45,10 @@ foreach($config->styles->unique() as $file) echo "\n\t<link type='text/css' href
 		?>	
 
 		<section class="uk-container">
-			<?= 
+			<?php echo "<h2 class='uk-margin-remove-bottom'>".ucfirst($page->title)."</h2>";
 			$loginRegister = $modules->get('LoginRegisterPro');
-			//redirect da attivare in production, altrimenti mi reindirizza sempre nel back-end
-			//$loginRegister->setRedirectUrl('/gestione/');
+			
+			$loginRegister->setRedirectUrl('/gestione/'); //redirect da attivare in production, altrimenti mi reindirizza sempre nel back-end
 			$loginRegister->setMarkup([
 			  // error notification
 			  'error' =>
