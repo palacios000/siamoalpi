@@ -1,7 +1,7 @@
 <?php require "inc/head.php" ?>
 <style>
 #wrap_register_codice{
-	visibility: hidden;
+	/*visibility: hidden;*/
 }
 </style>
 <body class=''>
@@ -10,19 +10,39 @@
 
 		<?php 
 		// definiamo quale tipo di utente si registra in base all'URL leggermente oscurato
-		//1/2 aggiungi campo extra nel form per determinare ruolo da assegnare all'utente		
+		//1.1/2 aggiungi campo extra nel form per determinare ruolo da assegnare all'utente		
 		$wire->addHookAfter("LoginRegisterProRegister::build", function (HookEvent $event) {
 			$form = $event->object->form();
-			$page = wire('page');
-			if ($page->name != "registrazione") {
-				$role = sha1($page->name);
-				$fieldCodice = $form->getChildByName('register_codice');
-				$fieldCodice->value = $role;
-				$fieldCodice->class = "uk-hidden";
+			$page = wire('page'); 
+			$input = wire('input');
+			$role = $input->get->role;
+
+		/*1.2/2 __ limita gli accessi e controlla che il ruolo sia definito nel campo "codice_textarea", in modo da limitare gli accessi 
+			(mi raccomando non dimentichiamoci di togliere i permessi, altrimenti chiunque puo' sceglersi in teoria il ruolo) */
+
+			/* i ruoli sono: grafico / catalogatore / catalogatore_junior / gestore */
+
+			$text = $page->codice_textarea; 
+			$arrayAllowedRoles = array();
+			foreach (explode("\n", $text) as $line) {
+				$arrayAllowedRoles[] = trim($line);
 			}
+
+			if (in_array($role, $arrayAllowedRoles)) {
+				$assignRole = sha1($role); 
+			}else{
+				$assignRole = "00001"; // tanto per segnalare qualcosa che non va;
+				$log = wire('log');
+				$log->save("login-register-pro", "New user registration using role not allowed: $role");
+			}
+
+			$fieldCodice = $form->getChildByName('register_codice');
+			$fieldCodice->value = $assignRole;
+			$fieldCodice->class = "uk-hidden";
+
 		});
 
-		//2/2 aggiungi ruolo in base al campo del form
+		//2/2 aggiungi ruolo in base al campo del form, in base ai ruoli sopra definiti
 		$wire->addHook('LoginRegisterPro::createUserReady', function($event) {
 			$user = $event->arguments(0); /** @var User $user User about to be saved */
 			$values = $event->arguments(1); /** @var array $values Values from form */
@@ -33,15 +53,6 @@
 			if($values['register_codice'] === sha1("gestore")) { $user->addRole('gestore');	}
 
 		});
-
-		/*i ruoli sono:
-		grafico
-		catalogatore
-		catalogatore_junior
-		gestore 
-		*/
-
-
 		?>	
 
 		<section class="uk-container">
