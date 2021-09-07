@@ -7,12 +7,13 @@
 		"host": "194.110.243.198",
 		"username": "crb@siamoalpi.obake.pro",  // or null for anonymous login
 		"password": "suVp-B6#;wO(DRxcvP",
-		"path": "/public_html/site/templates/",
+		"path": "/public_html/site/",
 
 		"upload_on_save": true,
 
 		// "port": 21,
 		"tls": true,
+		// "tls": false,
 		// "timeout": 30, // [seconds]
 
 		// "passive": true,

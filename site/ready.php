@@ -1,4 +1,34 @@
 <?php 
+// redirect users after logout to login-register page
+if(!$user->isLoggedin() && $input->get('loggedout')) {
+    $session->removeNotices();
+    $session->redirect($config->urls->root . 'registrazione'); 
+}
+
+// replace PW login form with login-register.php page
+$wire->addHookBefore('ProcessLogin::buildLoginForm', function (HookEvent $event) {
+    $session = $this->wire('session');
+    $config = $this->wire('config');
+    $input = $this->wire('input');
+    // inserisco la regola del get, altrimenti non mi fa loggare come admin in login-resiter
+    // if ($input->get->admin != 1) { ... non funziona
+    // if ($input->get->login != 1) {
+        $session->redirect($config->urls->root . 'registrazione'); 
+    // }
+});
+
+
+
+/* gestionale =========================== */
+/* seleziona il tema della ricerca antropologia in base alla posizione in cui si trova la pagina. 
+Riferimento al template "gestionale_scheda" */
+
+$wire->addHookAfter('InputfieldPage::getSelectablePages', function($event) {
+  if($event->object->hasField == 'tema') {
+    $pageSchedaParentId = $event->arguments('page')->parent->id;
+    $event->return = $event->pages->find("template=gestionale_tema, ente=$pageSchedaParentId");
+  }
+});
 
 // SeoMaestro ### 
 // Add the brand name after the title. 
