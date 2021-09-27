@@ -6,10 +6,13 @@
 /* uikit variables */
 
 	// //colors
+	$porporaPWscuro: #bc283d;
+	$porporaPWchiaro: #e83561;
+	$verdePW: #3eb998;
 	// $global-color: black;
-	// $global-link-color: black;
+	$global-link-color: $porporaPWscuro; 
 	// $global-emphasis-color: #333;
-	// $global-link-hover-color: $global-color;
+	$global-link-hover-color: $porporaPWchiaro;
 	// $base-heading-color: $global-color;
 	// $global-muted-color: #999 !default; // d
 	// $linkHoverColor: rgba($global-color,0.5);
@@ -21,11 +24,11 @@
 	// $logo-font-family: $base-heading-font-family !default;
 
 	// //button
-	// $button-default-background: white !default;
-	// $button-default-color: $global-color !default;
+	$button-default-background: $verdePW !default;
+	$button-default-hover-background: $porporaPWchiaro !default;
+	$button-default-color: white !default;
 	// $button-font-size: $global-font-size - 4px !default;
 	// $button-padding-horizontal: $global-gutter - 12px !default;
-	// $button-default-hover-background: white !default;
 	// $button-default-hover-color: black !default;
 
 	// //navbar
@@ -93,3 +96,14 @@
 
 
 /* ////////////////////////////////////////////////////////// */
+
+/* GUIDA */
+/* form commenti */
+p.CommentFormEmail.CommentForm_email{
+	margin-top: 0;
+}
+p.CommentFormSubmit.CommentForm_submit button{
+	@extend .uk-button;
+	@extend .uk-button-default;
+	border-radius: 3px;
+}

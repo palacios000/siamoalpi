@@ -20,7 +20,7 @@ $wire->addHookBefore('ProcessLogin::buildLoginForm', function (HookEvent $event)
 
 
 /* gestionale =========================== */
-/* seleziona il tema della ricerca antropologia in base alla posizione in cui si trova la pagina. 
+/* backend - seleziona il tema della ricerca antropologia in base alla posizione in cui si trova la pagina. 
 Riferimento al template "gestionale_scheda" */
 
 $wire->addHookAfter('InputfieldPage::getSelectablePages', function($event) {
@@ -29,6 +29,15 @@ $wire->addHookAfter('InputfieldPage::getSelectablePages', function($event) {
     $event->return = $event->pages->find("template=gestionale_tema, ente=$pageSchedaParentId");
   }
 });
+
+/* cambia titolo colonne di listerPro  */
+// $wire->addHookBefore("ProcessPageListerPro::renderResults", function(HookEvent $event) {
+//   // $field = $this->fields->get('tema.title');
+//   $field = $this->fields->get('modified_users_id');
+//   $field->label = "Some Very Different Title";
+// });
+
+/* gestionale =========================== END */
 
 // SeoMaestro ### 
 // Add the brand name after the title. 

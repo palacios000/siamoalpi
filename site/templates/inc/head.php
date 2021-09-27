@@ -9,4 +9,7 @@
 		<!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-TxKWSXbsweFt0o2WqfkfJRRNVaPdzXJ/YLqgStggBVRREXkwU7OKz+xXtqOU4u8+" crossorigin="anonymous"> -->
 
 		<?php //echo $page->seo; ?>
-	</head>
+	
+
+	<!-- </head> -- la chiusa HEAD va nel template --> 
+

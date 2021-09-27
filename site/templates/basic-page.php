@@ -1,4 +1,5 @@
 <?php require "inc/head.php" ?>
+</head>
 <body class=''>
 
 	<?php require "inc/menu.php" ?>
