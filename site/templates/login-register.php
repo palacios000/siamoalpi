@@ -14,8 +14,8 @@
 		var ProcessWire = { config: {"modals":{"large":"15,15,30,30,draggable=false,resizable=true,hide=250,show=100","medium":"50,49,100,100","small":"100,100,200,200","full":"0,0,0,0"},"ukGridWidths":{"84%":"5-6","80%":"4-5","74%":"3-4","65%":"2-3","58%":"3-5","43%":"1-2","36%":"2-5","27%":"1-3","21%":"1-4","17%":"1-5","5%":"1-6"},"LanguageSupport":{"language":{"id":1017,"name":"default","title":"Default"}},"httpHost":"siamoalpi.obake.pro","httpHosts":["siamoalpi.obake.pro","siamoalpi.it","www.siamoalpi.it"],"https":false,"adminTheme":{"logoAction":0,"toggleBehavior":0},"urls":{"root":"\/","admin":"\/gestione\/","modules":"\/wire\/modules\/","core":"\/wire\/core\/","files":"\/site\/assets\/files\/","templates":"\/site\/templates\/","adminTemplates":"\/wire\/modules\/AdminTheme\/AdminThemeUikit\/"},"debug":false,"user":{"id":40,"name":"guest","roles":[]},"page":{"id":23,"name":"login","process":"ProcessLogin"}} }; var config = ProcessWire.config;
 	</script>
 
-	
-	<link type='text/css' href='/wire/modules/AdminTheme/AdminThemeUikit/uikit-pw/pw.min.css?v=1630086528' rel='stylesheet' />
+	<link type='text/css' href='/site/assets/admin.css?v=1632762031' rel='stylesheet' />
+	<!-- <link type='text/css' href='/wire/modules/AdminTheme/AdminThemeUikit/uikit-pw/pw.min.css?v=1630086528' rel='stylesheet' /> -->
 	<link type='text/css' href='/wire/templates-admin/styles/AdminTheme.css?v=33g' rel='stylesheet' />
 	<link type='text/css' href='/site/modules/AdminOnSteroids/styles/aos.min.css?ts=2.0.21_2021090111' rel='stylesheet' />
 	<link type='text/css' href='/wire/modules/Jquery/JqueryUI/panel.css' rel='stylesheet' />
@@ -36,17 +36,8 @@
 <?php // la parte qui sopra copiata dal login page di PW ?>
 
 
-<style>
-#wrap_register_codice{
-	visibility: hidden;
-  height: 10px;
-  overflow: hidden;
-}
 
-.LoginRegisterPro .Inputfield:not(.InputfieldSubmit){
-	padding: 0 !important;
-}
-</style>
+
 </head>
 <body class='id-23 template-admin pw-init AdminThemeUikit role-guest role-nonsuperuser user-guest ProcessLogin pw-guest'>
 

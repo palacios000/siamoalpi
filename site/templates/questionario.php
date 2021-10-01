@@ -1,42 +1,31 @@
-<?php $form = $forms->render('questionario-valfurva'); ?>
-<?php require "inc/head.php" ?>
-<?php echo $form->styles; ?>
-<?php echo $form->scripts; ?>
-<style>
-.uk-button-success,
-.uk-button-success:focus, 
-.uk-button-success:hover{
-	background-color: #0e9b7e !important;
-}
-.InputfieldHeader.uk-form-label{
-	text-align: right;
-}
-</style>
+<?php 
+$formName = 'questionario-'.$page->name;
+$form = $forms->render("$formName");
+require "inc/head.php" ;
+/* echo $form->styles; */
+echo $form->scripts; 
+?>
 </head>
 <body class='questionario'>
 
-	<?php //require "inc/menu.php" ?>
-		
-
 		<section class="uk-container">
-			<img src="<?php echo $urls->templates ?>pictures/logo/siamo-alpi-nero-verde.svg" width="300" alt="Siamo Alpi">
-			<div class="uk-margin-large-top">
+			<img src="<?php echo $urls->templates ?>pictures/logo/siamo-alpi-nero-verde.svg" width="375" alt="Siamo Alpi" class="logo uk-padding">
+
+			<div class="uk-margin-large-top uk-width-2xlarge uk-margin-auto uk-padding">
 
 				<?php if($page->editable()){
-					echo "<a class='uk-padding' href='$page->editURL'>Modifica Pagina</a>";
+					echo "<a class='uk-margin uk-button uk-button-primary' href='$page->editURL'>Modifica Pagina</a>";
 				}?>
 				
-				<div class="uk-padding-large">
+				<div class="uk-padding-large-top">
 					<?php echo $page->body; ?>
 				</div>
 
-				<div class="uk-padding-large uk-padding-top-remove uk-margin-large-bottom">
-					<?php echo $form; ?>
+				<div class="uk-margin-medium-top uk-margin-large-bottom">
+					<?php echo $form; ?>	
 				</div>
 			</div>
 		</section>
-
-
 	
 	<?php require "inc/footer.php" ?>
 

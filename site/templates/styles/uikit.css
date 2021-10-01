@@ -1,4 +1,14 @@
 @charset "UTF-8";
+@font-face {
+  font-family: Moderat-Bold;
+  src: url("fonts/Moderat-Bold.woff2") format("woff2"), url("fonts/Moderat-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: Moderat-Light;
+  src: url("fonts/Moderat-Light.woff2") format("woff2"), url("fonts/Moderat-Light.woff") format("woff");
+}
+
 /* uikit variables */
 /* CRB function */
 /* ========================================================================
@@ -12,15 +22,15 @@
  */
 html {
   /* 1 */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 16px;
+  font-family: "Moderat-Light", sans-serif;
+  font-size: 19px;
   font-weight: normal;
   line-height: 1.5;
   /* 2 */
   -webkit-text-size-adjust: 100%;
   /* 3 */
   background: #fff;
-  color: #666;
+  color: black;
 }
 
 /*
@@ -108,7 +118,7 @@ em {
  */
 ins {
   background: #ffd;
-  color: #666;
+  color: black;
   text-decoration: none;
 }
 
@@ -117,7 +127,7 @@ ins {
  */
 mark {
   background: #ffd;
-  color: #666;
+  color: black;
 }
 
 /*
@@ -262,7 +272,7 @@ h6, .uk-h6,
 .uk-heading-xlarge,
 .uk-heading-2xlarge {
   margin: 0 0 20px 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Moderat-Bold", sans-serif;
   font-weight: normal;
   color: #333;
   text-transform: none;
@@ -307,7 +317,7 @@ h4, .uk-h4 {
 }
 
 h5, .uk-h5 {
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.4;
 }
 
@@ -417,7 +427,7 @@ blockquote footer {
  */
 pre {
   font: 0.875rem / 1.5 Consolas, monaco, monospace;
-  color: #666;
+  color: black;
   -moz-tab-size: 4;
   tab-size: 4;
   /* 1 */
@@ -504,7 +514,7 @@ a.uk-link-muted:hover,
 .uk-link-muted a:hover,
 .uk-link-toggle:hover .uk-link-muted,
 .uk-link-toggle:focus .uk-link-muted {
-  color: #666;
+  color: black;
 }
 
 /* Text
@@ -896,7 +906,7 @@ a.uk-link-reset,
   width: 30px;
   height: 1.5em;
   margin-bottom: -1.5em;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23666%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22black%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%20%2F%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -1030,9 +1040,9 @@ a.uk-link-reset,
   text-align: left;
   vertical-align: bottom;
   /* 1 */
-  font-size: 16px;
+  font-size: 19px;
   font-weight: bold;
-  color: #666;
+  color: black;
 }
 
 /* Cell
@@ -1292,14 +1302,14 @@ button.uk-icon:not(:disabled) {
 
 .uk-icon-link:hover,
 .uk-icon-link:focus {
-  color: #666;
+  color: black;
   outline: none;
 }
 
 /* OnClick + Active */
 .uk-icon-link:active,
 .uk-active > .uk-icon-link {
-  color: #595959;
+  color: black;
 }
 
 /*
@@ -1324,7 +1334,7 @@ button.uk-icon:not(:disabled) {
 .uk-icon-button:hover,
 .uk-icon-button:focus {
   background-color: #ebebeb;
-  color: #666;
+  color: black;
   outline: none;
 }
 
@@ -1332,7 +1342,7 @@ button.uk-icon:not(:disabled) {
 .uk-icon-button:active,
 .uk-active > .uk-icon-button {
   background-color: #dfdede;
-  color: #666;
+  color: black;
 }
 
 /* ========================================================================
@@ -1410,7 +1420,7 @@ button.uk-icon:not(:disabled) {
   height: 15px;
   width: 15px;
   border-radius: 500px;
-  background: #666;
+  background: black;
 }
 
 /* Firefox */
@@ -1421,7 +1431,7 @@ button.uk-icon:not(:disabled) {
   height: 15px;
   width: 15px;
   border-radius: 500px;
-  background: #666;
+  background: black;
 }
 
 /* Edge */
@@ -1438,7 +1448,7 @@ button.uk-icon:not(:disabled) {
   height: 15px;
   width: 15px;
   border-radius: 500px;
-  background: #666;
+  background: black;
 }
 
 /* Edge + IE11 */
@@ -1497,7 +1507,7 @@ button.uk-icon:not(:disabled) {
  * 3. Remove `border-radius` in iOS.
  * 4. Change font properties to `inherit` in all browsers.
  */
-.uk-input,
+.uk-input, body.questionario form.uk-form input,
 .uk-select,
 .uk-textarea,
 .uk-radio,
@@ -1515,7 +1525,7 @@ button.uk-icon:not(:disabled) {
 /*
  * Show the overflow in Edge.
  */
-.uk-input {
+.uk-input, body.questionario form.uk-form input {
   overflow: visible;
 }
 
@@ -1548,23 +1558,25 @@ button.uk-icon:not(:disabled) {
 /*
  * Remove the inner padding and cancel buttons in Chrome on OS X and Safari on OS X.
  */
-.uk-input[type="search"]::-webkit-search-cancel-button,
-.uk-input[type="search"]::-webkit-search-decoration {
+.uk-input[type="search"]::-webkit-search-cancel-button, body.questionario form.uk-form input[type="search"]::-webkit-search-cancel-button,
+.uk-input[type="search"]::-webkit-search-decoration,
+body.questionario form.uk-form input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /*
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-.uk-input[type="number"]::-webkit-inner-spin-button,
-.uk-input[type="number"]::-webkit-outer-spin-button {
+.uk-input[type="number"]::-webkit-inner-spin-button, body.questionario form.uk-form input[type="number"]::-webkit-inner-spin-button,
+.uk-input[type="number"]::-webkit-outer-spin-button,
+body.questionario form.uk-form input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /*
  * Removes placeholder transparency in Firefox.
  */
-.uk-input::-moz-placeholder,
+.uk-input::-moz-placeholder, body.questionario form.uk-form input::-moz-placeholder,
 .uk-textarea::-moz-placeholder {
   opacity: 1;
 }
@@ -1594,7 +1606,7 @@ button.uk-icon:not(:disabled) {
 /*
  * Remove default style in iOS.
  */
-.uk-input,
+.uk-input, body.questionario form.uk-form input,
 .uk-textarea {
   -webkit-appearance: none;
 }
@@ -1605,7 +1617,7 @@ button.uk-icon:not(:disabled) {
  * 3. Reset default
  * 4. Style
  */
-.uk-input,
+.uk-input, body.questionario form.uk-form input,
 .uk-select,
 .uk-textarea {
   /* 1 */
@@ -1617,7 +1629,7 @@ button.uk-icon:not(:disabled) {
   /* 4 */
   padding: 0 10px;
   background: #f8f8f8;
-  color: #666;
+  color: black;
 }
 
 /*
@@ -1626,7 +1638,7 @@ button.uk-icon:not(:disabled) {
  * 2. Make sure line-height is not larger than height
  *    Also needed to center the text vertically
  */
-.uk-input,
+.uk-input, body.questionario form.uk-form input,
 .uk-select:not([multiple]):not([size]) {
   height: 40px;
   vertical-align: middle;
@@ -1635,7 +1647,7 @@ button.uk-icon:not(:disabled) {
 }
 
 /* 2 */
-.uk-input:not(input),
+.uk-input:not(input), body.questionario form.uk-form input:not(input),
 .uk-select:not(select) {
   line-height: 40px;
 }
@@ -1657,16 +1669,16 @@ button.uk-icon:not(:disabled) {
 }
 
 /* Focus */
-.uk-input:focus,
+.uk-input:focus, body.questionario form.uk-form input:focus,
 .uk-select:focus,
 .uk-textarea:focus {
   outline: none;
   background-color: #ebebeb;
-  color: #666;
+  color: black;
 }
 
 /* Disabled */
-.uk-input:disabled,
+.uk-input:disabled, body.questionario form.uk-form input:disabled,
 .uk-select:disabled,
 .uk-textarea:disabled {
   background-color: #f8f8f8;
@@ -1676,11 +1688,11 @@ button.uk-icon:not(:disabled) {
 /*
  * Placeholder
  */
-.uk-input::-ms-input-placeholder {
+.uk-input::-ms-input-placeholder, body.questionario form.uk-form input::-ms-input-placeholder {
   color: #999 !important;
 }
 
-.uk-input::placeholder {
+.uk-input::placeholder, body.questionario form.uk-form input::placeholder {
   color: #999;
 }
 
@@ -1809,7 +1821,7 @@ select.uk-form-width-xsmall {
   -moz-appearance: none;
   /* 2 */
   padding-right: 20px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22black%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22black%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
   background-repeat: no-repeat;
   background-position: 100% 50%;
 }
@@ -1836,19 +1848,20 @@ select.uk-form-width-xsmall {
 /*
  * 1. Remove default style in Chrome
  */
-.uk-input[list] {
+.uk-input[list], body.questionario form.uk-form input[list] {
   padding-right: 20px;
   background-repeat: no-repeat;
   background-position: 100% 50%;
 }
 
-.uk-input[list]:hover,
-.uk-input[list]:focus {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%2012%208%206%2016%206%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+.uk-input[list]:hover, body.questionario form.uk-form input[list]:hover,
+.uk-input[list]:focus,
+body.questionario form.uk-form input[list]:focus {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22black%22%20points%3D%2212%2012%208%206%2016%206%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
 /* 1 */
-.uk-input[list]::-webkit-calendar-picker-indicator {
+.uk-input[list]::-webkit-calendar-picker-indicator, body.questionario form.uk-form input[list]::-webkit-calendar-picker-indicator {
   display: none !important;
 }
 
@@ -2086,7 +2099,7 @@ select.uk-form-width-xsmall {
  * Required for `a`.
  */
 .uk-form-icon:hover {
-  color: #666;
+  color: black;
 }
 
 /*
@@ -2099,7 +2112,7 @@ select.uk-form-width-xsmall {
 /*
  * Input padding
  */
-.uk-form-icon:not(.uk-form-icon-flip) ~ .uk-input {
+.uk-form-icon:not(.uk-form-icon-flip) ~ .uk-input, body.questionario form.uk-form .uk-form-icon:not(.uk-form-icon-flip) ~ input {
   padding-left: 40px !important;
 }
 
@@ -2111,7 +2124,7 @@ select.uk-form-width-xsmall {
   left: auto;
 }
 
-.uk-form-icon-flip ~ .uk-input {
+.uk-form-icon-flip ~ .uk-input, body.questionario form.uk-form .uk-form-icon-flip ~ input {
   padding-right: 40px !important;
 }
 
@@ -2151,7 +2164,7 @@ select.uk-form-width-xsmall {
   box-sizing: border-box;
   padding: 0 30px;
   vertical-align: middle;
-  font-size: 16px;
+  font-size: 19px;
   /* 8 */
   line-height: 40px;
   /* 9 */
@@ -2956,7 +2969,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
  */
 .uk-card-default {
   background-color: #f8f8f8;
-  color: #666;
+  color: black;
 }
 
 .uk-card-default .uk-card-title {
@@ -3047,7 +3060,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
 /* Hover + Focus */
 .uk-close:hover,
 .uk-close:focus {
-  color: #666;
+  color: black;
   outline: none;
 }
 
@@ -3112,7 +3125,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
 /* Hover + Focus */
 .uk-totop:hover,
 .uk-totop:focus {
-  color: #666;
+  color: black;
   outline: none;
 }
 
@@ -3148,7 +3161,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
   margin-bottom: 20px;
   padding: 15px 29px 15px 15px;
   background: #f8f8f8;
-  color: #666;
+  color: black;
 }
 
 /* Add margin if adjacent element */
@@ -3529,7 +3542,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
   width: 100%;
   /* 9 */
   border: none;
-  color: #666;
+  color: black;
 }
 
 .uk-search-input:focus {
@@ -3701,7 +3714,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
 /* Hover + Focus */
 .uk-search-toggle:hover,
 .uk-search-toggle:focus {
-  color: #666;
+  color: black;
 }
 
 /* ========================================================================
@@ -3730,7 +3743,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
 /* Hover + Focus */
 .uk-accordion-title:hover,
 .uk-accordion-title:focus {
-  color: #666;
+  color: black;
   text-decoration: none;
   outline: none;
 }
@@ -3819,7 +3832,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
   /* 4 */
   padding: 15px;
   background: #f8f8f8;
-  color: #666;
+  color: black;
 }
 
 /* Show */
@@ -3845,7 +3858,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
 .uk-dropdown-nav > li > a:hover,
 .uk-dropdown-nav > li > a:focus,
 .uk-dropdown-nav > li.uk-active > a {
-  color: #666;
+  color: black;
 }
 
 /*
@@ -3872,7 +3885,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
 .uk-dropdown-nav .uk-nav-sub a:hover,
 .uk-dropdown-nav .uk-nav-sub a:focus,
 .uk-dropdown-nav .uk-nav-sub li.uk-active > a {
-  color: #666;
+  color: black;
 }
 
 /* Direction / Alignment modifiers
@@ -4664,7 +4677,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
   position: relative;
   padding: 15px;
   background: #f8f8f8;
-  color: #666;
+  color: black;
   font-size: 1.25rem;
   line-height: 1.4;
   cursor: pointer;
@@ -5373,13 +5386,13 @@ ul.uk-nav-sub {
   width: 1.5em;
   height: 1.5em;
   margin-left: auto;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%20%2F%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .uk-nav-parent-icon > .uk-parent.uk-open > a::after {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%20%2F%3E%0A%3C%2Fsvg%3E");
 }
 
 /* Header
@@ -5412,7 +5425,7 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-nav-default > li > a:hover,
 .uk-nav-default > li > a:focus {
-  color: #666;
+  color: black;
 }
 
 /* Active */
@@ -5443,7 +5456,7 @@ ul.uk-nav-sub {
 
 .uk-nav-default .uk-nav-sub a:hover,
 .uk-nav-default .uk-nav-sub a:focus {
-  color: #666;
+  color: black;
 }
 
 .uk-nav-default .uk-nav-sub li.uk-active > a {
@@ -5464,7 +5477,7 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-nav-primary > li > a:hover,
 .uk-nav-primary > li > a:focus {
-  color: #666;
+  color: black;
 }
 
 /* Active */
@@ -5495,7 +5508,7 @@ ul.uk-nav-sub {
 
 .uk-nav-primary .uk-nav-sub a:hover,
 .uk-nav-primary .uk-nav-sub a:focus {
-  color: #666;
+  color: black;
 }
 
 .uk-nav-primary .uk-nav-sub li.uk-active > a {
@@ -5675,8 +5688,8 @@ ul.uk-nav-sub {
   min-height: 80px;
   padding: 0 15px;
   /* 4 */
-  font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 19px;
+  font-family: "Moderat-Light", sans-serif;
   /* 5 */
   text-decoration: none;
 }
@@ -5695,7 +5708,7 @@ ul.uk-nav-sub {
 .uk-navbar-nav > li:hover > a,
 .uk-navbar-nav > li > a:focus,
 .uk-navbar-nav > li > a.uk-open {
-  color: #666;
+  color: black;
   outline: none;
 }
 
@@ -5712,7 +5725,7 @@ ul.uk-nav-sub {
 /* Item
  ========================================================================== */
 .uk-navbar-item {
-  color: #666;
+  color: black;
 }
 
 /*
@@ -5731,7 +5744,7 @@ ul.uk-nav-sub {
 .uk-navbar-toggle:hover,
 .uk-navbar-toggle:focus,
 .uk-navbar-toggle.uk-open {
-  color: #666;
+  color: black;
   outline: none;
   text-decoration: none;
 }
@@ -5770,7 +5783,7 @@ ul.uk-nav-sub {
   /* 4 */
   padding: 15px;
   background: #f8f8f8;
-  color: #666;
+  color: black;
 }
 
 /* Show */
@@ -5861,7 +5874,7 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-navbar-dropdown-nav > li > a:hover,
 .uk-navbar-dropdown-nav > li > a:focus {
-  color: #666;
+  color: black;
 }
 
 /* Active */
@@ -5892,7 +5905,7 @@ ul.uk-nav-sub {
 
 .uk-navbar-dropdown-nav .uk-nav-sub a:hover,
 .uk-navbar-dropdown-nav .uk-nav-sub a:focus {
-  color: #666;
+  color: black;
 }
 
 .uk-navbar-dropdown-nav .uk-nav-sub li.uk-active > a {
@@ -5973,7 +5986,7 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-subnav > * > a:hover,
 .uk-subnav > * > a:focus {
-  color: #666;
+  color: black;
   text-decoration: none;
   outline: none;
 }
@@ -6029,13 +6042,13 @@ ul.uk-nav-sub {
 .uk-subnav-pill > * > a:hover,
 .uk-subnav-pill > * > a:focus {
   background-color: #f8f8f8;
-  color: #666;
+  color: black;
 }
 
 /* OnClick */
 .uk-subnav-pill > * > a:active {
   background-color: #f8f8f8;
-  color: #666;
+  color: black;
 }
 
 /* Active */
@@ -6079,7 +6092,7 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-breadcrumb > * > :hover,
 .uk-breadcrumb > * > :focus {
-  color: #666;
+  color: black;
   text-decoration: none;
 }
 
@@ -6087,7 +6100,7 @@ ul.uk-nav-sub {
 /* Active */
 .uk-breadcrumb > :last-child > span,
 .uk-breadcrumb > :last-child > a:not([href]) {
-  color: #666;
+  color: black;
 }
 
 /*
@@ -6156,13 +6169,13 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-pagination > * > :hover,
 .uk-pagination > * > :focus {
-  color: #666;
+  color: black;
   text-decoration: none;
 }
 
 /* Active */
 .uk-pagination > .uk-active > * {
-  color: #666;
+  color: black;
 }
 
 /* Disabled */
@@ -6228,7 +6241,7 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-tab > * > a:hover,
 .uk-tab > * > a:focus {
-  color: #666;
+  color: black;
   text-decoration: none;
 }
 
@@ -6280,19 +6293,19 @@ ul.uk-nav-sub {
  */
 .uk-slidenav {
   padding: 5px 10px;
-  color: rgba(102, 102, 102, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* Hover + Focus */
 .uk-slidenav:hover,
 .uk-slidenav:focus {
-  color: rgba(102, 102, 102, 0.9);
+  color: rgba(0, 0, 0, 0.9);
   outline: none;
 }
 
 /* OnClick */
 .uk-slidenav:active {
-  color: rgba(102, 102, 102, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* Icon modifier
@@ -6358,7 +6371,7 @@ ul.uk-nav-sub {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(102, 102, 102, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   /* 1 */
   text-indent: 100%;
   overflow: hidden;
@@ -6368,18 +6381,18 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-dotnav > * > :hover,
 .uk-dotnav > * > :focus {
-  background-color: rgba(102, 102, 102, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   outline: none;
 }
 
 /* OnClick */
 .uk-dotnav > * > :active {
-  background-color: rgba(102, 102, 102, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Active */
 .uk-dotnav > .uk-active > * {
-  background-color: rgba(102, 102, 102, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Modifier: 'uk-dotnav-vertical'
@@ -6523,13 +6536,13 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-iconnav > * > a:hover,
 .uk-iconnav > * > a:focus {
-  color: #666;
+  color: black;
   outline: none;
 }
 
 /* Active */
 .uk-iconnav > .uk-active > a {
-  color: #666;
+  color: black;
 }
 
 /* Modifier: 'uk-iconnav-vertical'
@@ -7756,7 +7769,7 @@ ul.uk-nav-sub {
 }
 
 .uk-text-default {
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.5;
 }
 
@@ -8836,8 +8849,8 @@ iframe.uk-cover {
  */
 .uk-logo {
   font-size: 1.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color: #666;
+  font-family: "Moderat-Light", sans-serif;
+  color: black;
   /* 1 */
   text-decoration: none;
 }
@@ -8845,7 +8858,7 @@ iframe.uk-cover {
 /* Hover + Focus */
 .uk-logo:hover,
 .uk-logo:focus {
-  color: #666;
+  color: black;
   outline: none;
   /* 1 */
   text-decoration: none;
@@ -10688,7 +10701,7 @@ iframe.uk-cover {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.uk-light .uk-input, .uk-section-primary:not(.uk-preserve-color) .uk-input, .uk-section-secondary:not(.uk-preserve-color) .uk-input, .uk-tile-primary:not(.uk-preserve-color) .uk-input, .uk-tile-secondary:not(.uk-preserve-color) .uk-input, .uk-card-primary.uk-card-body .uk-input, .uk-card-primary > :not([class*='uk-card-media']) .uk-input, .uk-card-secondary.uk-card-body .uk-input, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input, .uk-overlay-primary .uk-input, .uk-offcanvas-bar .uk-input,
+.uk-light .uk-input, .uk-section-primary:not(.uk-preserve-color) .uk-input, .uk-section-secondary:not(.uk-preserve-color) .uk-input, .uk-tile-primary:not(.uk-preserve-color) .uk-input, .uk-tile-secondary:not(.uk-preserve-color) .uk-input, .uk-card-primary.uk-card-body .uk-input, .uk-card-primary > :not([class*='uk-card-media']) .uk-input, .uk-card-secondary.uk-card-body .uk-input, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input, .uk-overlay-primary .uk-input, .uk-offcanvas-bar .uk-input, .uk-light body.questionario form.uk-form input, body.questionario form.uk-form .uk-light input, .uk-section-primary:not(.uk-preserve-color) body.questionario form.uk-form input, body.questionario form.uk-form .uk-section-primary:not(.uk-preserve-color) input, .uk-section-secondary:not(.uk-preserve-color) body.questionario form.uk-form input, body.questionario form.uk-form .uk-section-secondary:not(.uk-preserve-color) input, .uk-tile-primary:not(.uk-preserve-color) body.questionario form.uk-form input, body.questionario form.uk-form .uk-tile-primary:not(.uk-preserve-color) input, .uk-tile-secondary:not(.uk-preserve-color) body.questionario form.uk-form input, body.questionario form.uk-form .uk-tile-secondary:not(.uk-preserve-color) input, .uk-card-primary.uk-card-body body.questionario form.uk-form input, body.questionario form.uk-form .uk-card-primary.uk-card-body input, .uk-card-primary > :not([class*='uk-card-media']) body.questionario form.uk-form input, body.questionario form.uk-form .uk-card-primary > :not([class*='uk-card-media']) input, .uk-card-secondary.uk-card-body body.questionario form.uk-form input, body.questionario form.uk-form .uk-card-secondary.uk-card-body input, .uk-card-secondary > :not([class*='uk-card-media']) body.questionario form.uk-form input, body.questionario form.uk-form .uk-card-secondary > :not([class*='uk-card-media']) input, .uk-overlay-primary body.questionario form.uk-form input, body.questionario form.uk-form .uk-overlay-primary input, .uk-offcanvas-bar body.questionario form.uk-form input, body.questionario form.uk-form .uk-offcanvas-bar input,
 .uk-light .uk-select,
 .uk-section-primary:not(.uk-preserve-color) .uk-select,
 .uk-section-secondary:not(.uk-preserve-color) .uk-select,
@@ -10716,7 +10729,7 @@ iframe.uk-cover {
   background-clip: padding-box;
 }
 
-.uk-light .uk-input:focus, .uk-section-primary:not(.uk-preserve-color) .uk-input:focus, .uk-section-secondary:not(.uk-preserve-color) .uk-input:focus, .uk-tile-primary:not(.uk-preserve-color) .uk-input:focus, .uk-tile-secondary:not(.uk-preserve-color) .uk-input:focus, .uk-card-primary.uk-card-body .uk-input:focus, .uk-card-primary > :not([class*='uk-card-media']) .uk-input:focus, .uk-card-secondary.uk-card-body .uk-input:focus, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input:focus, .uk-overlay-primary .uk-input:focus, .uk-offcanvas-bar .uk-input:focus,
+.uk-light .uk-input:focus, .uk-section-primary:not(.uk-preserve-color) .uk-input:focus, .uk-section-secondary:not(.uk-preserve-color) .uk-input:focus, .uk-tile-primary:not(.uk-preserve-color) .uk-input:focus, .uk-tile-secondary:not(.uk-preserve-color) .uk-input:focus, .uk-card-primary.uk-card-body .uk-input:focus, .uk-card-primary > :not([class*='uk-card-media']) .uk-input:focus, .uk-card-secondary.uk-card-body .uk-input:focus, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input:focus, .uk-overlay-primary .uk-input:focus, .uk-offcanvas-bar .uk-input:focus, .uk-light body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-light input:focus, .uk-section-primary:not(.uk-preserve-color) body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-section-primary:not(.uk-preserve-color) input:focus, .uk-section-secondary:not(.uk-preserve-color) body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-section-secondary:not(.uk-preserve-color) input:focus, .uk-tile-primary:not(.uk-preserve-color) body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-tile-primary:not(.uk-preserve-color) input:focus, .uk-tile-secondary:not(.uk-preserve-color) body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-tile-secondary:not(.uk-preserve-color) input:focus, .uk-card-primary.uk-card-body body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-card-primary.uk-card-body input:focus, .uk-card-primary > :not([class*='uk-card-media']) body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-card-primary > :not([class*='uk-card-media']) input:focus, .uk-card-secondary.uk-card-body body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-card-secondary.uk-card-body input:focus, .uk-card-secondary > :not([class*='uk-card-media']) body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-card-secondary > :not([class*='uk-card-media']) input:focus, .uk-overlay-primary body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-overlay-primary input:focus, .uk-offcanvas-bar body.questionario form.uk-form input:focus, body.questionario form.uk-form .uk-offcanvas-bar input:focus,
 .uk-light .uk-select:focus,
 .uk-section-primary:not(.uk-preserve-color) .uk-select:focus,
 .uk-section-secondary:not(.uk-preserve-color) .uk-select:focus,
@@ -10743,11 +10756,11 @@ iframe.uk-cover {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.uk-light .uk-input::-ms-input-placeholder, .uk-section-primary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder, .uk-section-secondary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder, .uk-tile-primary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder, .uk-tile-secondary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder, .uk-card-primary.uk-card-body .uk-input::-ms-input-placeholder, .uk-card-primary > :not([class*='uk-card-media']) .uk-input::-ms-input-placeholder, .uk-card-secondary.uk-card-body .uk-input::-ms-input-placeholder, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input::-ms-input-placeholder, .uk-overlay-primary .uk-input::-ms-input-placeholder, .uk-offcanvas-bar .uk-input::-ms-input-placeholder {
+.uk-light .uk-input::-ms-input-placeholder, .uk-section-primary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder, .uk-section-secondary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder, .uk-tile-primary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder, .uk-tile-secondary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder, .uk-card-primary.uk-card-body .uk-input::-ms-input-placeholder, .uk-card-primary > :not([class*='uk-card-media']) .uk-input::-ms-input-placeholder, .uk-card-secondary.uk-card-body .uk-input::-ms-input-placeholder, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input::-ms-input-placeholder, .uk-overlay-primary .uk-input::-ms-input-placeholder, .uk-offcanvas-bar .uk-input::-ms-input-placeholder, .uk-light body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-light input::-ms-input-placeholder, .uk-section-primary:not(.uk-preserve-color) body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-section-primary:not(.uk-preserve-color) input::-ms-input-placeholder, .uk-section-secondary:not(.uk-preserve-color) body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-section-secondary:not(.uk-preserve-color) input::-ms-input-placeholder, .uk-tile-primary:not(.uk-preserve-color) body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-tile-primary:not(.uk-preserve-color) input::-ms-input-placeholder, .uk-tile-secondary:not(.uk-preserve-color) body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-tile-secondary:not(.uk-preserve-color) input::-ms-input-placeholder, .uk-card-primary.uk-card-body body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-card-primary.uk-card-body input::-ms-input-placeholder, .uk-card-primary > :not([class*='uk-card-media']) body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-card-primary > :not([class*='uk-card-media']) input::-ms-input-placeholder, .uk-card-secondary.uk-card-body body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-card-secondary.uk-card-body input::-ms-input-placeholder, .uk-card-secondary > :not([class*='uk-card-media']) body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-card-secondary > :not([class*='uk-card-media']) input::-ms-input-placeholder, .uk-overlay-primary body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-overlay-primary input::-ms-input-placeholder, .uk-offcanvas-bar body.questionario form.uk-form input::-ms-input-placeholder, body.questionario form.uk-form .uk-offcanvas-bar input::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-.uk-light .uk-input::placeholder, .uk-section-primary:not(.uk-preserve-color) .uk-input::placeholder, .uk-section-secondary:not(.uk-preserve-color) .uk-input::placeholder, .uk-tile-primary:not(.uk-preserve-color) .uk-input::placeholder, .uk-tile-secondary:not(.uk-preserve-color) .uk-input::placeholder, .uk-card-primary.uk-card-body .uk-input::placeholder, .uk-card-primary > :not([class*='uk-card-media']) .uk-input::placeholder, .uk-card-secondary.uk-card-body .uk-input::placeholder, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input::placeholder, .uk-overlay-primary .uk-input::placeholder, .uk-offcanvas-bar .uk-input::placeholder {
+.uk-light .uk-input::placeholder, .uk-section-primary:not(.uk-preserve-color) .uk-input::placeholder, .uk-section-secondary:not(.uk-preserve-color) .uk-input::placeholder, .uk-tile-primary:not(.uk-preserve-color) .uk-input::placeholder, .uk-tile-secondary:not(.uk-preserve-color) .uk-input::placeholder, .uk-card-primary.uk-card-body .uk-input::placeholder, .uk-card-primary > :not([class*='uk-card-media']) .uk-input::placeholder, .uk-card-secondary.uk-card-body .uk-input::placeholder, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input::placeholder, .uk-overlay-primary .uk-input::placeholder, .uk-offcanvas-bar .uk-input::placeholder, .uk-light body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-light input::placeholder, .uk-section-primary:not(.uk-preserve-color) body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-section-primary:not(.uk-preserve-color) input::placeholder, .uk-section-secondary:not(.uk-preserve-color) body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-section-secondary:not(.uk-preserve-color) input::placeholder, .uk-tile-primary:not(.uk-preserve-color) body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-tile-primary:not(.uk-preserve-color) input::placeholder, .uk-tile-secondary:not(.uk-preserve-color) body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-tile-secondary:not(.uk-preserve-color) input::placeholder, .uk-card-primary.uk-card-body body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-card-primary.uk-card-body input::placeholder, .uk-card-primary > :not([class*='uk-card-media']) body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-card-primary > :not([class*='uk-card-media']) input::placeholder, .uk-card-secondary.uk-card-body body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-card-secondary.uk-card-body input::placeholder, .uk-card-secondary > :not([class*='uk-card-media']) body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-card-secondary > :not([class*='uk-card-media']) input::placeholder, .uk-overlay-primary body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-overlay-primary input::placeholder, .uk-offcanvas-bar body.questionario form.uk-form input::placeholder, body.questionario form.uk-form .uk-offcanvas-bar input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -10763,7 +10776,7 @@ iframe.uk-cover {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22rgba(255, 255, 255, 0.7)%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22rgba(255, 255, 255, 0.7)%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
-.uk-light .uk-input[list]:hover, .uk-section-primary:not(.uk-preserve-color) .uk-input[list]:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-input[list]:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-input[list]:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-input[list]:hover, .uk-card-primary.uk-card-body .uk-input[list]:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-input[list]:hover, .uk-card-secondary.uk-card-body .uk-input[list]:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input[list]:hover, .uk-overlay-primary .uk-input[list]:hover, .uk-offcanvas-bar .uk-input[list]:hover,
+.uk-light .uk-input[list]:hover, .uk-section-primary:not(.uk-preserve-color) .uk-input[list]:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-input[list]:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-input[list]:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-input[list]:hover, .uk-card-primary.uk-card-body .uk-input[list]:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-input[list]:hover, .uk-card-secondary.uk-card-body .uk-input[list]:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-input[list]:hover, .uk-overlay-primary .uk-input[list]:hover, .uk-offcanvas-bar .uk-input[list]:hover, .uk-light body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-light input[list]:hover, .uk-section-primary:not(.uk-preserve-color) body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-section-primary:not(.uk-preserve-color) input[list]:hover, .uk-section-secondary:not(.uk-preserve-color) body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-section-secondary:not(.uk-preserve-color) input[list]:hover, .uk-tile-primary:not(.uk-preserve-color) body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-tile-primary:not(.uk-preserve-color) input[list]:hover, .uk-tile-secondary:not(.uk-preserve-color) body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-tile-secondary:not(.uk-preserve-color) input[list]:hover, .uk-card-primary.uk-card-body body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-card-primary.uk-card-body input[list]:hover, .uk-card-primary > :not([class*='uk-card-media']) body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-card-primary > :not([class*='uk-card-media']) input[list]:hover, .uk-card-secondary.uk-card-body body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-card-secondary.uk-card-body input[list]:hover, .uk-card-secondary > :not([class*='uk-card-media']) body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-card-secondary > :not([class*='uk-card-media']) input[list]:hover, .uk-overlay-primary body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-overlay-primary input[list]:hover, .uk-offcanvas-bar body.questionario form.uk-form input[list]:hover, body.questionario form.uk-form .uk-offcanvas-bar input[list]:hover,
 .uk-light .uk-input[list]:focus,
 .uk-section-primary:not(.uk-preserve-color) .uk-input[list]:focus,
 .uk-section-secondary:not(.uk-preserve-color) .uk-input[list]:focus,
@@ -10774,7 +10787,29 @@ iframe.uk-cover {
 .uk-card-secondary.uk-card-body .uk-input[list]:focus,
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-input[list]:focus,
 .uk-overlay-primary .uk-input[list]:focus,
-.uk-offcanvas-bar .uk-input[list]:focus {
+.uk-offcanvas-bar .uk-input[list]:focus,
+.uk-light body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-light input[list]:focus,
+.uk-section-primary:not(.uk-preserve-color) body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-section-primary:not(.uk-preserve-color) input[list]:focus,
+.uk-section-secondary:not(.uk-preserve-color) body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-section-secondary:not(.uk-preserve-color) input[list]:focus,
+.uk-tile-primary:not(.uk-preserve-color) body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-tile-primary:not(.uk-preserve-color) input[list]:focus,
+.uk-tile-secondary:not(.uk-preserve-color) body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-tile-secondary:not(.uk-preserve-color) input[list]:focus,
+.uk-card-primary.uk-card-body body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-card-primary.uk-card-body input[list]:focus,
+.uk-card-primary > :not([class*='uk-card-media']) body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-card-primary > :not([class*='uk-card-media']) input[list]:focus,
+.uk-card-secondary.uk-card-body body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-card-secondary.uk-card-body input[list]:focus,
+.uk-card-secondary > :not([class*='uk-card-media']) body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-card-secondary > :not([class*='uk-card-media']) input[list]:focus,
+.uk-overlay-primary body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-overlay-primary input[list]:focus,
+.uk-offcanvas-bar body.questionario form.uk-form input[list]:focus,
+body.questionario form.uk-form .uk-offcanvas-bar input[list]:focus {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22rgba(255, 255, 255, 0.7)%22%20points%3D%2212%2012%208%206%2016%206%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
@@ -10861,7 +10896,7 @@ iframe.uk-cover {
 }
 
 .uk-light .uk-radio:checked, .uk-section-primary:not(.uk-preserve-color) .uk-radio:checked, .uk-section-secondary:not(.uk-preserve-color) .uk-radio:checked, .uk-tile-primary:not(.uk-preserve-color) .uk-radio:checked, .uk-tile-secondary:not(.uk-preserve-color) .uk-radio:checked, .uk-card-primary.uk-card-body .uk-radio:checked, .uk-card-primary > :not([class*='uk-card-media']) .uk-radio:checked, .uk-card-secondary.uk-card-body .uk-radio:checked, .uk-card-secondary > :not([class*='uk-card-media']) .uk-radio:checked, .uk-overlay-primary .uk-radio:checked, .uk-offcanvas-bar .uk-radio:checked {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23666%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22black%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
 }
 
 
@@ -10876,7 +10911,7 @@ iframe.uk-cover {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:checked,
 .uk-overlay-primary .uk-checkbox:checked,
 .uk-offcanvas-bar .uk-checkbox:checked {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22black%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
 
@@ -10891,7 +10926,7 @@ iframe.uk-cover {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate,
 .uk-overlay-primary .uk-checkbox:indeterminate,
 .uk-offcanvas-bar .uk-checkbox:indeterminate {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22black%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E");
 }
 
 .uk-light .uk-form-icon, .uk-section-primary:not(.uk-preserve-color) .uk-form-icon, .uk-section-secondary:not(.uk-preserve-color) .uk-form-icon, .uk-tile-primary:not(.uk-preserve-color) .uk-form-icon, .uk-tile-secondary:not(.uk-preserve-color) .uk-form-icon, .uk-card-primary.uk-card-body .uk-form-icon, .uk-card-primary > :not([class*='uk-card-media']) .uk-form-icon, .uk-card-secondary.uk-card-body .uk-form-icon, .uk-card-secondary > :not([class*='uk-card-media']) .uk-form-icon, .uk-overlay-primary .uk-form-icon, .uk-offcanvas-bar .uk-form-icon {
@@ -10904,7 +10939,7 @@ iframe.uk-cover {
 
 .uk-light .uk-button-default, .uk-section-primary:not(.uk-preserve-color) .uk-button-default, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default, .uk-card-primary.uk-card-body .uk-button-default, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default, .uk-card-secondary.uk-card-body .uk-button-default, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default, .uk-overlay-primary .uk-button-default, .uk-offcanvas-bar .uk-button-default, .uk-light p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-light button, .uk-section-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button, .uk-section-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button, .uk-tile-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button, .uk-tile-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button, .uk-card-primary.uk-card-body p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button, .uk-card-primary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button, .uk-card-secondary.uk-card-body p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button, .uk-card-secondary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button, .uk-overlay-primary p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button, .uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button {
   background-color: #fff;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-button-default:hover, .uk-section-primary:not(.uk-preserve-color) .uk-button-default:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default:hover, .uk-card-primary.uk-card-body .uk-button-default:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default:hover, .uk-card-secondary.uk-card-body .uk-button-default:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default:hover, .uk-overlay-primary .uk-button-default:hover, .uk-offcanvas-bar .uk-button-default:hover, .uk-light p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-light button:hover, .uk-section-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button:hover, .uk-section-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button:hover, .uk-tile-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button:hover, .uk-tile-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button:hover, .uk-card-primary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button:hover, .uk-card-primary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button:hover, .uk-card-secondary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button:hover, .uk-card-secondary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button:hover, .uk-overlay-primary p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button:hover, .uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:hover,
@@ -10942,7 +10977,7 @@ p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button:focus,
 .uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button:focus,
 p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:focus {
   background-color: #f2f2f2;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-button-default:active, .uk-section-primary:not(.uk-preserve-color) .uk-button-default:active, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default:active, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default:active, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default:active, .uk-card-primary.uk-card-body .uk-button-default:active, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default:active, .uk-card-secondary.uk-card-body .uk-button-default:active, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default:active, .uk-overlay-primary .uk-button-default:active, .uk-offcanvas-bar .uk-button-default:active, .uk-light p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-light button:active, .uk-section-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button:active, .uk-section-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button:active, .uk-tile-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button:active, .uk-tile-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button:active, .uk-card-primary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button:active, .uk-card-primary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button:active, .uk-card-secondary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button:active, .uk-card-secondary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button:active, .uk-overlay-primary p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button:active, .uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:active,
@@ -10980,12 +11015,12 @@ p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button.uk-active,
 .uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button.uk-active,
 p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
   background-color: #e6e5e5;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-button-primary, .uk-section-primary:not(.uk-preserve-color) .uk-button-primary, .uk-section-secondary:not(.uk-preserve-color) .uk-button-primary, .uk-tile-primary:not(.uk-preserve-color) .uk-button-primary, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary, .uk-card-primary.uk-card-body .uk-button-primary, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-primary, .uk-card-secondary.uk-card-body .uk-button-primary, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-primary, .uk-overlay-primary .uk-button-primary, .uk-offcanvas-bar .uk-button-primary {
   background-color: #fff;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-button-primary:hover, .uk-section-primary:not(.uk-preserve-color) .uk-button-primary:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-button-primary:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-button-primary:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary:hover, .uk-card-primary.uk-card-body .uk-button-primary:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-primary:hover, .uk-card-secondary.uk-card-body .uk-button-primary:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-primary:hover, .uk-overlay-primary .uk-button-primary:hover, .uk-offcanvas-bar .uk-button-primary:hover,
@@ -11001,7 +11036,7 @@ p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
 .uk-overlay-primary .uk-button-primary:focus,
 .uk-offcanvas-bar .uk-button-primary:focus {
   background-color: #f2f2f2;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-button-primary:active, .uk-section-primary:not(.uk-preserve-color) .uk-button-primary:active, .uk-section-secondary:not(.uk-preserve-color) .uk-button-primary:active, .uk-tile-primary:not(.uk-preserve-color) .uk-button-primary:active, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary:active, .uk-card-primary.uk-card-body .uk-button-primary:active, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-primary:active, .uk-card-secondary.uk-card-body .uk-button-primary:active, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-primary:active, .uk-overlay-primary .uk-button-primary:active, .uk-offcanvas-bar .uk-button-primary:active,
@@ -11017,12 +11052,12 @@ p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
 .uk-overlay-primary .uk-button-primary.uk-active,
 .uk-offcanvas-bar .uk-button-primary.uk-active {
   background-color: #e6e5e5;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-button-secondary, .uk-section-primary:not(.uk-preserve-color) .uk-button-secondary, .uk-section-secondary:not(.uk-preserve-color) .uk-button-secondary, .uk-tile-primary:not(.uk-preserve-color) .uk-button-secondary, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-secondary, .uk-card-primary.uk-card-body .uk-button-secondary, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-secondary, .uk-card-secondary.uk-card-body .uk-button-secondary, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-secondary, .uk-overlay-primary .uk-button-secondary, .uk-offcanvas-bar .uk-button-secondary {
   background-color: #fff;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-button-secondary:hover, .uk-section-primary:not(.uk-preserve-color) .uk-button-secondary:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-button-secondary:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-button-secondary:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-secondary:hover, .uk-card-primary.uk-card-body .uk-button-secondary:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-secondary:hover, .uk-card-secondary.uk-card-body .uk-button-secondary:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-secondary:hover, .uk-overlay-primary .uk-button-secondary:hover, .uk-offcanvas-bar .uk-button-secondary:hover,
@@ -11038,7 +11073,7 @@ p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
 .uk-overlay-primary .uk-button-secondary:focus,
 .uk-offcanvas-bar .uk-button-secondary:focus {
   background-color: #f2f2f2;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-button-secondary:active, .uk-section-primary:not(.uk-preserve-color) .uk-button-secondary:active, .uk-section-secondary:not(.uk-preserve-color) .uk-button-secondary:active, .uk-tile-primary:not(.uk-preserve-color) .uk-button-secondary:active, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-secondary:active, .uk-card-primary.uk-card-body .uk-button-secondary:active, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-secondary:active, .uk-card-secondary.uk-card-body .uk-button-secondary:active, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-secondary:active, .uk-overlay-primary .uk-button-secondary:active, .uk-offcanvas-bar .uk-button-secondary:active,
@@ -11054,7 +11089,7 @@ p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
 .uk-overlay-primary .uk-button-secondary.uk-active,
 .uk-offcanvas-bar .uk-button-secondary.uk-active {
   background-color: #e6e5e5;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-button-text, .uk-section-primary:not(.uk-preserve-color) .uk-button-text, .uk-section-secondary:not(.uk-preserve-color) .uk-button-text, .uk-tile-primary:not(.uk-preserve-color) .uk-button-text, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-text, .uk-card-primary.uk-card-body .uk-button-text, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-text, .uk-card-secondary.uk-card-body .uk-button-text, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-text, .uk-overlay-primary .uk-button-text, .uk-offcanvas-bar .uk-button-text {
@@ -11151,12 +11186,12 @@ p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
 
 .uk-light .uk-badge, .uk-section-primary:not(.uk-preserve-color) .uk-badge, .uk-section-secondary:not(.uk-preserve-color) .uk-badge, .uk-tile-primary:not(.uk-preserve-color) .uk-badge, .uk-tile-secondary:not(.uk-preserve-color) .uk-badge, .uk-card-primary.uk-card-body .uk-badge, .uk-card-primary > :not([class*='uk-card-media']) .uk-badge, .uk-card-secondary.uk-card-body .uk-badge, .uk-card-secondary > :not([class*='uk-card-media']) .uk-badge, .uk-overlay-primary .uk-badge, .uk-offcanvas-bar .uk-badge {
   background-color: #fff;
-  color: #666 !important;
+  color: black !important;
 }
 
 .uk-light .uk-label, .uk-section-primary:not(.uk-preserve-color) .uk-label, .uk-section-secondary:not(.uk-preserve-color) .uk-label, .uk-tile-primary:not(.uk-preserve-color) .uk-label, .uk-tile-secondary:not(.uk-preserve-color) .uk-label, .uk-card-primary.uk-card-body .uk-label, .uk-card-primary > :not([class*='uk-card-media']) .uk-label, .uk-card-secondary.uk-card-body .uk-label, .uk-card-secondary > :not([class*='uk-card-media']) .uk-label, .uk-overlay-primary .uk-label, .uk-offcanvas-bar .uk-label {
   background-color: #fff;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-article-meta, .uk-section-primary:not(.uk-preserve-color) .uk-article-meta, .uk-section-secondary:not(.uk-preserve-color) .uk-article-meta, .uk-tile-primary:not(.uk-preserve-color) .uk-article-meta, .uk-tile-secondary:not(.uk-preserve-color) .uk-article-meta, .uk-card-primary.uk-card-body .uk-article-meta, .uk-card-primary > :not([class*='uk-card-media']) .uk-article-meta, .uk-card-secondary.uk-card-body .uk-article-meta, .uk-card-secondary > :not([class*='uk-card-media']) .uk-article-meta, .uk-overlay-primary .uk-article-meta, .uk-offcanvas-bar .uk-article-meta {
@@ -11465,7 +11500,7 @@ p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
 
 .uk-light .uk-subnav-pill > .uk-active > a, .uk-section-primary:not(.uk-preserve-color) .uk-subnav-pill > .uk-active > a, .uk-section-secondary:not(.uk-preserve-color) .uk-subnav-pill > .uk-active > a, .uk-tile-primary:not(.uk-preserve-color) .uk-subnav-pill > .uk-active > a, .uk-tile-secondary:not(.uk-preserve-color) .uk-subnav-pill > .uk-active > a, .uk-card-primary.uk-card-body .uk-subnav-pill > .uk-active > a, .uk-card-primary > :not([class*='uk-card-media']) .uk-subnav-pill > .uk-active > a, .uk-card-secondary.uk-card-body .uk-subnav-pill > .uk-active > a, .uk-card-secondary > :not([class*='uk-card-media']) .uk-subnav-pill > .uk-active > a, .uk-overlay-primary .uk-subnav-pill > .uk-active > a, .uk-offcanvas-bar .uk-subnav-pill > .uk-active > a {
   background-color: #fff;
-  color: #666;
+  color: black;
 }
 
 .uk-light .uk-subnav > .uk-disabled > a, .uk-section-primary:not(.uk-preserve-color) .uk-subnav > .uk-disabled > a, .uk-section-secondary:not(.uk-preserve-color) .uk-subnav > .uk-disabled > a, .uk-tile-primary:not(.uk-preserve-color) .uk-subnav > .uk-disabled > a, .uk-tile-secondary:not(.uk-preserve-color) .uk-subnav > .uk-disabled > a, .uk-card-primary.uk-card-body .uk-subnav > .uk-disabled > a, .uk-card-primary > :not([class*='uk-card-media']) .uk-subnav > .uk-disabled > a, .uk-card-secondary.uk-card-body .uk-subnav > .uk-disabled > a, .uk-card-secondary > :not([class*='uk-card-media']) .uk-subnav > .uk-disabled > a, .uk-overlay-primary .uk-subnav > .uk-disabled > a, .uk-offcanvas-bar .uk-subnav > .uk-disabled > a {
@@ -11755,4 +11790,99 @@ p.CommentFormEmail.CommentForm_email {
 
 p.CommentFormSubmit.CommentForm_submit button {
   border-radius: 3px;
+}
+
+/* public */
+p strong {
+  font-family: "Moderat-Bold", sans-serif;
+}
+
+/* questionario */
+body.questionario form.uk-form label {
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border-radius: 50%;
+  text-align: center;
+  border: 3px solid #0e9b7e;
+  background-color: #0e9b7e;
+  color: white;
+  font-family: "Moderat-Bold", sans-serif;
+}
+
+body.questionario form.uk-form #wrap_Inputfield_eta label,
+body.questionario form.uk-form #wrap_Inputfield_residenza label {
+  width: 2em;
+  border-radius: 0;
+  text-align: center;
+  border: none;
+  background-color: white;
+  color: black;
+}
+
+body.questionario form.uk-form #wrap_Inputfield_residenza {
+  margin-top: 5em;
+}
+
+body.questionario form.uk-form .uk-form-horizontal.uk-form-label {
+  width: 2em;
+}
+
+body.questionario form.uk-form .uk-form-large.InputfieldMaxWidth {
+  width: 95%;
+  padding-right: 10px;
+}
+
+body.questionario form.uk-form .uk-form-row {
+  margin-bottom: 23px;
+}
+
+body.questionario form.uk-form .uk-button, body.questionario form.uk-form p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button,
+body.questionario form.uk-form .uk-button:focus,
+body.questionario form.uk-form p.CommentFormSubmit.CommentForm_submit button:focus,
+p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button:focus {
+  background-color: #0e9b7e;
+  color: white;
+  font-family: "Moderat-Bold", sans-serif;
+  margin-top: 2em;
+}
+
+body.questionario form.uk-form .uk-button:hover, body.questionario form.uk-form p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button:hover {
+  background-color: #0c886f;
+}
+
+body.questionario form.uk-form input {
+  background-color: white;
+  border: 1px solid black;
+}
+
+body.questionario img.logo {
+  margin-top: 1.5em;
+}
+
+body.questionario p a {
+  text-decoration: underline;
+}
+
+body.questionario p a:hover {
+  text-decoration: none;
+}
+
+body.questionario #wrap_Inputfield-.Inputfield_codice {
+  visibility: hidden;
+  height: 1px;
+  overflow: hidden;
+}
+
+body.questionario .uk-alert.uk-alert-success {
+  background-color: #fbfffe;
+  color: #0e9b7e;
+  border: 2px solid #0e9b7e;
+  font-size: 1.16em;
+}
+
+@media (min-width: 960px) {
+  body.questionario .uk-form-horizontal .uk-form-controls {
+    margin-left: 100px;
+  }
 }

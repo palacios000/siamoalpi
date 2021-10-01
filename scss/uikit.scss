@@ -1,15 +1,28 @@
+//fonts
+@font-face {
+	font-family: Moderat-Bold;
+	src: url('fonts/Moderat-Bold.woff2') format('woff2'), url('fonts/Moderat-Bold.woff') format('woff');
+}
+@font-face {
+	font-family: Moderat-Light;
+	src: url('fonts/Moderat-Light.woff2') format('woff2'), url('fonts/Moderat-Light.woff') format('woff');
+}
+
+$fontBold: "Moderat-Bold", sans-serif;
 
 //$global-font-family: "Neuzeit S LT W03 Book", sans-serif, !default;
-// $global-font-family-heavy: "Neuzeit S LT W03 Book Heavy", sans-serif, !default; // gm
-// $base-heading-font-family: 'Infini-Bold', sans-serif, !default;
-// $global-font-size: 19px !default;
+$global-font-family: "Moderat-Light", sans-serif, !default; // gm
+$global-font-family-heavy: $fontBold;
+$base-heading-font-family: $global-font-family-heavy;
+$global-font-size: 19px !default;
 /* uikit variables */
 
 	// //colors
 	$porporaPWscuro: #bc283d;
 	$porporaPWchiaro: #e83561;
 	$verdePW: #3eb998;
-	// $global-color: black;
+	$verdeSiamoAlpi: #0e9b7e;
+	$global-color: black;
 	$global-link-color: $porporaPWscuro; 
 	// $global-emphasis-color: #333;
 	$global-link-hover-color: $porporaPWchiaro;
@@ -97,13 +110,110 @@
 
 /* ////////////////////////////////////////////////////////// */
 
+
+
+
 /* GUIDA */
-/* form commenti */
-p.CommentFormEmail.CommentForm_email{
-	margin-top: 0;
-}
-p.CommentFormSubmit.CommentForm_submit button{
-	@extend .uk-button;
-	@extend .uk-button-default;
-	border-radius: 3px;
+	/* form commenti */
+	p.CommentFormEmail.CommentForm_email{
+		margin-top: 0;
+	}
+	p.CommentFormSubmit.CommentForm_submit button{
+		@extend .uk-button;
+		@extend .uk-button-default;
+		border-radius: 3px;
+	}
+
+	/* public */
+	p strong{
+		font-family: $fontBold;
+	}
+
+/* questionario */
+body.questionario {
+	form.uk-form{
+		label {
+			width: 2em;
+			height: 2em;
+			line-height: 2em;
+			border-radius: 50%;
+			text-align: center;
+			border: 3px solid $verdeSiamoAlpi;
+			background-color: $verdeSiamoAlpi;
+			color: white;
+			font-family: $fontBold;
+		}
+		//override ultimi due label
+		#wrap_Inputfield_eta label,
+		#wrap_Inputfield_residenza label{
+			width: 2em;
+			border-radius: 0;
+			text-align: center;
+			border: none;
+			background-color: white;
+			color: black;
+		}
+		#wrap_Inputfield_residenza{
+			margin-top: 5em;
+		}
+		// #wrap_Inputfield_eta label{
+		// 	margin-top: -5px;
+		// }
+
+
+		.uk-form-horizontal.uk-form-label{
+			width: 2em;
+		}
+
+		.uk-form-large.InputfieldMaxWidth{
+			width: 95%;
+			padding-right: 10px;
+		}
+		.uk-form-row {
+			margin-bottom: 23px;
+		}
+
+		// per ora li metto qua, forse dopo faranno parte dello style button
+		.uk-button,
+		.uk-button:focus{
+			background-color: $verdeSiamoAlpi;
+			color: white;
+			font-family: $fontBold;
+			margin-top: 2em;
+		}
+		.uk-button:hover{
+			background-color: darken($verdeSiamoAlpi, 4);
+		}
+		input{
+			background-color: white;
+			border: 1px solid black;
+			@extend .uk-input;
+		}
+	}
+	img.logo{
+		margin-top: 1.5em;;
+	}
+	p a{
+		text-decoration: underline;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	#wrap_Inputfield-.Inputfield_codice{ //honeypot
+		visibility: hidden;
+		height: 1px;
+		overflow: hidden;
+	}
+	//success
+	.uk-alert.uk-alert-success{
+		background-color: #fbfffe;
+		color: $verdeSiamoAlpi;
+		border: 2px solid $verdeSiamoAlpi;
+		font-size: 1.16em;
+	}
+	@media (min-width: 960px){
+		.uk-form-horizontal .uk-form-controls{
+			margin-left: 100px;
+		}
+	}
 }
