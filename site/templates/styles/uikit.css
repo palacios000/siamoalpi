@@ -2585,7 +2585,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
   display: flow-root;
   /* 1 */
   box-sizing: content-box;
-  max-width: 1200px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -2674,7 +2674,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
 @media (min-width: 960px) {
   .uk-container-expand-left,
   .uk-container-expand-right {
-    max-width: calc(50% + (1200px / 2) - 40px);
+    max-width: calc(50% + (1600px / 2) - 40px);
   }
   .uk-container-expand-left.uk-container-xsmall,
   .uk-container-expand-right.uk-container-xsmall {

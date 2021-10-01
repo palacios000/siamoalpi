@@ -2,23 +2,18 @@
 </head>
 <body class=''>
 
-	<section class="uk-container" >
+	<section class="" >
 			
-		<div class="uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
-				
-				<img src="<?php echo $urls->templates ?>pictures/logo/siamo-alpi-nero-verde.svg" width="500" alt="Siamo Alpi" class="logo uk-padding uk-margin-xlarge-bottom uk-display-block">
+		<div>
+			<!-- <img src="<?php echo $urls->templates ?>pictures/landingok.jpg" alt="Siamo Alpi" > -->
+
+			<picture>
+				<source media="(max-width:1024px)" srcset="<?php echo $urls->templates ?>pictures/landing_mob.jpg">
+				<img src="<?php echo $urls->templates ?>pictures/landingok.jpg" alt="Flowers" style="width:auto;">
+			</picture> 
 
 		</div>
 	</section>
-
-	<?php // require "inc/menu.php" ?>
-	
-
-		<section>
-			<?php // require "inc/bread.php" ?>
-		</section>
-
-	
 
 
 	<?php require "inc/footer.php" ?>
