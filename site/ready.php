@@ -10,9 +10,9 @@ $wire->addHookBefore('ProcessLogin::buildLoginForm', function (HookEvent $event)
 	$session = $this->wire('session');
 	$config = $this->wire('config');
 	$input = $this->wire('input');
-	// inserisco la regola del get, altrimenti non mi fa loggare come admin in login-resiter
-	// if ($input->get->admin != 1) { ... non funziona
-	// if ($input->get->login != 1) {
+	// inserisco la regola del get, altrimenti non mi funziona in localhost
+	// non va
+	// if (!isset($input->get->localhost)) {
 		$session->redirect($config->urls->root . 'registrazione'); 
 	// }
 });
@@ -32,7 +32,7 @@ $wire->addHookBefore('ProcessLogin::buildLoginForm', function (HookEvent $event)
 	  }
 	});
 
-	
+
 
 	/* Soluzione per controllare gli eventi da generare in caso che un catalogatore salvi/modifichi pagine appartenenti ad un gruppo di lavoro a cui non appartiene'. */   
 	$wire->addHookAfter('Pages::saveReady', function($event) {

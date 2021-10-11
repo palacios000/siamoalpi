@@ -26,28 +26,37 @@
 						<?php echo $page->body ?>
 						<hr class="uk-margin-medium">
 						<?php
-						if (count($page->children)){
-							// echo "<ul class='uk-list'>";
-							// foreach ($page->children as $child) {
-							// 	echo "<li><a>$child->title</a><li>";
-							// }
-							// echo "</ul>"; uk-list-striped
-
-							//opzione 2
+						$showComments = true;
+						if (count($page->children) || $page->template == "gestionale_guida-pagina-downloads"){
+							
 							echo '<dl class="uk-description-list">';
-							foreach ($page->children as $child) {
-							    echo "<dt><a href='$child->url'>$child->title</a></dt>";
-							    echo "<dd>".$sanitizer->text($child->body, ['type' => 'sentence', 'maxLength' => 250, 'more' => '...'] )."</dd>";
-							}
+							if ($page->template == "gestionale_guida-pagina-downloads") {
+								//mostrami i file della pagina
+								foreach ($page->file_downloads as $file) {
+									$ext = ($file->ext() == "pdf") ? "pdf" : "text";
+
+								    echo "<dt><a href='$file->url'><span uk-icon='icon: file-$ext'></span> $file->name</a></dt>";
+								}
+
+							 }else{			
+								//mostrami le sottopagine
+								foreach ($page->children as $child) {
+								    echo "<dt><a href='$child->url'>$child->title</a></dt>";
+								    echo "<dd>".$sanitizer->text($child->body, ['type' => 'sentence', 'maxLength' => 250, 'more' => '...'] )."</dd>";
+								}
+								$showComments = false;
+
+							 }
 							echo '</dl>';
 
-
-						}else{
+						}
+						if ($showComments) {
 							echo "<h2 class='uk-h2 uk-margin-large-top'>Forum/Commenti</h2>";
 							echo $page->comments->renderAll(); 
 						}
 						?>
 					</div>
+
 					<div class="uk-width-1-3@m uk-width-1-1@s" >
 						<div class="uk-margin-large-left" uk-sticky>
 							
@@ -78,7 +87,11 @@
 		</section>
 
 	
-	<?php require "inc/guida/footer.php" ?>
+	<?php
+	
+	//echo $page->template;
+
+	require "inc/guida/footer.php" ?>
 
 </body>
 </html>
