@@ -34,7 +34,8 @@
 } 
 
 //loginRegister Pro
-.ProcessLogin #wrap_register_codice{
+.ProcessLogin #wrap_register_codice,
+.ProcessLogin ul.LoginRegisterLinks li.LoginRegisterLinksRegister,{
   visibility: hidden;
   height: 10px;
   overflow: hidden;
@@ -44,4 +45,9 @@
   padding: 0 !important;
 }
 
-//documentazione qui https://processwire.com/blog/posts/pw-3.0.179/
+.LoginRegisterPro .uk-alert-success.uk-alert{
+  color: @rock-primary;
+}
+
+// documentazione qui https://processwire.com/blog/posts/pw-3.0.179/
+// variabili Reno Theme: https://github.com/processwire/processwire/blob/dev/wire/modules/AdminTheme/AdminThemeUikit/uikit-pw/styles/reno.less

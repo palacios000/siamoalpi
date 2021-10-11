@@ -4,6 +4,11 @@ $form = $forms->render("$formName");
 require "inc/head.php" ;
 /* echo $form->styles; */
 echo $form->scripts; 
+
+//note visibili sono a catalogatore
+if($page->editable()){
+	echo "<style>	#wrap_Inputfield_note{ display: revert !important; } </style>";
+}
 ?>
 </head>
 <body class='questionario'>

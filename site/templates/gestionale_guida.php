@@ -1,5 +1,5 @@
 <?php require "inc/guida/head.php" ?>
-<body class=''>
+<body class='gestionale_guida'>
 
 	<?php require "inc/guida/menu.php" ?>
 
@@ -21,7 +21,7 @@
 				<!-- guida -->
 			
 				<div class="uk-grid uk-padding-top-small" uk-grid>
-					<div class="uk-width-2-3">
+					<div class="uk-width-2-3@m uk-width-1-1@s">
 						<h1><?php echo $page->title ?></h1>
 						<?php echo $page->body ?>
 						<hr class="uk-margin-medium">
@@ -43,12 +43,13 @@
 
 
 						}else{
+							echo "<h2 class='uk-h2 uk-margin-large-top'>Forum/Commenti</h2>";
 							echo $page->comments->renderAll(); 
 						}
 						?>
 					</div>
-					<div class="uk-width-1-3">
-						<div class="uk-margin-large-left">
+					<div class="uk-width-1-3@m uk-width-1-1@s" >
+						<div class="uk-margin-large-left" uk-sticky>
 							
 							<h3>MENU</h3>
 
@@ -57,14 +58,14 @@
 							$guidaEtnografica = $pages->get(1051) ?>
 
 							<H4><?php echo $guidaGestionale->title ?></H4>
-								<ul class="uk-list  uk-list-striped">
+								<ul class="uk-list  uk-list-striped uk-text-small">
 									<?php foreach ($guidaGestionale->children as $guida) {
 										echo "<li><a href='$guida->url'>$guida->title</a></li>";
 									} ?>
 								</ul>
 
 							<H4><?php echo $guidaEtnografica->title ?></H4>
-								<ul class="uk-list  uk-list-striped">
+								<ul class="uk-list  uk-list-striped uk-text-small">
 									<?php foreach ($guidaEtnografica->children as $guida) {
 										echo "<li><a href='$guida->url'>$guida->title</a></li>";
 									} ?>

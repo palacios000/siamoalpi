@@ -115,6 +115,11 @@ $global-font-size: 19px !default;
 
 
 /* GUIDA */
+body.gestionale_guida{
+	h1{
+		margin: 1.2em 0 .5em;
+		line-height: 1.15em;
+	}
 	/* form commenti */
 	p.CommentFormEmail.CommentForm_email{
 		margin-top: 0;
@@ -129,6 +134,7 @@ $global-font-size: 19px !default;
 	p strong{
 		font-family: $fontBold;
 	}
+}
 
 /* questionario */
 body.questionario {
@@ -146,7 +152,8 @@ body.questionario {
 		}
 		//override ultimi due label
 		#wrap_Inputfield_eta label,
-		#wrap_Inputfield_residenza label{
+		#wrap_Inputfield_residenza label,
+		#wrap_Inputfield_note label{
 			width: 2em;
 			border-radius: 0;
 			text-align: center;
@@ -157,9 +164,11 @@ body.questionario {
 		#wrap_Inputfield_residenza{
 			margin-top: 5em;
 		}
-		// #wrap_Inputfield_eta label{
-		// 	margin-top: -5px;
-		// }
+		
+		#wrap_Inputfield_note{ // campo extra catalogatori login
+			// visibility: hidden;
+			display: none;
+		}
 
 
 		.uk-form-horizontal.uk-form-label{

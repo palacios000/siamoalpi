@@ -2144,7 +2144,7 @@ body.questionario form.uk-form input[list]:focus {
  * 9. Align text if button has a width
  * 10. Required for `a`.
  */
-.uk-button, p.CommentFormSubmit.CommentForm_submit button {
+.uk-button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button {
   /* 1 */
   margin: 0;
   /* 2 */
@@ -2173,26 +2173,26 @@ body.questionario form.uk-form input[list]:focus {
   text-decoration: none;
 }
 
-.uk-button:not(:disabled), p.CommentFormSubmit.CommentForm_submit button:not(:disabled) {
+.uk-button:not(:disabled), body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:not(:disabled) {
   cursor: pointer;
 }
 
 /*
  * Remove the inner border and padding in Firefox.
  */
-.uk-button::-moz-focus-inner, p.CommentFormSubmit.CommentForm_submit button::-moz-focus-inner {
+.uk-button::-moz-focus-inner, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
 /* Hover */
-.uk-button:hover, p.CommentFormSubmit.CommentForm_submit button:hover {
+.uk-button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover {
   /* 9 */
   text-decoration: none;
 }
 
 /* Focus */
-.uk-button:focus, p.CommentFormSubmit.CommentForm_submit button:focus {
+.uk-button:focus, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus {
   outline: none;
 }
 
@@ -2202,23 +2202,23 @@ body.questionario form.uk-form input[list]:focus {
 /*
  * Default
  */
-.uk-button-default, p.CommentFormSubmit.CommentForm_submit button {
+.uk-button-default, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button {
   background-color: #3eb998;
   color: white;
 }
 
 /* Hover + Focus */
-.uk-button-default:hover, p.CommentFormSubmit.CommentForm_submit button:hover,
+.uk-button-default:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover,
 .uk-button-default:focus,
-p.CommentFormSubmit.CommentForm_submit button:focus {
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus {
   background-color: #e83561;
   color: #333;
 }
 
 /* OnClick + Active */
-.uk-button-default:active, p.CommentFormSubmit.CommentForm_submit button:active,
+.uk-button-default:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active,
 .uk-button-default.uk-active,
-p.CommentFormSubmit.CommentForm_submit button.uk-active {
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active {
   background-color: #319379;
   color: #333;
 }
@@ -2293,7 +2293,7 @@ p.CommentFormSubmit.CommentForm_submit button.uk-active {
  * Disabled
  * The same for all style modifiers
  */
-.uk-button-default:disabled, p.CommentFormSubmit.CommentForm_submit button:disabled,
+.uk-button-default:disabled, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:disabled,
 .uk-button-primary:disabled,
 .uk-button-secondary:disabled,
 .uk-button-danger:disabled {
@@ -10937,12 +10937,12 @@ body.questionario form.uk-form .uk-offcanvas-bar input[list]:focus {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.uk-light .uk-button-default, .uk-section-primary:not(.uk-preserve-color) .uk-button-default, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default, .uk-card-primary.uk-card-body .uk-button-default, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default, .uk-card-secondary.uk-card-body .uk-button-default, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default, .uk-overlay-primary .uk-button-default, .uk-offcanvas-bar .uk-button-default, .uk-light p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-light button, .uk-section-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button, .uk-section-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button, .uk-tile-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button, .uk-tile-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button, .uk-card-primary.uk-card-body p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button, .uk-card-primary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button, .uk-card-secondary.uk-card-body p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button, .uk-card-secondary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button, .uk-overlay-primary p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button, .uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button {
+.uk-light .uk-button-default, .uk-section-primary:not(.uk-preserve-color) .uk-button-default, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default, .uk-card-primary.uk-card-body .uk-button-default, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default, .uk-card-secondary.uk-card-body .uk-button-default, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default, .uk-overlay-primary .uk-button-default, .uk-offcanvas-bar .uk-button-default, .uk-light body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-light button, .uk-section-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button, .uk-section-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button, .uk-tile-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button, .uk-tile-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button, .uk-card-primary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button, .uk-card-primary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button, .uk-card-secondary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button, .uk-card-secondary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button, .uk-overlay-primary body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button, .uk-offcanvas-bar body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button {
   background-color: #fff;
   color: black;
 }
 
-.uk-light .uk-button-default:hover, .uk-section-primary:not(.uk-preserve-color) .uk-button-default:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default:hover, .uk-card-primary.uk-card-body .uk-button-default:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default:hover, .uk-card-secondary.uk-card-body .uk-button-default:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default:hover, .uk-overlay-primary .uk-button-default:hover, .uk-offcanvas-bar .uk-button-default:hover, .uk-light p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-light button:hover, .uk-section-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button:hover, .uk-section-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button:hover, .uk-tile-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button:hover, .uk-tile-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button:hover, .uk-card-primary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button:hover, .uk-card-primary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button:hover, .uk-card-secondary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button:hover, .uk-card-secondary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button:hover, .uk-overlay-primary p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button:hover, .uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:hover,
+.uk-light .uk-button-default:hover, .uk-section-primary:not(.uk-preserve-color) .uk-button-default:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default:hover, .uk-card-primary.uk-card-body .uk-button-default:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default:hover, .uk-card-secondary.uk-card-body .uk-button-default:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default:hover, .uk-overlay-primary .uk-button-default:hover, .uk-offcanvas-bar .uk-button-default:hover, .uk-light body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-light button:hover, .uk-section-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button:hover, .uk-section-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button:hover, .uk-tile-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button:hover, .uk-tile-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button:hover, .uk-card-primary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button:hover, .uk-card-primary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button:hover, .uk-card-secondary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button:hover, .uk-card-secondary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button:hover, .uk-overlay-primary body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button:hover, .uk-offcanvas-bar body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:hover,
 .uk-light .uk-button-default:focus,
 .uk-section-primary:not(.uk-preserve-color) .uk-button-default:focus,
 .uk-section-secondary:not(.uk-preserve-color) .uk-button-default:focus,
@@ -10954,33 +10954,33 @@ body.questionario form.uk-form .uk-offcanvas-bar input[list]:focus {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default:focus,
 .uk-overlay-primary .uk-button-default:focus,
 .uk-offcanvas-bar .uk-button-default:focus,
-.uk-light p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-light button:focus,
-.uk-section-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button:focus,
-.uk-section-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button:focus,
-.uk-tile-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button:focus,
-.uk-tile-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button:focus,
-.uk-card-primary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button:focus,
-.uk-card-primary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button:focus,
-.uk-card-secondary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button:focus,
-.uk-card-secondary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button:focus,
-.uk-overlay-primary p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button:focus,
-.uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:focus {
+.uk-light body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-light button:focus,
+.uk-section-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button:focus,
+.uk-section-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button:focus,
+.uk-tile-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button:focus,
+.uk-tile-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button:focus,
+.uk-card-primary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button:focus,
+.uk-card-primary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button:focus,
+.uk-card-secondary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button:focus,
+.uk-card-secondary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button:focus,
+.uk-overlay-primary body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button:focus,
+.uk-offcanvas-bar body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:focus {
   background-color: #f2f2f2;
   color: black;
 }
 
-.uk-light .uk-button-default:active, .uk-section-primary:not(.uk-preserve-color) .uk-button-default:active, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default:active, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default:active, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default:active, .uk-card-primary.uk-card-body .uk-button-default:active, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default:active, .uk-card-secondary.uk-card-body .uk-button-default:active, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default:active, .uk-overlay-primary .uk-button-default:active, .uk-offcanvas-bar .uk-button-default:active, .uk-light p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-light button:active, .uk-section-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button:active, .uk-section-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button:active, .uk-tile-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button:active, .uk-tile-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button:active, .uk-card-primary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button:active, .uk-card-primary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button:active, .uk-card-secondary.uk-card-body p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button:active, .uk-card-secondary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button:active, .uk-overlay-primary p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button:active, .uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button:active, p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:active,
+.uk-light .uk-button-default:active, .uk-section-primary:not(.uk-preserve-color) .uk-button-default:active, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default:active, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default:active, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default:active, .uk-card-primary.uk-card-body .uk-button-default:active, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default:active, .uk-card-secondary.uk-card-body .uk-button-default:active, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default:active, .uk-overlay-primary .uk-button-default:active, .uk-offcanvas-bar .uk-button-default:active, .uk-light body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-light button:active, .uk-section-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button:active, .uk-section-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button:active, .uk-tile-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button:active, .uk-tile-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button:active, .uk-card-primary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button:active, .uk-card-primary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button:active, .uk-card-secondary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button:active, .uk-card-secondary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button:active, .uk-overlay-primary body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button:active, .uk-offcanvas-bar body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:active, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:active,
 .uk-light .uk-button-default.uk-active,
 .uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-active,
 .uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-active,
@@ -10992,28 +10992,28 @@ p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button:focus {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default.uk-active,
 .uk-overlay-primary .uk-button-default.uk-active,
 .uk-offcanvas-bar .uk-button-default.uk-active,
-.uk-light p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-light button.uk-active,
-.uk-section-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button.uk-active,
-.uk-section-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button.uk-active,
-.uk-tile-primary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button.uk-active,
-.uk-tile-secondary:not(.uk-preserve-color) p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button.uk-active,
-.uk-card-primary.uk-card-body p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button.uk-active,
-.uk-card-primary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button.uk-active,
-.uk-card-secondary.uk-card-body p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button.uk-active,
-.uk-card-secondary > :not([class*='uk-card-media']) p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button.uk-active,
-.uk-overlay-primary p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button.uk-active,
-.uk-offcanvas-bar p.CommentFormSubmit.CommentForm_submit button.uk-active,
-p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
+.uk-light body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-light button.uk-active,
+.uk-section-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-primary:not(.uk-preserve-color) button.uk-active,
+.uk-section-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-section-secondary:not(.uk-preserve-color) button.uk-active,
+.uk-tile-primary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-primary:not(.uk-preserve-color) button.uk-active,
+.uk-tile-secondary:not(.uk-preserve-color) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-tile-secondary:not(.uk-preserve-color) button.uk-active,
+.uk-card-primary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary.uk-card-body button.uk-active,
+.uk-card-primary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-primary > :not([class*='uk-card-media']) button.uk-active,
+.uk-card-secondary.uk-card-body body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary.uk-card-body button.uk-active,
+.uk-card-secondary > :not([class*='uk-card-media']) body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-card-secondary > :not([class*='uk-card-media']) button.uk-active,
+.uk-overlay-primary body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-overlay-primary button.uk-active,
+.uk-offcanvas-bar body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button.uk-active,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
   background-color: #e6e5e5;
   color: black;
 }
@@ -11783,17 +11783,25 @@ p.CommentFormSubmit.CommentForm_submit .uk-offcanvas-bar button.uk-active {
 
 /* ////////////////////////////////////////////////////////// */
 /* GUIDA */
-/* form commenti */
-p.CommentFormEmail.CommentForm_email {
+body.gestionale_guida {
+  /* form commenti */
+  /* public */
+}
+
+body.gestionale_guida h1 {
+  margin: 1.2em 0 .5em;
+  line-height: 1.15em;
+}
+
+body.gestionale_guida p.CommentFormEmail.CommentForm_email {
   margin-top: 0;
 }
 
-p.CommentFormSubmit.CommentForm_submit button {
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button {
   border-radius: 3px;
 }
 
-/* public */
-p strong {
+body.gestionale_guida p strong {
   font-family: "Moderat-Bold", sans-serif;
 }
 
@@ -11811,7 +11819,8 @@ body.questionario form.uk-form label {
 }
 
 body.questionario form.uk-form #wrap_Inputfield_eta label,
-body.questionario form.uk-form #wrap_Inputfield_residenza label {
+body.questionario form.uk-form #wrap_Inputfield_residenza label,
+body.questionario form.uk-form #wrap_Inputfield_note label {
   width: 2em;
   border-radius: 0;
   text-align: center;
@@ -11822,6 +11831,10 @@ body.questionario form.uk-form #wrap_Inputfield_residenza label {
 
 body.questionario form.uk-form #wrap_Inputfield_residenza {
   margin-top: 5em;
+}
+
+body.questionario form.uk-form #wrap_Inputfield_note {
+  display: none;
 }
 
 body.questionario form.uk-form .uk-form-horizontal.uk-form-label {
@@ -11837,17 +11850,17 @@ body.questionario form.uk-form .uk-form-row {
   margin-bottom: 23px;
 }
 
-body.questionario form.uk-form .uk-button, body.questionario form.uk-form p.CommentFormSubmit.CommentForm_submit button, p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button,
+body.questionario form.uk-form .uk-button, body.questionario form.uk-form body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button,
 body.questionario form.uk-form .uk-button:focus,
-body.questionario form.uk-form p.CommentFormSubmit.CommentForm_submit button:focus,
-p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button:focus {
+body.questionario form.uk-form body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
+body.gestionale_guida p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button:focus {
   background-color: #0e9b7e;
   color: white;
   font-family: "Moderat-Bold", sans-serif;
   margin-top: 2em;
 }
 
-body.questionario form.uk-form .uk-button:hover, body.questionario form.uk-form p.CommentFormSubmit.CommentForm_submit button:hover, p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button:hover {
+body.questionario form.uk-form .uk-button:hover, body.questionario form.uk-form body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:hover, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button:hover {
   background-color: #0c886f;
 }
 
