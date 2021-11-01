@@ -1,7 +1,7 @@
 /* *** modifiche ed aggiunte da apportare a tailwind *** */
 /* questo file viene importato da tailwind.css, che si trova nel root del progetto */
 
-body.home{
+body.landing-home{
 	.landing-body{
 		h1,h2{
 			@apply font-serif uppercase text-4xl mb-7 mt-12;

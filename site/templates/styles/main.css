@@ -1,13 +1,13 @@
 /* *** modifiche ed aggiunte da apportare a tailwind *** */
 /* questo file viene importato da tailwind.css, che si trova nel root del progetto */
-body.home .landing-body h1, body.home .landing-body h2 {
+body.landing-home .landing-body h1, body.landing-home .landing-body h2 {
 	margin-bottom: 1.75rem;
 	margin-top: 3rem;
 	font-family: Morion;
 	font-size: 2rem;
 	text-transform: uppercase;
 }
-body.home .landing-body p {
+body.landing-home .landing-body p {
 	margin-bottom: 0.75rem;
 }
 /* ! tailwindcss v2.2.17 | MIT License | https://tailwindcss.com */
@@ -622,14 +622,23 @@ html{
 .bottom-0 {
 	bottom: 0px;
 }
+.top-48 {
+	top: 12rem;
+}
 .left-1\/3 {
 	left: 33.333333%;
 }
 .right-0 {
 	right: 0px;
 }
-.top-48 {
-	top: 12rem;
+.top-96 {
+	top: 24rem;
+}
+.bottom-64 {
+	bottom: 16rem;
+}
+.bottom-80 {
+	bottom: 20rem;
 }
 .z-10 {
 	z-index: 10;
@@ -697,8 +706,14 @@ html{
 .w-full {
 	width: 100%;
 }
-.w-99 {
-	width: 45rem;
+.w-1\/5 {
+	width: 20%;
+}
+.w-2\/3 {
+	width: 66.666667%;
+}
+.w-3\/5 {
+	width: 60%;
 }
 .w-1\/3 {
 	width: 33.333333%;
@@ -706,11 +721,11 @@ html{
 .w-2\/5 {
 	width: 40%;
 }
-.w-2\/3 {
-	width: 66.666667%;
+.w-99 {
+	width: 45rem;
 }
-.w-3\/5 {
-	width: 60%;
+.w-1\/2 {
+	width: 50%;
 }
 .max-w-sm {
 	max-width: 24rem;
@@ -794,8 +809,14 @@ html{
 .pr-8 {
 	padding-right: 2rem;
 }
+.pl-12 {
+	padding-left: 3rem;
+}
 .pb-32 {
 	padding-bottom: 8rem;
+}
+.pl-3 {
+	padding-left: 0.75rem;
 }
 .pb-10 {
 	padding-bottom: 2.5rem;
@@ -809,14 +830,35 @@ html{
 .pl-14 {
 	padding-left: 3.5rem;
 }
-.pl-12 {
-	padding-left: 3rem;
+.pr-12 {
+	padding-right: 3rem;
 }
-.pl-2 {
-	padding-left: 0.5rem;
+.pr-24 {
+	padding-right: 6rem;
 }
-.pl-3 {
-	padding-left: 0.75rem;
+.pr-28 {
+	padding-right: 7rem;
+}
+.pt-14 {
+	padding-top: 3.5rem;
+}
+.pl-28 {
+	padding-left: 7rem;
+}
+.pr-14 {
+	padding-right: 3.5rem;
+}
+.pb-72 {
+	padding-bottom: 18rem;
+}
+.pr-96 {
+	padding-right: 24rem;
+}
+.pr-97 {
+	padding-right: 28rem;
+}
+.pl-30 {
+	padding-left: 7.5rem;
 }
 .font-serif {
 	font-family: Morion;
