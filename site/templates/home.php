@@ -5,38 +5,7 @@
 
 	<section class="relative">
 
-		<!-- navigation START -->
-		<nav class="relative z-10">
-		  <div class="flex justify-between items-center">
-		    <a class="" href="#">
-		      <img class="h-36" src="<?php echo $config->urls->templates ?>pictures/logo/siamo-alpi-bianco.svg" alt="Siamo Alpi" width="">
-		    </a>
-		    <div class="">
-		      <button class="navbar-burger flex items-center px-6 ">
-		        <svg class="text-white block h-6 w-6" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-		          <title>Mobile burger</title>
-		          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-		        </svg>
-		      </button>
-		    </div>
-		  </div>
-		</nav>
-
-		<div class="hidden navbar-menu fixed top-0 right-0 bottom-0 w-5/6 max-w-sm z-50">
-		  <div class="navbar-backdrop fixed inset-0 bg-white opacity-10"></div>
-		  <nav class="relative flex flex-col py-8 w-full h-full bg-blu-sa-500 opacity-80 border-r overflow-y-auto">
-			<div>
-		      <ul class="mt-20 text-white font-serif uppercase text-4xl">
-		        <li class="mb-1"><a class="block pl-16 py-0 hover:bg-blue-50 hover:text-blu-sa " href="#">Home</a></li>
-		        <li class="mb-1"><a class="block pl-16 py-0 hover:bg-blue-50 hover:text-blu-sa " href="#">Il Progetto</a></li>
-		        <li class="mb-1"><a class="block pl-16 py-0 hover:bg-blue-50 hover:text-blu-sa " href="#">Le fasi</a></li>
-		      </ul>
-		    </div>
-		    
-		  </nav>
-		</div>
-
-		<!-- navigation END -->
+		<?php include 'inc/landing_menu.php' ?>
 
 		<div class="absolute top-0 w-full flex ">
 			<?php
@@ -84,33 +53,7 @@
 					</div>
 				</div>
 
-				<footer class="mt-30  flex justify-center ">
-					<div class="w-99 border-t border-blu-sa flex flex-row justify-end">
-						<div class="flex-grow">
-							<p class="text-white mt-6 text-base">
-								Segui lo sviluppo del progetto <br>
-								sui nostri canali social
-							</p>
-							<p class="mt-4">
-								<a href=""><img class="w-8 inline" src='<?php echo $config->urls->templates . "pictures/bg-landing/facebook.svg" ?>' alt='facebook icon'></a>
-								<a href=""><img class="w-8 inline" src='<?php echo $config->urls->templates . "pictures/bg-landing/instagram.svg" ?>' alt='instagram icon'></a>
-
-							</p>
-						</div>
-						<div class="mt-6 w-auto h-20">
-							<div class="border-l border-blu-sa text-blu-sa-700 uppercase text-xs pl-3">
-								<p class="tracking-wide">Un'inziativa di</p>
-								<img class="pt-6 h-20 " src="<?php echo $config->urls->templates . "pictures/bg-landing/loghi-provincia-sev.png" ?>" alt="Provincia di Sondrio, SEV">
-							</div>
-						</div>
-						<div class="mt-6 w-auto h-20">
-							<div class="border-l border-blu-sa text-blu-sa-700 uppercase text-xs pl-3">
-								<p class="tracking-wide">Finanziata da</p>
-								<img class="pt-6 h-20 mb-3" src="<?php echo $config->urls->templates . "pictures/bg-landing/loghi-fondazione-cariplo.png" ?>" alt="Fondazione Cariplo">
-							</div>
-						</div>
-					</div>
-				</footer>
+				<?php include 'inc/landing_footer.php' ?>
 			</div>
 
 			<!-- colonna C -->
@@ -133,7 +76,7 @@
 
 
 
-	<?php require "inc/footer.php" ?>
+	<?php require "inc/scripts.php" ?>
 
 </body>
 </html>

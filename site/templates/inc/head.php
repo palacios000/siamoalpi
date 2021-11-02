@@ -8,8 +8,7 @@
 
 		<link rel="shortcut icon" href="<?php echo $config->urls->templates?>pictures/favicon.png" />
 
-		<script src="<?php echo $config->urls->templates ?>js/main.js"></script>
-
+	
 
 		<!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-TxKWSXbsweFt0o2WqfkfJRRNVaPdzXJ/YLqgStggBVRREXkwU7OKz+xXtqOU4u8+" crossorigin="anonymous"> -->
 

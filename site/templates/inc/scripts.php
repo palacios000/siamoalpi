@@ -1,9 +1,3 @@
-<footer>
-	
-
-
-</footer>
-
 <!-- scripts -->
 
 
