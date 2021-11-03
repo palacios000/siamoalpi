@@ -1,4 +1,4 @@
-<footer class="mt-30  flex justify-center ">
+<footer class="mt-30 mb-8  flex justify-center ">
 	<div class="w-99 border-t border-blu-sa flex flex-row justify-end">
 		<div class="flex-grow">
 			<p class="text-white mt-6 text-base">

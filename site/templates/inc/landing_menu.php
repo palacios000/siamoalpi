@@ -2,7 +2,7 @@
 <nav class="relative z-10">
 	<div class="flex justify-between items-center">
 		<a class="" href="#">
-			<img class="h-36" src="<?php echo $config->urls->templates ?>pictures/logo/siamo-alpi-bianco.svg" alt="Siamo Alpi" width="">
+			<img class="h-36 pt-3" src="<?php echo $config->urls->templates ?>pictures/logo/siamo-alpi-bianco.svg" alt="Siamo Alpi" width="">
 		</a>
 		<div class="">
 			<button class="navbar-burger flex items-center px-6 ">
@@ -20,9 +20,9 @@
 	<nav class="relative flex flex-col py-8 w-full h-full bg-blu-sa-500 opacity-80 border-r overflow-y-auto">
 		<div>
 			<ul class="mt-20 text-white font-serif uppercase text-4xl">
-				<li class="mb-1"><a class="block pl-16 py-0 hover:bg-blue-50 hover:text-blu-sa " href="#">Home</a></li>
-				<li class="mb-1"><a class="block pl-16 py-0 hover:bg-blue-50 hover:text-blu-sa " href="#">Il Progetto</a></li>
-				<li class="mb-1"><a class="block pl-16 py-0 hover:bg-blue-50 hover:text-blu-sa " href="#">Le fasi</a></li>
+				<li class="mb-1"><a class="block pl-16 py-0 hover:underline" href="#">Home</a></li>
+				<li class="mb-1"><a class="block pl-16 py-0 hover:underline" href="#">Il Progetto</a></li>
+				<li class="mb-1"><a class="block pl-16 py-0 hover:underline" href="#">Le fasi</a></li>
 				<?php if($page->editable()){} ?>
 			</ul>
 		</div>
