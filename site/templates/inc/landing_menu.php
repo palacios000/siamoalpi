@@ -20,9 +20,9 @@
 	<nav class="relative flex flex-col py-8 w-full h-full bg-blu-sa-500 opacity-80 border-r overflow-y-auto">
 		<div>
 			<ul class="mt-20 text-white font-serif uppercase text-4xl">
-				<li class="mb-1"><a class="block pl-8 md:pl-16 py-0 hover:underline" href="#">Home</a></li>
-				<li class="mb-1"><a class="block pl-8 md:pl-16 py-0 hover:underline" href="#">Il Progetto</a></li>
-				<li class="mb-1"><a class="block pl-8 md:pl-16 py-0 hover:underline" href="#">Le fasi</a></li>
+				<li class="mb-2 w-auto"><a class="ml-8 py-0 pb-2 border-b-2 border-blu-sa-500 hover:border-white " href="#">Home</a></li>
+				<li class="mb-2 w-auto"><a class="ml-8 py-0 pb-2 border-b-2 border-blu-sa-500 hover:border-white " href="#">Il Progetto</a></li>
+				<li class="mb-2 w-auto"><a class="ml-8 py-0 pb-2 border-b-2 border-blu-sa-500 hover:border-white " href="#">Le fasi</a></li>
 				<?php if($page->editable()){} ?>
 			</ul>
 		</div>

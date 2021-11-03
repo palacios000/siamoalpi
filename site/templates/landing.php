@@ -17,7 +17,7 @@
 		<div class="relative md:absolute top-0 w-full flex">
 
 			<!-- colonna A -->
-			<div class="invisible md:visible w-1/5 ">
+			<div class="invisible md:visible w-1/12 md:w-1/5 ">
 				<div id="a1" class="h-97 relative flex-auto">
 					<img class="absolute bottom-0 left-0 pb-5 pr-8" src="<?php echo $bgFolder ?>2siamo-alpi.jpg" alt="archivio Garlaschelli">
 				</div>
@@ -28,7 +28,7 @@
 			</div>
 
 
-			<div class="w-full px-8 md:px-0 md:w-3/5 ">
+			<div class="w-full px-2 md:px-0 md:w-3/5 ">
 				<!-- blocco medium -->
 				<div id="b1" class="invisible md:visible mb-14 md:mb-0 h-0 md:h-97 relative justify-center">
 					<img class="absolute bottom-0 left-0 pb-32 pl-16 w-1/3" src="<?php echo $bgFolder ?>3siamo-alpi.jpg" alt="archivio Garlaschelli">
@@ -38,7 +38,7 @@
 				<div class="flex justify-center">
 					<div id="b2" class="w-full md:w-99  text-white">
 						<div class="landing-body text-base">
-							<p class="text-5xl md:text-8xl uppercase pb-16 font-serif tracking-widest">Apriamo i cassetti</p>
+							<p class="text-5xl md:text-8xl uppercase pb-16 font-serif tracking-tight">Apriamo i cassetti</p>
 							<h1>titolo h1</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque aliquid obcaecati, eius et eveniet, sed animi? Quas harum aspernatur, commodi ab fugit mollitia hic aliquam quos, impedit, dicta, consequatur.</p>
 							<p>prova Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -59,13 +59,13 @@
 					</div>
 				</div>
 
-				<div class="h-0 md:h-auto overflow-hidden">
+				<div class="h-0 md:h-auto overflow-hidden w-full">
 					<?php include 'inc/landing_footer.php' ?>
 				</div>
 			</div>
 
 			<!-- colonna C -->
-			<div class="invisible md:visible w-1/5 ">
+			<div class="invisible md:visible w-1/12 md:w-1/5 ">
 				<div id="c1" class="h-97 relative flex-auto">
 					<img class="absolute top-0 right-0 pt-44 pl-14" src="<?php echo $bgFolder ?>5siamo-alpi.jpg" alt="archivio Garlaschelli">
 				</div>
@@ -82,7 +82,7 @@
 
 	<!-- MOBILE FOOTER start -->
 	<section>
-		<div id="b4" class="md:hidden py-12">
+		<div id="b4" class="md:hidden pt-12 pb-8">
 			<img class="w-full" src="<?php echo $bgFolder ?>bg-mobile-bottom_c.jpg" alt="archivio Garlaschelli">
 		</div>
 
@@ -92,6 +92,15 @@
 		</div>
 	</section>
 	<!-- MOBILE FOOTER end -->
+
+
+				
+				
+	<div id="credits" class="relative overflow-visible visible md:invisible ">
+		<!-- absolute setting in .css file -->
+		<p class="credits absolute  right-0 pl-3 pb-0 mb-0 text-blu-sa-700 text-xxs transform rotate-270 w-80">FOTO: archivio Garlaschelli | design: simoneronzio.com</p>
+	</div>
+
 
 	<?php require "inc/scripts.php" ?>
 

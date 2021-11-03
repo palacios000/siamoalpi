@@ -13,3 +13,9 @@ body.landing-home{
 	}
 
 }
+
+#credits p.credits{
+	bottom: 2rem;
+	padding-top: 17.3rem;
+
+}
