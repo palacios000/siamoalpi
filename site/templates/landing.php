@@ -2,13 +2,19 @@
 </head>
 <body class='landing-home bg-verde-sa antialiased'>
 
-	<section class="relative">
+	<section class="relative ">
 
 		<?php include 'inc/landing_menu.php' ?>
 
-		<div class="absolute top-0 w-full flex">
-			<?php
-			$bgFolder = $config->urls->templates . "pictures/bg-landing/bg/" ; ?>
+		<?php $bgFolder = $config->urls->templates . "pictures/bg-landing/bg/" ; ?>
+
+		<!-- colonna B - content MOBILE INTRO start -->
+		<div id="b1m" class="md:hidden w-full h96 pb-3 ">
+			<img class="" src="<?php echo $bgFolder ?>bg-mobile-top_c.jpg" alt="archivio Garlaschelli">
+		</div>
+		<!-- colonna B - content MOBILE INTRO end -->
+
+		<div class="relative md:absolute top-0 w-full flex">
 
 			<!-- colonna A -->
 			<div class="invisible md:visible w-1/5 ">
@@ -21,17 +27,18 @@
 				</div>
 			</div>
 
-			<!-- colonna B - content -->
-			<div class="w-full md:w-3/5 ">
-				<div id="b1" class="h-97 relative justify-center">
+
+			<div class="w-full px-8 md:px-0 md:w-3/5 ">
+				<!-- blocco medium -->
+				<div id="b1" class="invisible md:visible mb-14 md:mb-0 h-0 md:h-97 relative justify-center">
 					<img class="absolute bottom-0 left-0 pb-32 pl-16 w-1/3" src="<?php echo $bgFolder ?>3siamo-alpi.jpg" alt="archivio Garlaschelli">
 					<img class="absolute top-0 left-1/3 h-1/4 pl-3" src="<?php echo $bgFolder ?>1siamo-alpi.jpg" alt="archivio Garlaschelli">
 					<img class="absolute bottom-0 right-0 pb-10 pr-9 w-2/5" src="<?php echo $bgFolder ?>4siamo-alpi.jpg" alt="archivio Garlaschelli">
 				</div>
 				<div class="flex justify-center">
-					<div id="b2" class="w-99  text-white">
+					<div id="b2" class="w-full md:w-99  text-white">
 						<div class="landing-body text-base">
-							<p class="text-8xl uppercase pb-16 font-serif tracking-widest">Apriamo i cassetti</p>
+							<p class="text-5xl md:text-8xl uppercase pb-16 font-serif tracking-widest">Apriamo i cassetti</p>
 							<h1>titolo h1</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque aliquid obcaecati, eius et eveniet, sed animi? Quas harum aspernatur, commodi ab fugit mollitia hic aliquam quos, impedit, dicta, consequatur.</p>
 							<p>prova Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -52,7 +59,9 @@
 					</div>
 				</div>
 
-				<?php include 'inc/landing_footer.php' ?>
+				<div class="h-0 md:h-auto overflow-hidden">
+					<?php include 'inc/landing_footer.php' ?>
+				</div>
 			</div>
 
 			<!-- colonna C -->
@@ -68,7 +77,21 @@
 			</div>
 		</div>
 
+
 	</section>
+
+	<!-- MOBILE FOOTER start -->
+	<section>
+		<div id="b4" class="md:hidden py-12">
+			<img class="w-full" src="<?php echo $bgFolder ?>bg-mobile-bottom_c.jpg" alt="archivio Garlaschelli">
+		</div>
+
+		<!-- aggiungi ancora il footer -->
+		<div class="h-auto md:h-0 overflow-hidden">
+			<?php include 'inc/landing_footer-mobile.php' ?>
+		</div>
+	</section>
+	<!-- MOBILE FOOTER end -->
 
 	<?php require "inc/scripts.php" ?>
 
