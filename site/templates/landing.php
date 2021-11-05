@@ -28,7 +28,7 @@
 			</div>
 
 
-			<div class="w-full px-2 md:px-0 md:w-3/5 ">
+			<div class="w-full px md:px-0 md:w-3/5 ">
 				<!-- blocco medium -->
 				<div id="b1" class="invisible md:visible mb-14 md:mb-0 h-0 md:h-97 relative justify-center">
 					<img class="absolute bottom-0 left-0 pb-32 pl-16 w-1/3" src="<?php echo $bgFolder ?>3siamo-alpi.jpg" alt="archivio Garlaschelli">
@@ -38,17 +38,17 @@
 				<div class="flex justify-center">
 					<div id="b2" class="w-full md:w-99  text-white">
 						<div class="landing-body text-base">
-							<p class="text-5xl md:text-8xl uppercase pb-16 font-serif tracking-tight">Apriamo i cassetti</p>
-							<h1>titolo h1</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque aliquid obcaecati, eius et eveniet, sed animi? Quas harum aspernatur, commodi ab fugit mollitia hic aliquam quos, impedit, dicta, consequatur.</p>
-							<p>prova Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							<p class="text-5xlb md:text-8xl uppercase pb-8 md:pb-16 font-serif tracking-tight ">Apriamo i cassetti</p>
+							<h1 class="">Questi sono i cassetti di Simone e Giulio in Valtellina</h1>
+							<p class="leading-snug tracking-wide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque aliquid obcaecati, eius et eveniet, sed animi? Quas harum aspernatur, commodi ab fugit mollitia hic aliquam quos, impedit, dicta, consequatur.</p>
+							<p class="leading-snug tracking-wide">prova Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><h1>titolo h1</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque aliquid obcaecati, eius et eveniet, sed animi? Quas harum aspernatur, commodi ab fugit mollitia hic aliquam quos, impedit, dicta, consequatur.</p>
-							<p>prova Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							<p class="leading-snug tracking-wide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque aliquid obcaecati, eius et eveniet, sed animi? Quas harum aspernatur, commodi ab fugit mollitia hic aliquam quos, impedit, dicta, consequatur.</p>
+							<p class="leading-snug tracking-wide">prova Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse

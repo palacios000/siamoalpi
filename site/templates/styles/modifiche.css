@@ -4,7 +4,8 @@
 body.landing-home{
 	.landing-body{
 		h1,h2{
-			@apply text-white font-serif uppercase text-4xl mb-7 mt-12;
+			@apply text-white font-serif uppercase text-4xl mb-7 mt-12 lg:mt-14 leading-snug1 lg:leading-12;
+			letter-spacing: 0.045rem;
 		};
 		p{
 			@apply mb-3;
