@@ -6,8 +6,8 @@
 				sui nostri canali social
 			</p>
 			<p class="mt-4">
-				<a href=""><img class="w-8 inline" src='<?php echo $config->urls->templates . "pictures/bg-landing/facebook.svg" ?>' alt='facebook icon'></a>
-				<a href=""><img class="w-8 inline" src='<?php echo $config->urls->templates . "pictures/bg-landing/instagram.svg" ?>' alt='instagram icon'></a>
+				<a href="https://www.facebook.com/SiamoAlpi/"><img class="w-8 inline" src='<?php echo $config->urls->templates . "pictures/bg-landing/facebook.svg" ?>' alt='facebook icon'></a>
+				<a href="https://www.instagram.com/siamoalpi/"><img class="w-8 inline" src='<?php echo $config->urls->templates . "pictures/bg-landing/instagram.svg" ?>' alt='instagram icon'></a>
 
 			</p>
 		</div>

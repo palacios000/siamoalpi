@@ -8,7 +8,7 @@ body.landing-home{
 			letter-spacing: 0.045rem;
 		};
 		p{
-			@apply mb-3;
+			@apply mb-3 leading-snug tracking-wide;
 		}
 
 	}

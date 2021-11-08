@@ -1,4 +1,4 @@
-// Burger menus
+/*// Burger menus
 document.addEventListener('DOMContentLoaded', function() {
     // open
     const burger = document.querySelectorAll('.navbar-burger');
@@ -38,3 +38,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+*/

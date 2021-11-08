@@ -9,53 +9,37 @@
 		<?php $bgFolder = $config->urls->templates . "pictures/bg-landing/bg/" ; ?>
 
 		<!-- colonna B - content MOBILE INTRO start -->
-		<div id="b1m" class="md:hidden w-full h96 pb-3 ">
-			<img class="" src="<?php echo $bgFolder ?>bg-mobile-top_c.jpg" alt="archivio Garlaschelli">
-		</div>
+			<div id="b1m" class="md:hidden w-full h96 pb-3 ">
+				<img class="" src="<?php echo $bgFolder ?>bg-mobile-top_c.jpg" alt="archivio Garlaschelli">
+			</div>
 		<!-- colonna B - content MOBILE INTRO end -->
 
 		<div class="relative md:absolute top-0 w-full flex">
 
 			<!-- colonna A -->
 			<div class="invisible md:visible w-1/12 md:w-1/5 ">
-				<div id="a1" class="h-97 relative flex-auto">
-					<img class="absolute bottom-0 left-0 pb-5 pr-8" src="<?php echo $bgFolder ?>2siamo-alpi.jpg" alt="archivio Garlaschelli">
-				</div>
-				<div id="a2" class="relative flex-auto h-3/5 ">
-					<img class="absolute top-48 left-0 pl-12 w-2/3 " src="<?php echo $bgFolder ?>3-9siamo-alpi.jpg" alt="archivio Garlaschelli">
-					<img class="absolute bottom-8 left-0 pr-28 max-h-72"  src="<?php echo $bgFolder ?>1-5siamo-alpi.jpg" alt="archivio Garlaschelli">
-				</div>
+				<?php 
+				if ($page->name == "home") require "inc/landing/home_colonna-a.php" ;
+				if ($page->name == "il-progetto") require "inc/landing/progetto_colonna-a.php" ;
+				if ($page->name == "le-fasi") require "inc/landing/fasi_colonna-a.php" ;
+				?>
 			</div>
-
 
 			<div class="w-full px md:px-0 md:w-3/5 ">
 				<!-- blocco medium -->
 				<div id="b1" class="invisible md:visible mb-14 md:mb-0 h-0 md:h-97 relative justify-center">
-					<img class="absolute bottom-0 left-0 pb-32 pl-16 w-1/3" src="<?php echo $bgFolder ?>3siamo-alpi.jpg" alt="archivio Garlaschelli">
-					<img class="absolute top-0 left-1/3 h-1/4 pl-3" src="<?php echo $bgFolder ?>1siamo-alpi.jpg" alt="archivio Garlaschelli">
-					<img class="absolute bottom-0 right-0 pb-10 pr-9 w-2/5" src="<?php echo $bgFolder ?>4siamo-alpi.jpg" alt="archivio Garlaschelli">
+					<?php 
+					if ($page->name == "home") require "inc/landing/home_colonna-b.php" ;
+					if ($page->name == "il-progetto") require "inc/landing/progetto_colonna-b.php" ;
+					if ($page->name == "le-fasi") require "inc/landing/fasi_colonna-b.php" ;
+					 ?>
 				</div>
 				<div class="flex justify-center">
 					<div id="b2" class="w-full md:w-99  text-white">
 						<div class="landing-body text-base">
-							<p class="text-5xlb md:text-8xl uppercase pb-8 md:pb-16 font-serif tracking-tight ">Apriamo i cassetti</p>
-							<h1 class="">Questi sono i cassetti di Simone e Giulio in Valtellina</h1>
-							<p class="leading-snug tracking-wide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque aliquid obcaecati, eius et eveniet, sed animi? Quas harum aspernatur, commodi ab fugit mollitia hic aliquam quos, impedit, dicta, consequatur.</p>
-							<p class="leading-snug tracking-wide">prova Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><h1>titolo h1</h1>
-							<p class="leading-snug tracking-wide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque aliquid obcaecati, eius et eveniet, sed animi? Quas harum aspernatur, commodi ab fugit mollitia hic aliquam quos, impedit, dicta, consequatur.</p>
-							<p class="leading-snug tracking-wide">prova Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p class="text-5xlb md:text-8xl uppercase pb-8 md:pb-16 font-serif tracking-tight "><?php echo $page->titleH1 ?></p>
+							<?php echo $page->body ?>
 						</div>
-
 					</div>
 				</div>
 
@@ -66,14 +50,12 @@
 
 			<!-- colonna C -->
 			<div class="invisible md:visible w-1/12 md:w-1/5 ">
-				<div id="c1" class="h-97 relative flex-auto">
-					<img class="absolute top-0 right-0 pt-44 pl-14" src="<?php echo $bgFolder ?>5siamo-alpi.jpg" alt="archivio Garlaschelli">
-				</div>
-				<div id="c2" class="relative flex-auto h-3/5">
-					<img class="absolute top-0 right-0 pt-14 pl-28 " src="<?php echo $bgFolder ?>3-6siamo-alpi.jpg" alt="archivio Garlaschelli">
-					<img class="absolute top-96 right-0 pl-16 pr-14" src="<?php echo $bgFolder ?>1-9siamo-alpi.jpg" alt="archivio Garlaschelli">
-					<img class="absolute bottom-0 right-0 pl-30 max-h-44" src="<?php echo $bgFolder ?>1-7siamo-alpi.jpg" alt="archivio Garlaschelli">
-				</div>
+				<?php 
+					if ($page->name == "home") require "inc/landing/home_colonna-c.php" ;
+					if ($page->name == "il-progetto") require "inc/landing/progetto_colonna-c.php" ;
+					if ($page->name == "le-fasi") require "inc/landing/fasi_colonna-c.php" ;
+
+				 ?>
 			</div>
 		</div>
 
