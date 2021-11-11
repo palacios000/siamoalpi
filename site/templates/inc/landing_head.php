@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/uikit.css" /> -->
-		<link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/main.css" />
+		<link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/main.min.css" />
 
 		<link rel="shortcut icon" href="<?php echo $config->urls->templates?>pictures/favicon.png" />
 
