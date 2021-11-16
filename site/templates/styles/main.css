@@ -1,7 +1,7 @@
 /* *** modifiche ed aggiunte da apportare a tailwind *** */
 /* questo file viene importato da tailwind.css, che si trova nel root del progetto */
 body.landing-home .landing-body h1, body.landing-home .landing-body h2{
-			margin-bottom: 1rem;
+			margin-bottom: 1.75rem;
 			margin-top: 3rem;
 			font-family: Morion;
 			font-size: 2rem;
@@ -20,17 +20,39 @@ body.landing-home .landing-body h1, body.landing-home .landing-body h2{
 }
 body.landing-home .landing-body h1,body.landing-home .landing-body h2{
 			letter-spacing: 0.045rem;
-		};
+		}
 body.landing-home .landing-body p{
 			margin-bottom: 0.75rem;
-			line-height: 1.4rem;
-			letter-spacing: 0.025em;
+}
+body.landing-home .landing-body p small{
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+}
+body.landing-home .landing-body a{
+			border-bottom-width: 2px;
+			--tw-border-opacity: 1;
+			border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+			padding-bottom: 0px;
+}
+body.landing-home .landing-body a:hover{
+			border-width: 0px;
+}
+@media (min-width: 1024px){
+			body.landing-home .landing-body a{
+						padding-bottom: 0.25rem;
+			}
 }
 #credits p.credits{
 	bottom: 2rem;
 	padding-top: 17.3rem;
 
 }
+/*
+a{
+	@apply underline hover:no-underline;
+}*/
+/*
+*/
 /* ! tailwindcss v2.2.17 | MIT License | https://tailwindcss.com */
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*

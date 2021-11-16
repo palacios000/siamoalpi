@@ -20,7 +20,7 @@
 			<div class="invisible md:visible w-1/12 md:w-1/5 ">
 				<?php 
 				if ($page->name == "home") require "inc/landing/home_colonna-a.php" ;
-				if ($page->name == "il-progetto") require "inc/landing/progetto_colonna-a.php" ;
+				if ($page->name == "il-progetto" || $page->name == "partecipa") require "inc/landing/progetto_colonna-a.php" ;
 				if ($page->name == "le-fasi") require "inc/landing/fasi_colonna-a.php" ;
 				?>
 			</div>
@@ -30,7 +30,7 @@
 				<div id="b1" class="invisible md:visible mb-14 md:mb-0 h-0 md:h-97 relative justify-center">
 					<?php 
 					if ($page->name == "home") require "inc/landing/home_colonna-b.php" ;
-					if ($page->name == "il-progetto") require "inc/landing/progetto_colonna-b.php" ;
+					if ($page->name == "il-progetto" || $page->name == "partecipa") require "inc/landing/progetto_colonna-b.php" ;
 					if ($page->name == "le-fasi") require "inc/landing/fasi_colonna-b.php" ;
 					 ?>
 				</div>
@@ -52,7 +52,7 @@
 			<div class="invisible md:visible w-1/12 md:w-1/5 ">
 				<?php 
 					if ($page->name == "home") require "inc/landing/home_colonna-c.php" ;
-					if ($page->name == "il-progetto") require "inc/landing/progetto_colonna-c.php" ;
+					if ($page->name == "il-progetto" || $page->name == "partecipa") require "inc/landing/progetto_colonna-c.php" ;
 					if ($page->name == "le-fasi") require "inc/landing/fasi_colonna-c.php" ;
 
 				 ?>
