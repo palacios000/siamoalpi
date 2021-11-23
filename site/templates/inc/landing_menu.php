@@ -1,4 +1,4 @@
-<?php $landingHome = $pages->findOne("name=landing-page");  ?>
+<?php $landingHome = $pages->findOne("name=sa");  ?>
 
 <!-- navigation START -->
 <div x-data="{ open: false }">

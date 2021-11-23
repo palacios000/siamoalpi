@@ -28,7 +28,7 @@ $wire->addHookBefore('ProcessLogin::buildLoginForm', function (HookEvent $event)
 	$wire->addHookAfter('InputfieldPage::getSelectablePages', function($event) {
 	  if($event->object->hasField == 'tema') {
 		$pageSchedaParentId = $event->arguments('page')->parent->id;
-		$event->return = $event->pages->find("template=gestionale_tema, ente=$pageSchedaParentId");
+		$event->return = $event->pages->find("template=gestionale_tema, ente=$pageSchedaParentId, include=unpublished");
 	  }
 	});
 
@@ -40,7 +40,8 @@ $wire->addHookBefore('ProcessLogin::buildLoginForm', function (HookEvent $event)
 	  $user = wire('user');
 	  $page = $event->arguments(0);
 
-	  if ($page->template == "gestionale_scheda" && $user->hasRole('operatore')) {
+	  if ($page->template == "gestionale_scheda" && $user->hasRole('operatore') && $page->parent->name != "trash") {
+
 		if ($user->ente->id != $page->parent->id) {
 
 			// 1 notifica admin
@@ -62,11 +63,18 @@ $wire->addHookBefore('ProcessLogin::buildLoginForm', function (HookEvent $event)
 
 			// 4 blocca la pagina
 			// $page->addStatus("locked"); // non so perche' ma non va...
-						
-		  }
+		}
+	  	/* Scheda: pubblica sempre, anche quando viene premuto salva (e non pubblica) */
+	  	if ($page->isUnpublished()) {
+	  		$page->removeStatus('unpublished');
+	  	}
+
 	  }
 
-  });
+  	});
+
+
+
 
 	/* cambia titolo colonne di listerPro -- non funziona  */
 	// $wire->addHookBefore("ProcessPageListerPro::renderResults", function(HookEvent $event) {

@@ -1,5 +1,5 @@
 <footer class="mt-8 mb-8 ml-3 flex flex-row w-11/12  ">
-	<div class="">
+	<div class="z-50">
 
 		
 		<div class="grid grid-cols-2 mr-6">
@@ -22,7 +22,7 @@
 				Segui lo sviluppo del progetto <br>
 				sui nostri canali social
 			</p>
-			<p class="mt-4">
+			<p class="mt-4 z-50">
 				<a href="https://www.facebook.com/SiamoAlpi/"><img class="w-8 inline" src='<?php echo $config->urls->templates . "pictures/bg-landing/facebook.svg" ?>' alt='facebook icon'></a>
 				<a href="https://www.instagram.com/siamoalpi/"><img class="w-8 inline" src='<?php echo $config->urls->templates . "pictures/bg-landing/instagram.svg" ?>' alt='instagram icon'></a>
 

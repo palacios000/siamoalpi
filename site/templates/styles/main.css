@@ -720,6 +720,9 @@ html{
 .z-50{
 			z-index: 50;
 }
+.z-0{
+			z-index: 0;
+}
 .mb-14{
 			margin-bottom: 3.5rem;
 }
