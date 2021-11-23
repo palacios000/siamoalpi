@@ -11820,10 +11820,15 @@ body.questionario form.uk-form label {
 
 body.questionario form.uk-form #wrap_Inputfield_eta label,
 body.questionario form.uk-form #wrap_Inputfield_residenza label,
-body.questionario form.uk-form #wrap_Inputfield_note label {
-  width: 2em;
+body.questionario form.uk-form #wrap_Inputfield_note label,
+body.questionario form.uk-form #wrap_Inputfield_luogo label,
+body.questionario form.uk-form #wrap_Inputfield_immagine label,
+body.questionario form.uk-form #wrap_Inputfield_descrizione label,
+body.questionario form.uk-form #wrap_Inputfield_anno label,
+body.questionario form.uk-form #wrap_Inputfield_ente label {
+  width: 100%;
   border-radius: 0;
-  text-align: center;
+  text-align: left;
   border: none;
   background-color: white;
   color: black;
@@ -11850,6 +11855,16 @@ body.questionario form.uk-form .uk-form-row {
   margin-bottom: 23px;
 }
 
+body.questionario form.uk-form #Inputfield_descrizione {
+  width: 100%;
+  padding: 10px;
+}
+
+body.questionario form.uk-form .uk-text-muted {
+  color: black !important;
+  font-size: .9em;
+}
+
 body.questionario form.uk-form .uk-button, body.questionario form.uk-form body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button, body.gestionale_guida p.CommentFormSubmit.CommentForm_submit body.questionario form.uk-form button,
 body.questionario form.uk-form .uk-button:focus,
 body.questionario form.uk-form body.gestionale_guida p.CommentFormSubmit.CommentForm_submit button:focus,
@@ -11867,6 +11882,19 @@ body.questionario form.uk-form .uk-button:hover, body.questionario form.uk-form 
 body.questionario form.uk-form input {
   background-color: white;
   border: 1px solid black;
+}
+
+body.questionario form.uk-form #wrap_Inputfield_immagine li.InputfieldFormBuilderFileUpload input {
+  padding: 10px;
+  height: 60px;
+}
+
+body.questionario form.uk-form #wrap_Inputfield_ente select {
+  padding: 10px;
+}
+
+body.questionario form.uk-form #wrap_Inputfield_ente {
+  padding-top: 5px;
 }
 
 body.questionario img.logo {

@@ -154,10 +154,17 @@ body.questionario {
 		//override ultimi due label
 		#wrap_Inputfield_eta label,
 		#wrap_Inputfield_residenza label,
-		#wrap_Inputfield_note label{
-			width: 2em;
+		#wrap_Inputfield_note label,
+		//e gli altri del questionario invio foto
+		#wrap_Inputfield_luogo label,
+		#wrap_Inputfield_immagine label,
+		#wrap_Inputfield_descrizione label,
+		#wrap_Inputfield_anno label,
+		#wrap_Inputfield_ente label
+		{
+			width: 100%;
 			border-radius: 0;
-			text-align: center;
+			text-align: left;
 			border: none;
 			background-color: white;
 			color: black;
@@ -184,6 +191,17 @@ body.questionario {
 			margin-bottom: 23px;
 		}
 
+		// specifiche sempre form invio foto
+		#Inputfield_descrizione {
+		    width: 100%;
+		    padding: 10px;
+		}
+		.uk-text-muted{
+			color: black !important;
+			font-size: .9em;
+		}
+		 
+
 		// per ora li metto qua, forse dopo faranno parte dello style button
 		.uk-button,
 		.uk-button:focus{
@@ -195,10 +213,23 @@ body.questionario {
 		.uk-button:hover{
 			background-color: darken($verdeSiamoAlpi, 4);
 		}
+
 		input{
 			background-color: white;
 			border: 1px solid black;
 			@extend .uk-input;
+		}
+
+		// specifiche sempre form invio foto
+		#wrap_Inputfield_immagine li.InputfieldFormBuilderFileUpload input{
+			padding: 10px;
+			height: 60px;
+		}
+		#wrap_Inputfield_ente select{
+			padding: 10px;
+		}
+		#wrap_Inputfield_ente{
+			padding-top: 5px;
 		}
 	}
 	img.logo{
