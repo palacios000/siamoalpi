@@ -714,20 +714,20 @@ html{
 .left-72{
 			left: 18rem;
 }
-.z-10{
-			z-index: 10;
+.z-0{
+			z-index: 0;
 }
 .z-50{
 			z-index: 50;
 }
-.z-0{
-			z-index: 0;
-}
-.mb-14{
-			margin-bottom: 3.5rem;
+.z-10{
+			z-index: 10;
 }
 .mb-0{
 			margin-bottom: 0px;
+}
+.mb-14{
+			margin-bottom: 3.5rem;
 }
 .mt-8{
 			margin-top: 2rem;
@@ -979,6 +979,10 @@ html{
 .stroke-current{
 			stroke: currentColor;
 }
+.px-8{
+			padding-left: 2rem;
+			padding-right: 2rem;
+}
 .px-3{
 			padding-left: 0.75rem;
 			padding-right: 0.75rem;
@@ -997,6 +1001,9 @@ html{
 }
 .pb-3{
 			padding-bottom: 0.75rem;
+}
+.pt-52{
+			padding-top: 13rem;
 }
 .pb-8{
 			padding-bottom: 2rem;
@@ -1042,9 +1049,6 @@ html{
 }
 .pr-32{
 			padding-right: 8rem;
-}
-.pt-52{
-			padding-top: 13rem;
 }
 .pt-20{
 			padding-top: 5rem;
@@ -1209,14 +1213,14 @@ html{
 			.md\:hidden{
 						display: none;
 			}
-			.md\:h-97{
-						height: 28rem;
-			}
 			.md\:h-auto{
 						height: auto;
 			}
 			.md\:h-0{
 						height: 0px;
+			}
+			.md\:h-97{
+						height: 28rem;
 			}
 			.md\:w-1\/5{
 						width: 20%;

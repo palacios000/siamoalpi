@@ -11818,6 +11818,10 @@ body.questionario form.uk-form label {
   font-family: "Moderat-Bold", sans-serif;
 }
 
+body.questionario form.uk-form textarea, body.questionario form.uk-form select {
+  border: 1px solid black;
+}
+
 body.questionario form.uk-form #wrap_Inputfield_eta label,
 body.questionario form.uk-form #wrap_Inputfield_residenza label,
 body.questionario form.uk-form #wrap_Inputfield_note label,

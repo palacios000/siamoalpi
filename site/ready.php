@@ -5,17 +5,17 @@ if(!$user->isLoggedin() && $input->get('loggedout')) {
 	$session->redirect($config->urls->root . 'registrazione'); 
 }
 
-// replace PW login form with login-register.php page
-$wire->addHookBefore('ProcessLogin::buildLoginForm', function (HookEvent $event) {
-	$session = $this->wire('session');
-	$config = $this->wire('config');
-	$input = $this->wire('input');
-	// inserisco la regola del get, altrimenti non mi funziona in localhost
-	// non va
-	// if (!isset($input->get->localhost)) {
-		$session->redirect($config->urls->root . 'registrazione'); 
-	// }
-});
+// // replace PW login form with login-register.php page
+// $wire->addHookBefore('ProcessLogin::buildLoginForm', function (HookEvent $event) {
+// 	$session = $this->wire('session');
+// 	$config = $this->wire('config');
+// 	$input = $this->wire('input');
+// 	// inserisco la regola del get, altrimenti non mi funziona in localhost
+// 	// non va
+// 	// if (!isset($input->get->localhost)) {
+// 		$session->redirect($config->urls->root . 'registrazione'); 
+// 	// }
+// });
 
 
 

@@ -151,6 +151,10 @@ body.questionario {
 			color: white;
 			font-family: $fontBold;
 		}
+		textarea, select{
+			border: 1px solid black;
+		}
+		
 		//override ultimi due label
 		#wrap_Inputfield_eta label,
 		#wrap_Inputfield_residenza label,
