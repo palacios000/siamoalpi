@@ -30,14 +30,14 @@
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="       http://purl.org/pico/1.0/ http://www.culturaitalia.it/pico/schemas/1.0/pico.xsd       http://purl.org/pico/iccd/3.00/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/iccd.xsd       http://purl.org/pico/iccd/2.00/bdm/ http://www.culturaitalia.it/pico/schemas/iccd/2.00/bdm.xsd       http://purl.org/pico/iccd/3.00/d/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/d.xsd       http://purl.org/pico/iccd/3.00/f/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/f.xsd       http://purl.org/pico/iccd/3.00/mi/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/mi.xsd       http://purl.org/pico/iccd/3.00/nu/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/nu.xsd       http://purl.org/pico/iccd/3.00/oa/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/oa.xsd       http://purl.org/pico/iccd/3.00/oac/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/oac.xsd       http://purl.org/pico/iccd/3.00/pst/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/pst.xsd       http://purl.org/pico/iccd/3.00/ra/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/ra.xsd       http://purl.org/pico/iccd/3.00/s/ http://www.culturaitalia.it/pico/schemas/iccd/3.00/s.xsd     ">
                     <dc:title xsi:type="f:SGL">SGLT=senza titolo;SGLS=del catalogatore;</dc:title>
 
-                    // quello che interessa a me
+                    
                     <dcterms:alternative xml:lang="it" xsi:type="f:SGLA">Italia del Sud, Calabria</dcterms:alternative>
                     <dc:subject xml:lang="it">Italia del Sud - Calabria - donna con cesta in testa</dc:subject>
                     <dcterms:spatial xsi:type="f:LDC">LDCN=Villa Ghirlanda Silva;</dcterms:spatial>
                     <dc:subject xsi:type="pico:Thesaurus">http://culturaitalia.it/pico/thesaurus/4.1#fotografie</dc:subject>
                     <pico:object xsi:type="dcterms:URI">http://www.oai.servizirl.it/PICOImg/medium/F_SUP-10110-0003728_726372.jpg</pico:object>
                     <dcterms:isReferencedBy xsi:type="pico:Anchor">title=consulta la scheda esterna; URL=http://www.lombardiabeniculturali.it/fotografie/schede/IMM-10110-0003446/</dcterms:isReferencedBy>
-                    // fine
+                    
 
 
 
