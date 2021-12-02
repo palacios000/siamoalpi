@@ -1,6 +1,22 @@
 <?php 
-$stopHarvesting = ($page->counter->cicli >= 1 && !$page->codice) ? true : false;
-if (!$page->counter->stop || $stopHarvesting) {  
+// interrompi l'haversting quando Sirbec non mi da' piu' il resumption token
+    if($page->counter->cicli >= 1 && !$page->codice){
+        $page->of(false);
+        $page->counter->stop = 1;
+        $page->save('counter');
+    }
+// resetta a comando
+    if ($page->counter->reset) {
+        $page->of(false);
+        $page->counter->reset = 0;
+        $page->counter->cicli = null;
+        $page->counter->records = null;
+        $page->save('counter');
+        $page->codice = null; // resetta anche resuption token
+        $page->save();
+    }
+
+if (!$page->counter->stop) {  
 
     $aoifeed = "http://www.oai.servizirl.it/oai/interfaccia.jsp?verb=ListRecords";
     if ($page->codice) {
