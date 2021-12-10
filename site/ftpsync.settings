@@ -9,7 +9,7 @@
 		"password": "suVp-B6#;wO(DRxcvP",
 		"path": "/public_html/site/",
 
-		//"upload_on_save": false,
+		//"upload_on_save":f alse,
 		"upload_on_save": true,
 
 		// "port": 21,

@@ -9,10 +9,10 @@
     if ($page->counter->reset) {
         $page->of(false);
         $page->counter->reset = 0;
-        $page->counter->cicli = null;
-        $page->counter->records = null;
+        $page->counter->cicli = 0;
+        $page->counter->records = 0;
         $page->save('counter');
-        $page->codice = null; // resetta anche resuption token
+        $page->codice = ""; // resetta anche resuption token
         $page->save();
     }
 
