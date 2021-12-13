@@ -1,74 +1,44 @@
 <?php 
 
-// ATTENZION - STO SPERIMENTANDO CON BRESCIA
-// https://opac.provincia.brescia.it/data/jsonDataApi?type=sh&shelfid=1825
 
 if (!$page->counter->stop) {
 
-    $opacJson = 'https://opac.provincia.brescia.it/data/jsonDataApi?type=sh&shelfid=' . $page->codice;
+    $shelfJson = 'https://biblioteche.provinciasondrio.gov.it/data/jshelf/widget/3043/';
 
-    $str = file_get_contents('https://opac.provincia.brescia.it/data/jsonDataApi?type=sh&shelfid=1825&page=3&ttl=120');
-    //aggiusta string
-    //$str = '{"scaffale":'.$str.'}';
-    // $str = file_get_contents('https://opac.provincia.brescia.it/data/jshelf/widget/1825/1/');
-    // $str = file_get_contents('../test-scaffaleOpac.txt');
-    // $str = utf8_encode($str);
+    // CURL esito fallito // soluzione trovata qui https://stackoverflow.com/questions/2548451/php-file-get-contents-behaves-differently-to-browser
 
-/* con CURL mi da' 403 Forbidden error...
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://opac.provincia.brescia.it/data/jsonDataApi?type=sh&shelfid=1825&page=3&ttl=120");
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_exec($ch);
-    curl_close($ch);
-*/
+    $opts = array('http' =>
+        array(
+            'method'  => 'GET',
+            'user_agent '  => "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2) Gecko/20100301 Ubuntu/9.10 (karmic) Firefox/3.6",
+            'header' => array(
+                'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*\/*;q=0.8'
+            ), 
+        )
+    );
+    $context  = stream_context_create($opts);
+    $f = file_get_contents("$shelfJson", false, $context);
+    $json = json_decode($f);
 
-
-
-
-    echo $ch;
-    $json = json_decode($ch, true); 
-
-
-    //$xmlRecords = count($xml->ListRecords->record);
-    // interagisci con questa e salva le informazioni della ricerca 
-    // $nCicli = ($page->counter->cicli) ? $page->counter->cicli + 1 : 1;
-    // $nRecords = ($page->counter->records) ? $page->counter->records + $xmlRecords : $xmlRecords;
-
-/*    
-    $page->of(false);
-    $page->counter->records = $nRecords;
-    $page->save('counter');
-
-*/
-    //echo $opacjo;
-    //echo $str."<br>";
     if ($json) {
-        echo "json OK";
-    }else{
-        echo "json non c'e'";
-    }
-    echo '<pre>' . var_dump($json) . '</pre>';
-    // echo '<pre>' . var_dump($json) . '</pre>';
-
-    // termini da inserire nella ricerca
-    // $keywords =  trim(str_replace("\n", '|' , $page->codice_textarea));
-
-    if ($nRecords == "ciao") {
         foreach ($json as $record) {
+
+
+            echo $record->full_author . "<br>";
 
             // 1. inizia ad estrapolare i titoli e descrizioni, per poi cercare i termini di ricerca
 
             // titolo da esplodere
-            $dcTitle = $records->metadata->children(PICO)->record->children(DC)->title;
+/*            $dcTitle = $records->metadata->children(PICO)->record->children(DC)->title;
             $titles = explode(";", $dcTitle);
             $finalTitle = '';
             $nTitles = count($titles);
-            $counter = 1;
+            $counter = 1;*/
 
             //echo $finalTitle;
             
             // 3. cerco i miei termini di ricerca
-            if($record->full_author) { 
+            if($record->full_author == "pizza") { 
 
 
                 // inizio importazione
