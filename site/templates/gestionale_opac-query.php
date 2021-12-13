@@ -1,12 +1,13 @@
 <?php 
 
+$radiceURL = 'https://biblioteche.provinciasondrio.gov.it/';
+$error_message = '';
 
 if (!$page->counter->stop) {
 
-    $shelfJson = 'https://biblioteche.provinciasondrio.gov.it/data/jshelf/widget/3043/';
+    $shelfJson = $radiceURL . 'data/jshelf/widget/' . $page->codice . '/'; 
 
-    // CURL esito fallito // soluzione trovata qui https://stackoverflow.com/questions/2548451/php-file-get-contents-behaves-differently-to-browser
-
+    // metodo CURL fallito ... // soluzione trovata qui https://stackoverflow.com/questions/2548451/php-file-get-contents-behaves-differently-to-browser
     $opts = array('http' =>
         array(
             'method'  => 'GET',
@@ -23,62 +24,58 @@ if (!$page->counter->stop) {
     if ($json) {
         foreach ($json as $record) {
 
+            // 1 .trova il codice OPAC
+                $explodeURL = explode(':catalog:', $record->opac_url);
+                $codice = $sanitizer->int($explodeURL[1]);
+                if ($codice) {
+                    // 2. inizio importazione
+                        //check if appuntamento is already there
+                        $alreadyImported = $pages->findOne("template=gestionale_opac-importazione-scheda, codice=$codice")->title;
 
-            echo $record->full_author . "<br>";
+                        if (!$alreadyImported) {
+                            $p = new Page();
 
-            // 1. inizia ad estrapolare i titoli e descrizioni, per poi cercare i termini di ricerca
+                            //define template & parent
+                            $p->template = "gestionale_opac-importazione-scheda";
 
-            // titolo da esplodere
-/*            $dcTitle = $records->metadata->children(PICO)->record->children(DC)->title;
-            $titles = explode(";", $dcTitle);
-            $finalTitle = '';
-            $nTitles = count($titles);
-            $counter = 1;*/
+                            $p->title = $sanitizer->text($record->cover_title);
+                            $p->name  = $sanitizer->pageName($p->title, true);
+                            $p->parent = $page;
 
-            //echo $finalTitle;
-            
-            // 3. cerco i miei termini di ricerca
-            if($record->full_author == "pizza") { 
+                            $p->display_name = $sanitizer->text($sanitizer->unentities($record->full_author));
+                            $p->descrizione = $sanitizer->text($record->abstract);
+                            $p->link = $sanitizer->url($radiceURL . $record->opac_url);
+                            $p->codice = $codice;
 
+                            // add images (add url in text fild)
+                            $p->codice_esportato = $sanitizer->url($record->cover_url);
 
-                // inizio importazione
-                    //check if appuntamento is already there
-                    $alreadyImported = $pages->findOne("template=gestionale_opac-importazione-scheda, codice=$codice")->title;
-                    /*if (!$alreadyImported) {
-                        $p = new Page();
+                            $p->save();
+                            echo 'new page <a href="' . $p->editUrl . '" target="_blank">' . $p->path . '</a><br>';
+                        }
 
-                        //define template & parent
-                        $p->template = "gestionale_sirbec-importazione-scheda";
-
-                        $p->title = $sanitizer->text($finalTitle);
-                        $p->name  = $sanitizer->pageName($p->title, true);
-                        $p->parent = $page;
-
-                        $p->display_name = $sanitizer->text($collection);
-                        $p->descrizione = $sanitizer->text($subject);
-                        $p->link = $sanitizer->url($urlRecord);
-
-                        // codice univoco & codice datasource
-                        $p->codice = $sanitizer->text($identifier);
-                        $p->codice_esportato = $page->sirbec_datasource->name;
-
-                        // add images
-                        $p->save();
-                        if(strlen($urlFoto)){
-                            $p->immagini->add((string)$urlFoto);
-                        } 
-
-                        $p->save();
-                        echo 'new page <a href="' . $p->editUrl . '" target="_blank">' . $p->path . '</a><br>';
-                    }*/
-            } 
+                }else{
+                    $error_message .= "codice catalogo OPAC non trovato " . print_r($explodeURL, true) . "\n";
+                }
         }
     }else{
-        echo "no records found";
+        $error_message .= "L'URL json interrogato non da' risultati";
+        // manda una mail di notifica?
     }
 }else{
     echo "ricerca interrotta";
 }
+
+// notifica admin in caso di problemi
+if ($error_message) {
+    $mail = wireMail();
+    $mail->sendSingle(true);
+    $mail->to('admin@siamoalpi.it'); 
+    $mail->subject("Problema con harvesting, pagina: $page->name");
+    $mail->body($error_message);
+    $mail->send();
+}
+
 die()
 /* 
  # guida ####################################################################
@@ -95,20 +92,29 @@ die()
     |-----------------|-----------------------------|
     
     # gestionale_opac-importazione-scheda
-    |--------------|----------------------------------|
-    |   PW field   |           Json syntax            |
-    |--------------|----------------------------------|
-    | title        | cover_title                      |
-    | display_name | full_author                      |
-    | codice       | ID opac, da prendere in opac_url |
-    | descrizione  | abstract                         |
-    | immagini *   | cover_url                        |
-    | link         | opac_url                         |
-    |--------------|----------------------------------|
-    * note: (non so se ha senso importare la foto, forse basta l URL, comunque non possiamo usare i comperio)
+    |------------------|----------------------------------|
+    |     PW field     |           Json syntax            |
+    |------------------|----------------------------------|
+    | title            | cover_title                      |
+    | display_name     | full_author                      |
+    | codice           | ID opac, da prendere in opac_url |
+    | descrizione      | abstract                         |
+    | codice_esportato | cover_url                        |
+    | link             | opac_url                         |
+    |------------------|----------------------------------|
 
-    http://www.oai.servizirl.it/oai/interfaccia.jsp?verb=ListRecords&metadataPrefix=pico&set=AFRLSUP
-    http://www.oai.servizirl.it/oai/interfaccia.jsp?verb=ListRecords&resumptionToken=null%7Cnull%7CAFRLSUP%7Cpico%7C300%7C2021-11-29T10:39:04Z
+
+Note tecniche di Giulio Bonanome
+
+    https://<opac_url>/data/jsonDataApi?type=sh&shelfid=<shelf_widget_id_esistente>
+    &page=<numero_risultati>
+    &sort=<ordinamento_risultati_ricerca>
+    &ttl=<time_to_live_apc_cache_in_secondi>
+     
+    Versione compatta https://<opac_url>/data/jshelf/widget/<shelf_widget_id_esistente>/<numero_risultati>/<time_to_live_apc_cache_in_secondi>
+    Esempio: https://opac.provincia.brescia.it/data/jshelf/widget/1825/20/100
+
+
 
 */
 ?>
