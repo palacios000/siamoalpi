@@ -15,6 +15,7 @@
 	foreach ($schede as $scheda) {
 		$json .= '
 		{
+			"objectID" : "sa'.$scheda->id.'",
 			"titolo": "'.$sanitizer->entities($scheda->title).'",
 			"descrizione": "'.$sanitizer->entities($sanitizer->markupToLine($scheda->descrizione)).'",
 			"immagine": "'.$scheda->immagini->first->httpUrl.'",
