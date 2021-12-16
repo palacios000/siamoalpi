@@ -16,11 +16,11 @@
 
 	<section class="container w-3/4 mx-auto">
 		<div class="bg-white ">
-			<h1>test</h1>
-			<div id="searchbox">
+			<h1 class="text-3xl p-10">Prova ricerca contenuti</h1>
+			<div id="searchbox" class="p-5">
 				
 			</div>
-			<div id="hits">
+			<div id="hits" class="p-5">
 				
 			</div>
 		</div>
@@ -60,31 +60,32 @@
 
 		  if (isFirstRender) {
 		    const ul = document.createElement('div');
-		    ul.classList.add('tabella');
-		    const previousButton = document.createElement('button');
-		    previousButton.className = 'previous-button';
-		    previousButton.textContent = 'Show previous';
+		    ul.classList.add('tabella', 'grid', 'grid-cols-4', 'gap-4');
+		    //const previousButton = document.createElement('button');
+		    //previousButton.className = 'previous-button';
+		    //previousButton.textContent = 'Show previous';
 
-		    previousButton.addEventListener('click', () => {
-		      showPrevious();
-		    });
+			    // previousButton.addEventListener('click', () => {
+			    //   showPrevious();
+			    // });
 
 		    const nextButton = document.createElement('button');
-		    nextButton.className = 'next-button';
-		    nextButton.textContent = 'Show more';
+		    nextButton.classList.add('next-button', 'bg-verde-sa', 'text-white', 'p-3');
+		    // nextButton.className = 'next-button';
+		    nextButton.textContent = 'Mostra altro';
 
 		    nextButton.addEventListener('click', () => {
 		      showMore();
 		    });
 
-		    widgetParams.container.appendChild(previousButton);
+		    //widgetParams.container.appendChild(previousButton);
 		    widgetParams.container.appendChild(ul);
 		    widgetParams.container.appendChild(nextButton);
 
 		    return;
 		  }
 
-		  widgetParams.container.querySelector('.previous-button').disabled = isFirstPage;
+		  //widgetParams.container.querySelector('.previous-button').disabled = isFirstPage;
 		  widgetParams.container.querySelector('.next-button').disabled = isLastPage;
 
 		  widgetParams.container.querySelector('div').innerHTML = `
@@ -98,9 +99,11 @@
 		            <div>
 		          		<img src='${item.immagine}'>
 			        </div>
+			        <div class='max-h-36 overflow-hidden'>
 		            <p class='text-sm'>
 		            ${instantsearch.highlight({ attribute: 'descrizione', hit: item })}
 		            </p>
+			        </div>
 		          </div>`
 		      )
 		      .join('')}
@@ -191,17 +194,17 @@
 	<?php require "inc/scripts.php" ?>
 
 <!-- masonry -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-
+ -->
 	<script>
 		
-		var elem = document.querySelector('.tabella');
-		var msnry = new Masonry( elem, {
-		  // options
-		  itemSelector: '.algCard',
-		  columnWidth: '400'
-		});
+		// var elem = document.querySelector('.tabella');
+		// var msnry = new Masonry( elem, {
+		//   // options
+		//   itemSelector: '.algCard',
+		//   columnWidth: '400'
+		// });
 		
 
 		// element argument can be a selector string

@@ -27,11 +27,15 @@ body.landing-home{
 
 }
 
-.algCard{
+.ais-SearchBox-input{
+	border:  gray 1px solid;
+}
+
+/*.algCard{
 	width: 400px;
 	border:  1px solid red;
 	display: inline;
-}
+}*/
 /*
 li.ais-InfiniteHits-item{
 	border: 2px red solid;
