@@ -27,24 +27,30 @@ body.landing-home{
 
 }
 
-/*li.ais-InfiniteHits-item{
+.algCard{
+	width: 400px;
+	border:  1px solid red;
+	display: inline;
+}
+/*
+li.ais-InfiniteHits-item{
 	border: 2px red solid;
-	width: 33%;
-	flex-basis: 33.333333%;
+	width: 200px;
 }
 */
-ol.ais-InfiniteHits-list { /* Masonry container */
+
+/*ol.ais-InfiniteHits-list { 
   column-count: 3;
   column-gap: 1em;
 }
 
-li.ais-InfiniteHits-item{ /* Masonry bricks or child elements */
+li.ais-InfiniteHits-item{ 
   background-color: #eee;
   display: inline-block;
   margin: 0 0 1em;
   width: 100%;
 }
-
+*/
 /*
 a{
 	@apply underline hover:no-underline;

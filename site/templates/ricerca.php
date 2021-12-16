@@ -29,69 +29,191 @@
 
 
 
-<script>
-	const searchClient = algoliasearch('NK1J7ES7IV', '6581401b5f047688ea20ca3f5e6074fd');
+<!-- algolia search -->
+	<script>
+		const searchClient = algoliasearch('NK1J7ES7IV', '6581401b5f047688ea20ca3f5e6074fd');
 
-	const search = instantsearch({
-	  indexName: 'siamoAlpi',
-	  searchClient,
-	});
-
-	search.addWidgets([
-	  instantsearch.widgets.searchBox({
-	    container: '#searchbox',
-	  }),
-
-	  instantsearch.widgets.configure({
-	    hitsPerPage: 6,
-	  }),
+		const search = instantsearch({
+		  indexName: 'siamoAlpi',
+		  searchClient,
+		});
 
 
-	  instantsearch.widgets.infiniteHits({
-	    container: '#hits',
-	    escapeHTML: true,
-	    cssClasses: {
-	        list: [],
-	        root: ['cardX-prova', 'cardY-test'],
-	      },
-	    templates: {
-	        item: `
-	        <div>
-	          <h2>
-	            {{ titolo }}
-	          </h2>
-	          <div>
-	          	<img src='{{ immagine }}'>
-	          </div>
-	          <p>{{ descrizione }}</p>
-	        </div>
-	        `,
-	      },
 
-	  })
-	]);
 
-	search.start();
 
-</script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-<!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script> -->
 
-<script>
-	//var elem = document.querySelector('.grid');
-	//var msnry = new Masonry( elem, {
-	  // options
-	  //itemSelector: '.ais-InfiniteHits-item'
-	//});
 
-	// element argument can be a selector string
-	//   for an individual element
-	//var msnry = new Masonry( '.grid', {
-	  // options
-	//});
-</script>
+
+
+
+		// Create the render function
+		const renderInfiniteHits = (renderOptions, isFirstRender) => {
+		  const {
+		    hits,
+		    widgetParams,
+		    showPrevious,
+		    isFirstPage,
+		    showMore,
+		    isLastPage,
+		  } = renderOptions;
+
+		  if (isFirstRender) {
+		    const ul = document.createElement('div');
+		    ul.classList.add('tabella');
+		    const previousButton = document.createElement('button');
+		    previousButton.className = 'previous-button';
+		    previousButton.textContent = 'Show previous';
+
+		    previousButton.addEventListener('click', () => {
+		      showPrevious();
+		    });
+
+		    const nextButton = document.createElement('button');
+		    nextButton.className = 'next-button';
+		    nextButton.textContent = 'Show more';
+
+		    nextButton.addEventListener('click', () => {
+		      showMore();
+		    });
+
+		    widgetParams.container.appendChild(previousButton);
+		    widgetParams.container.appendChild(ul);
+		    widgetParams.container.appendChild(nextButton);
+
+		    return;
+		  }
+
+		  widgetParams.container.querySelector('.previous-button').disabled = isFirstPage;
+		  widgetParams.container.querySelector('.next-button').disabled = isLastPage;
+
+		  widgetParams.container.querySelector('div').innerHTML = `
+		    ${hits
+		      .map(
+		        item =>
+		          `<div class='algCard '>
+		          	<h2 class='font-bold'>
+		            ${instantsearch.highlight({ attribute: 'titolo', hit: item })}
+		            </h2>
+		            <div>
+		          		<img src='${item.immagine}'>
+			        </div>
+		            <p class='text-sm'>
+		            ${instantsearch.highlight({ attribute: 'descrizione', hit: item })}
+		            </p>
+		          </div>`
+		      )
+		      .join('')}
+		  `;
+		};
+
+		// Create the custom widget
+		const customInfiniteHits = instantsearch.connectors.connectInfiniteHits(
+		  renderInfiniteHits
+		);
+
+		// Instantiate the custom widget
+		search.addWidgets([
+		  customInfiniteHits({
+		    container: document.querySelector('#hits'),
+		    showPrevious: true,
+		    templates: {
+		        item: `
+		        <div>
+		          <h2>
+		            {{ titolo }}
+		          </h2>
+		          <div>
+		          	<img src='{{ immagine }}'>
+		          </div>
+		          <p>{{ descrizione }}</p>
+		        </div>
+		        `,
+		      },
+		  }),
+
+		  instantsearch.widgets.searchBox({
+		    container: '#searchbox',
+		  })
+
+
+		]);
+
+
+
+
+
+
+
+
+/*
+
+		search.addWidgets([
+		  instantsearch.widgets.searchBox({
+		    container: '#searchbox',
+		  }),
+
+		  instantsearch.widgets.configure({
+		    hitsPerPage: 6,
+		  }),
+
+
+		  instantsearch.widgets.infiniteHits({
+		    container: '#hits',
+		    escapeHTML: true,
+		    cssClasses: {
+		        list: ['grid'],
+		        root: ['cardX-prova', 'cardY-test'],
+		      },
+		    templates: {
+		        item: `
+		        <div>
+		          <h2>
+		            {{ titolo }}
+		          </h2>
+		          <div>
+		          	<img src='{{ immagine }}'>
+		          </div>
+		          <p>{{ descrizione }}</p>
+		        </div>
+		        `,
+		      },
+
+		  })
+		]);
+*/
+		search.start();
+
+	</script>
+
+
 
 	<?php require "inc/scripts.php" ?>
+
+<!-- masonry -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+
+	<script>
+		
+		var elem = document.querySelector('.tabella');
+		var msnry = new Masonry( elem, {
+		  // options
+		  itemSelector: '.algCard',
+		  columnWidth: '400'
+		});
+		
+
+		// element argument can be a selector string
+		//   for an individual element
+		/*var msnry = new Masonry( '.grid', {
+		  itemSelector: '.ais-InfiniteHits-item',
+		  columnWidth: '200px'
+		  // options
+		});*/
+	</script>
+
+
 
 </body>
 </html>

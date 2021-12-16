@@ -47,24 +47,29 @@ body.landing-home .landing-body a:hover{
 	padding-top: 17.3rem;
 
 }
-/*li.ais-InfiniteHits-item{
+.algCard{
+	width: 400px;
+	border:  1px solid red;
+	display: inline;
+}
+/*
+li.ais-InfiniteHits-item{
 	border: 2px red solid;
-	width: 33%;
-	flex-basis: 33.333333%;
+	width: 200px;
 }
 */
-ol.ais-InfiniteHits-list { /* Masonry container */
-  -moz-column-count: 3;
-       column-count: 3;
-  -moz-column-gap: 1em;
-       column-gap: 1em;
+/*ol.ais-InfiniteHits-list { 
+  column-count: 3;
+  column-gap: 1em;
 }
-li.ais-InfiniteHits-item{ /* Masonry bricks or child elements */
+
+li.ais-InfiniteHits-item{ 
   background-color: #eee;
   display: inline-block;
   margin: 0 0 1em;
   width: 100%;
 }
+*/
 /*
 a{
 	@apply underline hover:no-underline;
@@ -1134,6 +1139,10 @@ html{
 .text-xxs{
 			font-size: .65rem;
 }
+.text-sm{
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+}
 .text-xs{
 			font-size: 0.75rem;
 			line-height: 1rem;
@@ -1141,6 +1150,9 @@ html{
 .text-3xl{
 			font-size: 1.875rem;
 			line-height: 2.25rem;
+}
+.font-bold{
+			font-weight: 700;
 }
 .uppercase{
 			text-transform: uppercase;
