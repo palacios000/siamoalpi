@@ -51,7 +51,7 @@
 	    container: '#hits',
 	    escapeHTML: true,
 	    cssClasses: {
-	        list: ['grid', 'grid-cols-3', 'gap-4'],
+	        list: [],
 	        root: ['cardX-prova', 'cardY-test'],
 	      },
 	    templates: {
@@ -60,10 +60,10 @@
 	          <h2>
 	            {{ titolo }}
 	          </h2>
-	          <p>{{ descrizione }}</p>
 	          <div>
 	          	<img src='{{ immagine }}'>
 	          </div>
+	          <p>{{ descrizione }}</p>
 	        </div>
 	        `,
 	      },
@@ -74,6 +74,23 @@
 	search.start();
 
 </script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script> -->
+
+<script>
+	//var elem = document.querySelector('.grid');
+	//var msnry = new Masonry( elem, {
+	  // options
+	  //itemSelector: '.ais-InfiniteHits-item'
+	//});
+
+	// element argument can be a selector string
+	//   for an individual element
+	//var msnry = new Masonry( '.grid', {
+	  // options
+	//});
+</script>
+
 	<?php require "inc/scripts.php" ?>
 
 </body>

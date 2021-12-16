@@ -27,6 +27,24 @@ body.landing-home{
 
 }
 
+/*li.ais-InfiniteHits-item{
+	border: 2px red solid;
+	width: 33%;
+	flex-basis: 33.333333%;
+}
+*/
+ol.ais-InfiniteHits-list { /* Masonry container */
+  column-count: 3;
+  column-gap: 1em;
+}
+
+li.ais-InfiniteHits-item{ /* Masonry bricks or child elements */
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+}
+
 /*
 a{
 	@apply underline hover:no-underline;

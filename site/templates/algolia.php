@@ -9,15 +9,15 @@
 
 	// prepare il contenuto del json
 	$json = '[';
-	$schede = $pages->find("template=gestionale_scheda");
+	$schede = $pages->find("template=gestionale_scheda, limit=20");
 	$nSchede = count($schede);
 	$n = 1;
 	foreach ($schede as $scheda) {
 		$json .= '
 		{
 			"objectID" : "sa'.$scheda->id.'",
-			"titolo": "'.$sanitizer->entities($scheda->title).'",
-			"descrizione": "'.$sanitizer->entities($sanitizer->markupToLine($scheda->descrizione)).'",
+			"titolo": "'.str_replace('"', '\"', $sanitizer->markupToLine($scheda->title)).'",
+			"descrizione": "'.str_replace('"', '\"', $sanitizer->markupToLine($scheda->descrizione)).'",
 			"immagine": "'.$scheda->immagini->first->httpUrl.'",
 			"url": "'.$scheda->httpUrl.'"
 		}';
