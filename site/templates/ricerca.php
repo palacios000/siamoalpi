@@ -9,6 +9,8 @@
 
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css" integrity="sha256-TehzF/2QvNKhGQrrNpoOb2Ck4iGZ1J/DI4pkd2oUsBc=" crossorigin="anonymous"> -->
 
+<!-- pre connect -->
+<link crossorigin href="https://NK1J7ES7IV-dsn.algolia.net" rel="preconnect" />
 
 
 </head>
@@ -18,6 +20,9 @@
 		<div class="bg-white ">
 			<h1 class="text-3xl p-10">Prova ricerca contenuti</h1>
 			<div id="searchbox" class="p-5">
+				
+			</div>
+			<div id="stats" class="p-5 text-sm">
 				
 			</div>
 			<div id="hits" class="p-5">
@@ -93,16 +98,15 @@
 		      .map(
 		        item =>
 		          `<div class='algCard '>
-		          	<h2 class='font-bold'>
-		            ${instantsearch.highlight({ attribute: 'titolo', hit: item })}
-		            </h2>
 		            <div>
 		          		<img src='${item.immagine}'>
 			        </div>
 			        <div class='max-h-36 overflow-hidden'>
-		            <p class='text-sm'>
-		            ${instantsearch.highlight({ attribute: 'descrizione', hit: item })}
-		            </p>
+		            
+			          	<h2 class='font-bold'>
+			            ${instantsearch.highlight({ attribute: 'titolo', hit: item })}
+			            </h2>
+
 			        </div>
 		          </div>`
 		      )
@@ -137,7 +141,22 @@
 
 		  instantsearch.widgets.searchBox({
 		    container: '#searchbox',
-		  })
+		  }),
+
+		  instantsearch.widgets.stats({
+		    container: '#stats',
+		    templates: {
+		       text: `
+		         
+		           {{#hasNoResults}}Nessun risultato trovato{{/hasNoResults}}
+		           {{#hasOneResult}}1 risultato trovato{{/hasOneResult}}
+		           {{#hasManyResults}}{{#helpers.formatNumber}}{{nbHits}}{{/helpers.formatNumber}} risultati trovati{{/hasManyResults}}
+
+		         
+		       `,
+		     },
+		  }),
+
 
 
 		]);
