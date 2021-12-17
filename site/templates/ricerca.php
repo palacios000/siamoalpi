@@ -76,14 +76,39 @@
 
 		    const nextButton = document.createElement('button');
 		    nextButton.classList.add('next-button', 'bg-verde-sa', 'text-white', 'p-3');
-		    // nextButton.className = 'next-button';
 		    nextButton.textContent = 'Mostra altro';
-
 		    nextButton.addEventListener('click', () => {
 		      showMore();
 		    });
 
+		    // show/hide content
+			    const hideButton = document.createElement('button');
+			    const showButton = document.createElement('button');
+			    const hideme = document.getElementsByClassName('titoloFoto');
+			    var i;
+			    hideButton.classList.add('bg-verde-sa', 'text-white', 'p-1');
+			    showButton.classList.add('bg-verde-sa', 'text-white', 'p-1', 'hidden');
+			    hideButton.textContent = 'nascondi titolo';
+			    showButton.textContent = 'mostra titolo';
+			    hideButton.addEventListener('click', () => {
+			      for (i = 0; i < hideme.length; i++) {
+				      hideme[i].classList.add('hidden');
+			      };
+			      hideButton.classList.add('hidden');
+			      showButton.classList.remove('hidden');
+			    });
+			    showButton.addEventListener('click', () => {
+			      for (i = 0; i < hideme.length; i++) {
+				      hideme[i].classList.remove('hidden');
+			      };
+			      hideButton.classList.remove('hidden');
+			      showButton.classList.add('hidden');
+			    });
+
+
 		    //widgetParams.container.appendChild(previousButton);
+		    widgetParams.container.appendChild(hideButton);
+		    widgetParams.container.appendChild(showButton);
 		    widgetParams.container.appendChild(ul);
 		    widgetParams.container.appendChild(nextButton);
 
@@ -103,7 +128,7 @@
 			        </div>
 			        <div class='max-h-36 overflow-hidden'>
 		            
-			          	<h2 class='font-bold'>
+			          	<h2 class='font-bold titoloFoto'>
 			            ${instantsearch.highlight({ attribute: 'titolo', hit: item })}
 			            </h2>
 
