@@ -130,11 +130,6 @@ if (!$page->counter->stop) {
                             }
                         }
                         $annoA = ($annoDa != $annoA) ? $annoA : ""; // segnalamelo solo se diverso da valore precedente "anno Da"
-                        var_dump($datazioneExplode);
-                        echo "<br>";
-                        echo "anno da:" . $annoDa;
-                        echo "<br>";
-                        echo "anno a:" . $annoA;
 
                 // inizio importazione
                     //check if appuntamento is already there
