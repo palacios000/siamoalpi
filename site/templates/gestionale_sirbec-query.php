@@ -80,7 +80,7 @@ if (!$page->counter->stop) {
             // 2. li inserisco in un WireData in modo da poter fare una ricerca con la function di PW
             $unicaStringa = $finalTitle . " " . $description . " " . $subject; 
 
-            // 3. cerco i miei termini di ricerca
+            // 3.1 cerco i miei termini di ricerca
             if(preg_match("($keywords)", $unicaStringa) === 1) { 
 
                 //prelevo tutti gli altri dati
@@ -99,6 +99,43 @@ if (!$page->counter->stop) {
                         }
                     }
 
+                    // autore
+                        $autore = "";
+                        $author = $records->metadata->children(PICO)->record->author; 
+                        if ($author) {
+                            $authorExplode = explode(";", $author);
+                            foreach ($authorExplode as $key => $value) {
+                                if (strstr($value, "AUFN=")) {
+                                    $autoreExp = explode("=", $value);
+                                    $autore = $autoreExp[1];
+                                }
+                            }
+
+                        }
+
+                    // datazione
+                        $secolo = ""; $annoDa = ""; $annoA = "";
+                        $datazione = $records->metadata->children(PICO)->record->children(DCTERMS)->created; 
+                        $datazioneExplode = explode(";", $datazione);
+                        foreach ($datazioneExplode as $key => $value) {
+                            if (strstr($value, "DTZG=")) {
+                                $secoloExp = explode("=", $value);
+                                $secolo = $secoloExp[1];
+                            }elseif (strstr($value, "DTSI=")) {
+                                $annoDaExp = explode("=", $value);
+                                $annoDa = $annoDaExp[1];
+                            }elseif (strstr($value, "DTSF=")) {
+                                $annoAExp = explode("=", $value);
+                                $annoA = $annoAExp[1];
+                            }
+                        }
+                        $annoA = ($annoDa != $annoA) ? $annoA : ""; // segnalamelo solo se diverso da valore precedente "anno Da"
+                        var_dump($datazioneExplode);
+                        echo "<br>";
+                        echo "anno da:" . $annoDa;
+                        echo "<br>";
+                        echo "anno a:" . $annoA;
+
                 // inizio importazione
                     //check if appuntamento is already there
                     $alreadyImported = $pages->findOne("template=gestionale_sirbec-importazione-scheda, codice=$identifier")->title;
@@ -115,10 +152,17 @@ if (!$page->counter->stop) {
                         $p->display_name = $sanitizer->text($collection);
                         $p->descrizione = $sanitizer->text($subject);
                         $p->link = $sanitizer->url($urlRecord);
+                        $p->autore = $sanitizer->text($autore);
 
                         // codice univoco & codice datasource
                         $p->codice = $sanitizer->text($identifier);
                         $p->codice_esportato = $page->sirbec_datasource->name;
+
+                        // dataziome
+                        $p->datazione->secolo = $sanitizer->text($secolo);
+                        $p->datazione->anno = $sanitizer->text($annoDa);
+                        $p->datazione->anno_fine  = $sanitizer->text($annoA);
+
 
                         // add images
                         $p->save();
@@ -130,6 +174,8 @@ if (!$page->counter->stop) {
                         echo 'new page <a href="' . $p->editUrl . '" target="_blank">' . $p->path . '</a><br>';
                     }
             } 
+            // 3.2 oppure aggiorno le schede SA coi dati assegnati in Sirbec
+            // da fare ...
         }
     }else{
         echo "no records found";
@@ -156,17 +202,20 @@ die()
     |------------------------------|--------------------------------|
     
     # gestionale_sirbec-importazione-scheda
-    |------------------|---------------------------------|
-    |     PW field     |            XML syntax           |
-    |------------------|---------------------------------|
-    | title            | dcterms:alternative             |
-    | display_name     | dcterms:spacial  da controllare |
-    | codice           | identifier                      |
-    | descrizione      | dc:subject                      |
-    | immagini         | pico:ojcet                      |
-    | link             | dcterms:isReferencedBy          |
-    | codice_esportato | origine DataSource              |
-    |------------------|---------------------------------|
+    |------------------|---------------------------------|-------------------------|
+    |     PW field     |            XML syntax           |         dettagli        |
+    |------------------|---------------------------------|-------------------------|
+    | title            | dcterms:alternative             |                         |
+    | display_name     | dcterms:spacial  da controllare |                         |
+    | codice           | identifier                      |                         |
+    | descrizione      | dc:subject                      |                         |
+    | immagini         | pico:ojcet                      | campo immagine          |
+    | link             | dcterms:isReferencedBy          |                         |
+    | codice_esportato | origine DataSource              | sirbec_datasource (F)   |
+    | autore           |                                 |                         |
+    |------------------|---------------------------------|-------------------------|
+    | datazione        | DTZ.DTZG; DTS.DTSI; DTS.DTSF;   | secolo, anno, anno_fine |
+    |------------------|---------------------------------|-------------------------|
 
     http://www.oai.servizirl.it/oai/interfaccia.jsp?verb=ListRecords&metadataPrefix=pico&set=AFRLSUP
     http://www.oai.servizirl.it/oai/interfaccia.jsp?verb=ListRecords&resumptionToken=null%7Cnull%7CAFRLSUP%7Cpico%7C300%7C2021-11-29T10:39:04Z

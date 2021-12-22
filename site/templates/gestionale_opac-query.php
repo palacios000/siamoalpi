@@ -42,7 +42,7 @@ if (!$page->counter->stop) {
                             $p->name  = $sanitizer->pageName($p->title, true);
                             $p->parent = $page;
 
-                            $p->display_name = $sanitizer->text($sanitizer->unentities($record->full_author));
+                            $p->autore = $sanitizer->text($sanitizer->unentities($record->full_author));
                             $p->descrizione = $sanitizer->text($record->abstract);
                             $p->link = $sanitizer->url($radiceURL . $record->opac_url);
                             $p->codice = $codice;
@@ -96,7 +96,7 @@ die()
     |     PW field     |           Json syntax            |
     |------------------|----------------------------------|
     | title            | cover_title                      |
-    | display_name     | full_author                      |
+    | autore           | full_author                      |
     | codice           | ID opac, da prendere in opac_url |
     | descrizione      | abstract                         |
     | codice_esportato | cover_url                        |
