@@ -13,22 +13,22 @@
 		<section class=" w-3/4 ">
 			<div class="bg-white ">
 				<h1 class="text-3xl py-8 px-5">Ricerca contenuti [Prova]</h1>
-				<div id="searchbox" class="p-5">
-					
-				</div>
-				<div id="stats" class="p-5 text-sm">
-					
-				</div>
-				<div id="hits" class="p-5">
-					
-				</div>
+				<div id="searchbox" class="p-5"></div>
+				<div id="stats" class="p-5 text-sm"></div>
+				
+				<div id="hits" class="p-5"></div>
 			</div>
 			
 		</section>
 		<section class="w-1/4">
-			<h2>filtri</h2>
-			<div id="refinement-list">
-			<!-- https://www.algolia.com/doc/api-reference/widgets/dynamic-facets/js/ -->
+			<div id="clear-filter"></div>
+			<h2 class="mt-4 text-white px-4">filtri</h2>
+			<div id="refinement-list" class="px-8">
+				
+			</div>
+
+			<h2 class="mt-4 text-white px-4">Temi di ricerca</h2>
+			<div id="temiricerca" class="px-8">
 				
 			</div>
 		</section>
@@ -43,6 +43,7 @@
 		const search = instantsearch({
 			indexName: 'siamoAlpi',
 			searchClient,
+			routing: true
 		});
 
 
@@ -107,7 +108,9 @@
 					${hits
 						.map(
 							item =>
-								`<div class='algCard '>
+								`
+								<a href='${item.url}'>
+								<div class='algCard '>
 									<div>
 										<img src='${item.immagine}'>
 								</div>
@@ -118,7 +121,8 @@
 										</h2>
 
 								</div>
-								</div>`
+								</div>
+								</a>`
 						)
 						.join('')}
 				`;
@@ -128,17 +132,6 @@
 			const customInfiniteHits = instantsearch.connectors.connectInfiniteHits(
 				renderInfiniteHits
 			);
-
-
-
-
-
-
-
-
-
-
-
 
 
 		// 3. Instantiate the custom widget
@@ -152,6 +145,8 @@
 				// searchbox
 				instantsearch.widgets.searchBox({
 					container: '#searchbox',
+					searchAsYouType: false,
+					autofocus: false,
 				}),
 
 				// n. risultati
@@ -172,15 +167,26 @@
 				  limit: 15,
 				  showMore: true,
 				  searchable: true,
-				  searchablePlaceholder: 'Cerca tra i temi',
+				  searchablePlaceholder: 'Cerca tra i tags',
+				}),
+
+				instantsearch.widgets.menu({
+				  container: '#temiricerca',
+				  attribute: 'temi',
+				}),
+
+					
+				
+				instantsearch.widgets.clearRefinements({
+				  container: '#clear-filter',
+				  templates: {
+				      resetLabel: 'Rimuovi filtri',
+				    },
 				}),
 
 
 
 			]);
-
-
-
 
 		search.start();
 
