@@ -24,7 +24,7 @@ echo  '
 
 
 /**
- * CAMPI
+ * CAMPI del template "gestionale_scheda"
 	|=========================|==========|===============|
 	| title                   |          |               |
 	| tema                    | PageRef  |               |
