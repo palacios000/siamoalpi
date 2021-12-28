@@ -2,7 +2,8 @@
 
 /** MOTORE DI SINCRONIZZAZIONE SCHEDE CON ALGOLIA
  * 
- * La pagina crea un file json che viene poi inviato ad Algolia
+ * A. La pagina crea un file json che viene poi inviato ad Algolia
+ * B. Cancella le schede con stato di lavorazione ELIMINA
  * 
  * le immagini vanno prima ridotte a dimensione per l'output e poi consegnate ad Algolia
  * 
@@ -22,7 +23,9 @@
 	// selector per trovare le schede da esportare in algolia
 	$selector = "template=gestionale_scheda, immagini.count>=1";
 	if (!$page->counter->reset) {
-		$selector .= ", created|modified>=$page->timestamp ";
+		$debugTimestamp = $page->timestamp - (60 * 60 * 2);
+		$selector .= ", created|modified>=$debugTimestamp, limit=30 ";
+		// $selector .= ", created|modified>=$page->timestamp ";
 	}
 
 	// prepare il contenuto del json
@@ -57,28 +60,16 @@
 						}
 
 				// tema
-					$temi = '';
-					$cntTemi = count($scheda->tema);
-					$nTemi = 1; 
-					if ($cntTemi) {
+					$temi = array();
 						foreach ($scheda->tema as $tema) {
-							$temi .= '"'.str_replace('"', '\"', $sanitizer->markupToLine($tema->title)).'"';
-							$temi .= ($nTemi < $cntTemi) ? ',' : ''; 
-							$nTemi++;
+							$temi[] = $sanitizer->markupToLine($tema->title);
 						}
-					}
 
 				// tags
-					$tags = '';
-					$cntTags = count($scheda->tags);
-					$nTags = 1; 
-					if ($cntTags) {
+					$tags = array();
 						foreach ($scheda->tags as $tag) {
-							$tags .= '"'.str_replace('"', '\"', $sanitizer->markupToLine($tag->title)).'"';
-							$tags .= ($nTags < $cntTags) ? ',' : ''; 
-							$nTags++;
+							$tags[] = $sanitizer->markupToLine($tag->title);
 						}
-					}
 
 				// datazione - DA FARE - sirbec dependant
 
@@ -92,8 +83,8 @@
 					"descrizione": "'.str_replace('"', '\"', $sanitizer->markupToLine($scheda->descrizione)).'",
 					"immagine": "'.$immagineUrl.'",
 					"url": "'.$scheda->httpUrl.'",
-					"temi": ['.$temi.'],
-					"tags": ['.$tags.']
+					"temi": '. json_encode($temi).',
+					"tags": '. json_encode($tags).'
 				}';
 				$json .= ($n < $nSchede) ? ',': ''; 
 				$nSchedePronte++;
@@ -186,20 +177,18 @@
 		$delRecordsArray = json_encode($delRecordsArray);
 	}
 
-	echo $delRecordsArray;
+	//echo $delRecordsArray;
 
 
 // 5. manda tutto ad algolia
-	// if ($error == "pippo") {
+	// if ($error == "pippo") { // DEBUG
 	if (!$error) {
 
-	// $client = new \AlgoliaSearch\Client('NK1J7ES7IV', '15310a01b90b40aa75122bf82fec47d9');
 	$client = \Algolia\AlgoliaSearch\SearchClient::create('NK1J7ES7IV', '15310a01b90b40aa75122bf82fec47d9');
 	$index = $client->initIndex('siamoAlpi');
 
 	$records = json_decode(file_get_contents("$algoliaURL"), true);
 
-	// Batching is done automatically by the API client
 	$index->saveObjects($records, ['autoGenerateObjectIDIfNotExist' => true]);
 
 	// Delete records
