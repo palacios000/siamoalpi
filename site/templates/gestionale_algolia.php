@@ -5,8 +5,10 @@
  * A. La pagina crea un file json che viene poi inviato ad Algolia
  * B. Cancella le schede con stato di lavorazione ELIMINA
  * 
- * le immagini vanno prima ridotte a dimensione per l'output e poi consegnate ad Algolia
+ * L'id dei record Algolia un prefisso "sa" per identificare le schede aggiunte da Siamo Alpi.
+ * Mentre per i record OPAC il prefisso e'  "op".
  * 
+ * le immagini vanno prima ridotte a dimensione per l'output e poi consegnate ad Algolia
  * Le immagini le prepara un altro script, attivato con Cron, in "gestionale_algolia-imageresize.php"
  * 
  * Lo script php di algolia e' inserito tramite Composer
@@ -82,7 +84,7 @@
 					"titolo": "'.str_replace('"', '\"', $sanitizer->markupToLine($scheda->title)).'",
 					"descrizione": "'.str_replace('"', '\"', $sanitizer->markupToLine($scheda->descrizione)).'",
 					"immagine": "'.$immagineUrl.'",
-					"url": "'.$scheda->httpUrl.'",
+					"url": "https://siamoalpi.it/archivio/scheda/?id='.$scheda->id.'",
 					"temi": '. json_encode($temi).',
 					"tags": '. json_encode($tags).'
 				}';
