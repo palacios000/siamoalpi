@@ -197,20 +197,25 @@ die()
     |------------------------------|--------------------------------|
     
     # gestionale_sirbec-importazione-scheda
-    |------------------|---------------------------------|-------------------------|
-    |     PW field     |            XML syntax           |         dettagli        |
-    |------------------|---------------------------------|-------------------------|
-    | title            | dcterms:alternative             |                         |
-    | display_name     | dcterms:spacial  da controllare |                         |
-    | codice           | identifier                      |                         |
-    | descrizione      | dc:subject                      |                         |
-    | immagini         | pico:ojcet                      | campo immagine          |
-    | link             | dcterms:isReferencedBy          |                         |
-    | codice_esportato | origine DataSource              | sirbec_datasource (F)   |
-    | autore           |                                 |                         |
-    |------------------|---------------------------------|-------------------------|
-    | datazione        | DTZ.DTZG; DTS.DTSI; DTS.DTSF;   | secolo, anno, anno_fine |
-    |------------------|---------------------------------|-------------------------|
+    |-------------------|---------------------------------|-------------------------|
+    |      PW field     |            XML syntax           |         dettagli        |
+    |-------------------|---------------------------------|-------------------------|
+    | title             | dcterms:alternative             |                         |
+    | display_name      | dcterms:spacial  da controllare |                         |
+    | codice            | identifier                      |                         |
+    | descrizione       | dc:subject                      |                         |
+    | immagini          | pico:ojcet                      | campo immagine          |
+    | link              | dcterms:isReferencedBy          |                         |
+    | codice_esportato  | origine DataSource              | sirbec_datasource (F)   |
+    | autore            | AUF => AUFN                     |                         |
+    |-------------------|---------------------------------|-------------------------|
+    | datazione (combo) | DTZ.DTZG; DTS.DTSI; DTS.DTSF;   | secolo, anno, anno_fine |
+    |-------------------|---------------------------------|-------------------------|
+    | luogo (combo)     | LRC => LRCC; LRCL               | comune, localita        |
+    |-------------------|---------------------------------|-------------------------|
+    | sync (combo)      |                                 | sirbec, algolia         |
+    |                   |                                 |                         |
+
 
     http://www.oai.servizirl.it/oai/interfaccia.jsp?verb=ListRecords&metadataPrefix=pico&set=AFRLSUP
     http://www.oai.servizirl.it/oai/interfaccia.jsp?verb=ListRecords&resumptionToken=null%7Cnull%7CAFRLSUP%7Cpico%7C300%7C2021-11-29T10:39:04Z
