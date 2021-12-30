@@ -11,25 +11,21 @@
 		$delRecordsArray = array();
 		foreach ($eliminare as $elimina) {
 			$delRecordsArray[] = 'sa'.$elimina->id;
-			//$elimina->trash();
+			$elimina->trash();
 		}
-		$delRecordsArray = json_encode($delRecordsArray);
 	}
 
-	echo $delRecordsArray;
 
-
-// 5. manda tutto ad algolia
+// manda tutto ad algolia
 	if ($delRecords) {
-
+	
 		$client = \Algolia\AlgoliaSearch\SearchClient::create('NK1J7ES7IV', '15310a01b90b40aa75122bf82fec47d9');
 		$index = $client->initIndex('siamoAlpi');
 
-		$index->deleteObjects($delRecordsArray); // non va ... ?
-		// $index->deleteObject('sa2562');
+		$index->deleteObjects($delRecordsArray); 
 	}
 
-// exit;
+exit;
 
 
 /**

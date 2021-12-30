@@ -23,7 +23,8 @@
 	$filePath = $config->paths->assets . $jsonName;
 
 	// selector per trovare le schede da esportare in algolia
-	$selector = "template=gestionale_scheda, immagini.count>=1";
+	// stato_avanzamento: 1109 in lavorazion, 1111 approvata, 1112 esportata, 2593 eliminata
+	$selector = "template=gestionale_scheda, immagini.count>=1, stato_avanzamento!=2593";
 	if (!$page->counter->reset) {
 		$debugTimestamp = $page->timestamp - (60 * 60 * 2);
 		$selector .= ", created|modified>=$debugTimestamp, limit=30 ";
@@ -167,17 +168,17 @@
 	}
 
 // 4. elimina le schede con status ELIMINA
-	$delRecords = false;
-	$eliminare = $pages->find("template=gestionale_scheda, stato_avanzamento=2593"); // 2593 = ELIMINA
-	if (count($eliminare)) {
-		$delRecords = true;
-		$delRecordsArray = array();
-		foreach ($eliminare as $elimina) {
-			$delRecordsArray[] = 'sa'.$elimina->id;
-			//$elimina->trash();
-		}
-		$delRecordsArray = json_encode($delRecordsArray);
-	}
+	// $delRecords = false;
+	// $eliminare = $pages->find("template=gestionale_scheda, stato_avanzamento=2593"); // 2593 = ELIMINA
+	// if (count($eliminare)) {
+	// 	$delRecords = true;
+	// 	$delRecordsArray = array();
+	// 	foreach ($eliminare as $elimina) {
+	// 		$delRecordsArray[] = 'sa'.$elimina->id;
+	// 		//$elimina->trash();
+	// 	}
+	// 	$delRecordsArray = json_encode($delRecordsArray);
+	// }
 
 	//echo $delRecordsArray;
 
@@ -194,10 +195,10 @@
 	$index->saveObjects($records, ['autoGenerateObjectIDIfNotExist' => true]);
 
 	// Delete records
-	if ($delRecords) {
-		$index->deleteObjects($delRecordsArray); // non va ... ?
-		// $index->deleteObject('sa2562');
-	}
+	// if ($delRecords) {
+	// 	$index->deleteObjects($delRecordsArray); // non va ... ?
+	// 	// $index->deleteObject('sa2562');
+	// }
 
 
 	/*	
