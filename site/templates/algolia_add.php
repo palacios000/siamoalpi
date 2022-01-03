@@ -167,23 +167,8 @@
 		$page->save();
 	}
 
-// 4. elimina le schede con status ELIMINA
-	// $delRecords = false;
-	// $eliminare = $pages->find("template=gestionale_scheda, stato_avanzamento=2593"); // 2593 = ELIMINA
-	// if (count($eliminare)) {
-	// 	$delRecords = true;
-	// 	$delRecordsArray = array();
-	// 	foreach ($eliminare as $elimina) {
-	// 		$delRecordsArray[] = 'sa'.$elimina->id;
-	// 		//$elimina->trash();
-	// 	}
-	// 	$delRecordsArray = json_encode($delRecordsArray);
-	// }
 
-	//echo $delRecordsArray;
-
-
-// 5. manda tutto ad algolia
+// 4. manda tutto ad algolia
 	// if ($error == "pippo") { // DEBUG
 	if (!$error) {
 
@@ -194,20 +179,6 @@
 
 	$index->saveObjects($records, ['autoGenerateObjectIDIfNotExist' => true]);
 
-	// Delete records
-	// if ($delRecords) {
-	// 	$index->deleteObjects($delRecordsArray); // non va ... ?
-	// 	// $index->deleteObject('sa2562');
-	// }
-
-
-	/*	
-	variante che non funziona
-		$client = \Algolia\AlgoliaSearch\SearchClient::create('NK1J7ES7IV', '15310a01b90b40aa75122bf82fec47d9');
-		$index = $client->initIndex('contacts');
-		$batch = json_decode(file_get_contents('https://raw.githubusercontent.com/algolia/datasets/master/contacts/contacts.json'), true);
-		$index->saveObjects($batch, ['autoGenerateObjectIDIfNotExist' => true]);
-	*/
 	}
 
 
