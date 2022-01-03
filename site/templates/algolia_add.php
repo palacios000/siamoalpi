@@ -1,6 +1,6 @@
 <?php 
 
-/** MOTORE DI SINCRONIZZAZIONE SCHEDE CON ALGOLIA
+/** MOTORE CRUD SCHEDE CON ALGOLIA
  * 
  * A. La pagina crea un file json che viene poi inviato ad Algolia
  * B. Cancella le schede con stato di lavorazione ELIMINA
@@ -16,23 +16,25 @@
 
 // 0 controlla lo stopper se e' attivo, se lo e' blocca tutto
 	$error = ($page->counter->stop) ? true : false;
-
-// 1 prepara il json
-	$json = '';
 	$jsonName = "algolia.json";
 	$filePath = $config->paths->assets . $jsonName;
 
+// 1 prepara la query di ricerca schede
+
 	// selector per trovare le schede da esportare in algolia
+	$selector = "template=gestionale_scheda, immagini.count>=1";
+
 	// stato_avanzamento: 1109 in lavorazion, 1111 approvata, 1112 esportata, 2593 eliminata
-	$selector = "template=gestionale_scheda, immagini.count>=1, stato_avanzamento!=2593";
+	$selector .= ", stato_avanzamento!=2593";
 	if (!$page->counter->reset) {
-		$debugTimestamp = $page->timestamp - (60 * 60 * 2);
-		// $selector .= ", created|modified>=$debugTimestamp, limit=50 ";
-		$selector .= ", limit=50 ";
-		// $selector .= ", created|modified>=$page->timestamp ";
+		//$debugTimestamp = $page->timestamp - (60 * 60 * 2);
+		$selector .= ", (created|modified>=$page->timestamp), (sync.sirbec=1) ";
 	}
+	// DEBUG only
+	$selector .= ", limit=50 ";
 
 	// prepare il contenuto del json
+	$json = '';
 	if (!$error) {
 		$schede = $pages->find($selector);
 		$fotoFinalWidth = 260; // larghezza delle immagini per l'output di algolia (260 e' la variazione creata da lister (tabella) del backend) // da modificare poi con 600px?
@@ -91,9 +93,17 @@
 					$record['temi'] = $temi ;
 					$record['tags'] = $tags ;
 					$record['voto'] = $voto ;
+					$record['comune'] = '' ;
+					$record['data'] = '' ;
 
-				
 			$jsonBuild[] = $record;
+
+			// modifica status scheda da sync con sirbec
+				if ($scheda->sync->sirbec) {
+					$scheda->of(false);
+					$scheda->sync->sirbec = '';
+					$scheda->save();
+				}
 		}
 
 		$nSchedePronte = count($jsonBuild);
