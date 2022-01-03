@@ -27,20 +27,20 @@
 	$selector = "template=gestionale_scheda, immagini.count>=1, stato_avanzamento!=2593";
 	if (!$page->counter->reset) {
 		$debugTimestamp = $page->timestamp - (60 * 60 * 2);
-		$selector .= ", created|modified>=$debugTimestamp, limit=30 ";
+		// $selector .= ", created|modified>=$debugTimestamp, limit=50 ";
+		$selector .= ", limit=50 ";
 		// $selector .= ", created|modified>=$page->timestamp ";
 	}
 
 	// prepare il contenuto del json
 	if (!$error) {
-		$json = '[';
 		$schede = $pages->find($selector);
-		$nSchede = count($schede);
-		$n = 1;
-		$nSchedePronte = 0; // schede da immettere nel json
 		$fotoFinalWidth = 260; // larghezza delle immagini per l'output di algolia (260 e' la variazione creata da lister (tabella) del backend) // da modificare poi con 600px?
+
+		$jsonBuild = array();
+
 		foreach ($schede as $scheda) {
-			//if (count($scheda->immagini)) { l'ho messo nel selector
+			$record = array();
 				
 				// immagine 
 					// check if there is our variation
@@ -65,36 +65,39 @@
 				// tema
 					$temi = array();
 						foreach ($scheda->tema as $tema) {
-							$temi[] = $sanitizer->markupToLine($tema->title);
+							$temi[] = $tema->title;
 						}
 
 				// tags
 					$tags = array();
 						foreach ($scheda->tags as $tag) {
-							$tags[] = $sanitizer->markupToLine($tag->title);
+							$tags[] = $tag->title;
 						}
+
+				// valutazione
+					/* assegnamo pesi diversi per i due tipi di valutazione della scheda (etnografica / grafica) dando piu' rilievo alla grafica */
+					$voto = ($scheda->valutazione_etnografica->codice) + ($scheda->valutazione_estetica->codice * 2);
 
 				// datazione - DA FARE - sirbec dependant
 
 				// luogo - DA FARE - sirbec dependant
 
 				// prepare il json
-				$json .= '
-				{
-					"objectID" : "sa'.$scheda->id.'",
-					"titolo": "'.str_replace('"', '\"', $sanitizer->markupToLine($scheda->title)).'",
-					"descrizione": "'.str_replace('"', '\"', $sanitizer->markupToLine($scheda->descrizione)).'",
-					"immagine": "'.$immagineUrl.'",
-					"url": "https://siamoalpi.it/archivio/scheda/?id='.$scheda->id.'",
-					"temi": '. json_encode($temi).',
-					"tags": '. json_encode($tags).'
-				}';
-				$json .= ($n < $nSchede) ? ',': ''; 
-				$nSchedePronte++;
-			//}
-			$n++;
+					$record['objectID'] = "sa".$scheda->id ;
+					$record['titolo'] = $sanitizer->markupToLine($scheda->title) ;
+					$record['descrizione'] = $sanitizer->markupToLine($scheda->descrizione) ;
+					$record['immagine'] = $immagineUrl ;
+					$record['url'] = 'https://siamoalpi.it/archivio/scheda/?id='.$scheda->id ;
+					$record['temi'] = $temi ;
+					$record['tags'] = $tags ;
+					$record['voto'] = $voto ;
+
+				
+			$jsonBuild[] = $record;
 		}
-		$json .= ']';
+
+		$nSchedePronte = count($jsonBuild);
+		$json = json_encode($jsonBuild);
 	}
 
 // 2. check if it's all valid. Scrivi il json
@@ -167,10 +170,9 @@
 		$page->save();
 	}
 
-
 // 4. manda tutto ad algolia
-	// if ($error == "pippo") { // DEBUG
-	if (!$error) {
+	if ($error == "pippo") { // DEBUG
+	// if (!$error) {
 
 	$client = \Algolia\AlgoliaSearch\SearchClient::create('NK1J7ES7IV', '15310a01b90b40aa75122bf82fec47d9');
 	$index = $client->initIndex('siamoAlpi');
