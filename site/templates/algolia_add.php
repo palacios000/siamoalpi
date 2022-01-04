@@ -80,9 +80,11 @@
 					/* assegnamo pesi diversi per i due tipi di valutazione della scheda (etnografica / grafica) dando piu' rilievo alla grafica */
 					$voto = ($scheda->valutazione_etnografica->codice) + ($scheda->valutazione_estetica->codice * 2);
 
-				// datazione - DA FARE - sirbec dependant
+				// datazione - DA FARE - sirbec dependant // farei: "filter__anno(from + to) / 2"
 
-				// luogo - DA FARE - sirbec dependant
+				// luogo - DA FARE - sirbec dependant // coordinate google?
+					// query google maps and get back coordinates... 
+					// info here: https://developers.google.com/maps/documentation/geocoding/requests-geocoding?hl=it
 
 				// prepare il json
 					$record['objectID'] = "sa".$scheda->id ;
@@ -90,10 +92,11 @@
 					$record['descrizione'] = $sanitizer->markupToLine($scheda->descrizione) ;
 					$record['immagine'] = $immagineUrl ;
 					$record['url'] = 'https://siamoalpi.it/archivio/scheda/?id='.$scheda->id ;
+					$record['ente'] = $scheda->parent->title;
 					$record['temi'] = $temi ;
 					$record['tags'] = $tags ;
 					$record['voto'] = $voto ;
-					$record['comune'] = '' ;
+					$record['geo'] = '' ;
 					$record['data'] = '' ;
 
 			$jsonBuild[] = $record;
