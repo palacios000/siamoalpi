@@ -1,24 +1,9 @@
 <?php 
 /** Aggiorna le coordinate delle schede interrogando Google Maps
  * info qui: https://developers.google.com/maps/documentation/geocoding/requests-geocoding?hl=it#json
- *  */
-
-// interrompi l'haversting quando Sirbec non mi da' piu' il resumption token
-    if($page->counter->cicli >= 1 && !$page->codice){
-        $page->of(false);
-        $page->counter->stop = 1;
-        $page->save('counter');
-    }
-// resetta a comando
-    if ($page->counter->reset) {
-        $page->of(false);
-        $page->counter->reset = 0;
-        $page->counter->cicli = 0;
-        $page->counter->records = 0;
-        $page->save('counter');
-        $page->codice = ""; // resetta anche resuption token
-        $page->save();
-    }
+ *  
+ * 
+ * */
 
 
 if (!$page->counter->stop) {  
@@ -28,7 +13,7 @@ if (!$page->counter->stop) {
     $googleUrl = "https://maps.googleapis.com/maps/api/geocode/";
    
     // cerca le schede
-    $schede = $pages->find("template=gestionale_scheda, stato_avanzamento=1112, sync.sirbec=1, sync.geocoding!=1 ");
+    $schede = $pages->find("template=gestionale_scheda, stato_avanzamento=1112, sync.sirbec=1, sync.geocoding!=1, sync.map_desync!=1, limit=15 ");
     if (count($schede)) {
         //echo "schede: " . count($schede);
         foreach ($schede as $scheda) {
@@ -46,27 +31,36 @@ if (!$page->counter->stop) {
                 //star query
                 $query = "{$googleUrl}json?address={$indirizzo}&key={$key}";
 
-                //echo $query;
-
                 $f = file_get_contents("$query", false);
                 $json = json_decode($f);
 
                 if ($json) {
-                    //foreach ($json as $record) {
-                        //var_dump($record);
-                        
-                        $geo = $json->results;
+                    foreach ($json as $records) {
+                        foreach ($records as $results) {
+                            $address = $results->formatted_address;
+                            $lat = $results->geometry->location->lat;
+                            $lng = $results->geometry->location->lng;
+                        }
 
-                        $address = $geo->address_components;
-                        $lat = $geo->geometry->location->lat;
-                        $long = $geo->geometry->location->long;
-
-                        echo "address: $address";
-                        echo "<br>lat: $lat - long: $long";
-                        
-                    //}
+                    }
+                    // aggiorna scheda
+                    if ($lat && $lng) {
+                        $scheda->of(false);
+                        $scheda->mappa->address = $address;
+                        $scheda->save('mappa');
+                        $scheda->mappa->lat = $lat;
+                        $scheda->mappa->lng = $lng;
+                        $scheda->save('mappa'); // non so perche' ma devo salvare due volte ...
+                        $scheda->sync->geocoding = 1;
+                        $scheda->save('sync');
+                        $scheda->of(true);
+                    }
                 }
             }
+            // echo "lat:$lat - long: $lng"; // lat:46.146413 - long: 9.5717867
+
+            // halt for X seconds for every loop
+            sleep(1); 
         }
 
     }else{
@@ -94,24 +88,26 @@ die()
     |------------------------------|--------------------------------|
     
     # gestionale_sirbec-importazione-scheda
-    |-------------------|---------------------------------|--------------------------------------|
-    |      PW field     |            XML syntax           |               dettagli               |
-    |-------------------|---------------------------------|--------------------------------------|
-    | title             | dcterms:alternative             |                                      |
-    | display_name      | dcterms:spacial  da controllare |                                      |
-    | codice            | identifier                      |                                      |
-    | descrizione       | dc:subject                      |                                      |
-    | immagini          | pico:ojcet                      | campo immagine                       |
-    | link              | dcterms:isReferencedBy          |                                      |
-    | codice_esportato  | origine DataSource              | sirbec_datasource (F)                |
-    | autore            | AUF => AUFN                     |                                      |
-    |-------------------|---------------------------------|--------------------------------------|
-    | datazione (combo) | DTZ.DTZG; DTS.DTSI; DTS.DTSF;   | secolo, anno, anno_fine              |
-    |-------------------|---------------------------------|--------------------------------------|
-    | luogo (combo)     | LRC => LRCC; LRCL               | comune, localita                     |
-    |-------------------|---------------------------------|--------------------------------------|
-    | sync (combo)      | x, x, x, soggetto SGTD          | sirbec, algolia, geocoding, soggetto |
-    |                   |                                 |                                      |
+    |-------------------|---------------------------------|--------------------------------------------------|
+    |      PW field     |            XML syntax           |                     dettagli                     |
+    |-------------------|---------------------------------|--------------------------------------------------|
+    | title             | dcterms:alternative             |                                                  |
+    | display_name      | dcterms:spacial  da controllare |                                                  |
+    | codice            | identifier                      |                                                  |
+    | descrizione       | dc:subject                      |                                                  |
+    | immagini          | pico:ojcet                      | campo immagine                                   |
+    | link              | dcterms:isReferencedBy          |                                                  |
+    | codice_esportato  | origine DataSource              | sirbec_datasource (F)                            |
+    | autore            | AUF => AUFN                     |                                                  |
+    |-------------------|---------------------------------|--------------------------------------------------|
+    | datazione (combo) | DTZ.DTZG; DTS.DTSI; DTS.DTSF;   | secolo, anno, anno_fine                          |
+    |-------------------|---------------------------------|--------------------------------------------------|
+    | luogo (combo)     | LRC => LRCC; LRCL               | comune, localita                                 |
+    |-------------------|---------------------------------|--------------------------------------------------|
+    | sync (combo)      | x, x, x, soggetto SGTD, x       | sirbec, algolia, geocoding, soggetto, map_desync |
+    |-------------------|---------------------------------|--------------------------------------------------|
+    | mappa             |                                 | address, lng, lat                                |
+    |                   |                                 |                                                  |
 
 
     http://www.oai.servizirl.it/oai/interfaccia.jsp?verb=ListRecords&metadataPrefix=pico&set=AFRLSUP

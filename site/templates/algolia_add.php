@@ -11,6 +11,10 @@
  * le immagini vanno prima ridotte a dimensione per l'output e poi consegnate ad Algolia
  * Le immagini le prepara un altro script, attivato con Cron, in "gestionale_algolia-imageresize.php"
  * 
+ * Le coordinate geocoding viene elaborato da uno script che chiede tramite google API le coordinate 
+ * coi valori importati precedentemente dal Sirbec. Per questo aggiorno le schede che sono state
+ * sincronizzate AND geo taggate
+ *  
  * Lo script php di algolia e' inserito tramite Composer
 */
 
@@ -25,10 +29,11 @@
 	$selector = "template=gestionale_scheda, immagini.count>=1";
 
 	// stato_avanzamento: 1109 in lavorazion, 1111 approvata, 1112 esportata, 2593 eliminata
-	$selector .= ", stato_avanzamento!=2593";
+	// $selector .= ", stato_avanzamento!=2593";
+	$selector .= ", stato_avanzamento=1112";
 	if (!$page->counter->reset) {
 		//$debugTimestamp = $page->timestamp - (60 * 60 * 2);
-		$selector .= ", (created|modified>=$page->timestamp), (sync.sirbec=1) ";
+		$selector .= ", (created|modified>=$page->timestamp), (sync.sirbec=1, sync.geocoding=1) ";
 	}
 	// DEBUG only
 	$selector .= ", limit=50 ";
@@ -58,7 +63,7 @@
 
 					// TEMP (liste mi da' 260 per vertical e 260 orizzontali... non penso noi dovremo distinguere tra i due casi. Per ora prendo quello che c'e').
 						$nVariations = $scheda->immagini->first->getVariations();
-						if ( count($nVariations) >= 1) {
+						if (count($nVariations) >= 1) {
 							$immagineUrl = $nVariations->last->httpUrl;
 						}else{
 							$immagineUrl = $scheda->immagini->first->width($fotoFinalWidth)->httpUrl;
@@ -80,11 +85,42 @@
 					/* assegnamo pesi diversi per i due tipi di valutazione della scheda (etnografica / grafica) dando piu' rilievo alla grafica */
 					$voto = ($scheda->valutazione_etnografica->codice) + ($scheda->valutazione_estetica->codice * 2);
 
-				// datazione - DA FARE - sirbec dependant // farei: "filter__anno(from + to) / 2"
+				// datazione - sirbec dependant 
+					// per avere solo un valore faccio la media dei due anni ...
+					$annox = '';
+					$anno_start = '';
+					$anno_end = '';
+					if ($scheda->datazione->anno) {
+						// controlla che ci sia solo l'anno e non la data
+						if (strstr($scheda->datazione->anno, "/")) {
+							$datax = explode('/', $scheda->datazione->anno);
+							$anno_start = $datax[2];
+						}else{
+							$anno_start = $scheda->datazione->anno;
+						}
+					}
 
-				// luogo - DA FARE - sirbec dependant // coordinate google?
-					// query google maps and get back coordinates... 
-					// info here: https://developers.google.com/maps/documentation/geocoding/requests-geocoding?hl=it
+					if ($scheda->datazione->anno_fine) {
+						// controlla che ci sia solo l'anno e non la data
+						if (strstr($scheda->datazione->anno_fine, "/")) {
+							$datax = explode('/', $scheda->datazione->anno_fine);
+							$anno_end = $datax[2];
+						}else{
+							$anno_end = $scheda->datazione->anno_fine;
+						}
+					}
+
+					if ($anno_end) {
+						$annox = ($anno_start + $anno_end) / 2 ;
+					}else{
+						$annox = $anno_start;
+					}
+
+				// luogo - sirbec dependant 
+					$geo = (object) array('lat'=> floatval($scheda->mappa->lat), 'lng'=> floatval($scheda->mappa->lng));
+					$comune = $scheda->luogo->comune;
+
+					
 
 				// prepare il json
 					$record['objectID'] = "sa".$scheda->id ;
@@ -96,8 +132,9 @@
 					$record['temi'] = $temi ;
 					$record['tags'] = $tags ;
 					$record['voto'] = $voto ;
-					$record['geo'] = '' ;
-					$record['data'] = '' ;
+					$record['datazione'] = intval($annox) ;
+					$record['comune'] = $comune ;
+					$record['_geoloc'] = $geo ;	
 
 			$jsonBuild[] = $record;
 
