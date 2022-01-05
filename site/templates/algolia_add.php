@@ -29,14 +29,14 @@
 	$selector = "template=gestionale_scheda, immagini.count>=1";
 
 	// stato_avanzamento: 1109 in lavorazion, 1111 approvata, 1112 esportata, 2593 eliminata
-	// $selector .= ", stato_avanzamento!=2593";
-	$selector .= ", stato_avanzamento=1112";
+	$selector .= ", stato_avanzamento!=2593";
 	if (!$page->counter->reset) {
-		//$debugTimestamp = $page->timestamp - (60 * 60 * 2);
+		// $debugTimestamp = $page->timestamp - (60 * 60 * 2);
+		// $selector .= ", (created|modified>=$page->timestamp), (sync.sirbec=1, sync.geocoding=1, sync.fotoready=1) "; // PRODUCTION
 		$selector .= ", (created|modified>=$page->timestamp), (sync.sirbec=1, sync.geocoding=1) ";
 	}
 	// DEBUG only
-	$selector .= ", limit=50 ";
+	// $selector .= ", limit=50 ";
 
 	// prepare il contenuto del json
 	$json = '';
@@ -120,8 +120,7 @@
 					$geo = (object) array('lat'=> floatval($scheda->mappa->lat), 'lng'=> floatval($scheda->mappa->lng));
 					$comune = $scheda->luogo->comune;
 
-					
-
+				
 				// prepare il json
 					$record['objectID'] = "sa".$scheda->id ;
 					$record['titolo'] = $sanitizer->markupToLine($scheda->title) ;
@@ -221,8 +220,8 @@
 	}
 
 // 4. manda tutto ad algolia
-	if ($error == "pippo") { // DEBUG
-	// if (!$error) {
+	//if ($error == "pippo") { // DEBUG
+	if (!$error) {
 
 	$client = \Algolia\AlgoliaSearch\SearchClient::create('NK1J7ES7IV', '15310a01b90b40aa75122bf82fec47d9');
 	$index = $client->initIndex('siamoAlpi');
