@@ -9,7 +9,7 @@
 if (!$page->counter->stop) {  
 
     // creata apposita chiave per accedere via cronjob/server (limitata da IP)
-    $key = "AIzaSyBp5AHXRIMToCz5wfpK5yjCLxpVUAJUFr0";
+    $key = $keyGmapsGeolocation; // spostao in config.php
     $googleUrl = "https://maps.googleapis.com/maps/api/geocode/";
    
     // cerca le schede
