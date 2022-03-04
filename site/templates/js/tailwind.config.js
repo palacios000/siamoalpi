@@ -1,12 +1,10 @@
 module.exports = {
-  mode: 'jit',
-  purge: [
+  content: [
 	'public/site/*.php',
 	'public/site/templates/*.php',
 	'public/site/templates/**/*.php',
 	'public/site/templates/**/*.js',
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       fontSize: {
@@ -44,9 +42,6 @@ module.exports = {
         '5/6': '83.333333%',
       }
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }
